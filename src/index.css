@@ -3,6 +3,15 @@
 @tailwind utilities;
 
 
+
+p,
+h1,
+h2,
+h3,
+li {
+    color: #4B4F58;
+}
+
 /* Reset some default styles */
 * {
     margin: 0;

@@ -6,24 +6,24 @@ const FirstSection = () => {
     return (
         <div>
             <section className="first_section mt-40 mb-20">
-                <div className="section-1 flex justify-center items-center flex-wrap lg:flex-nowrap  gap-5">
+                <div className="section-1 flex justify-center items-center flex-wrap lg:flex-nowrap overflow-hidden  gap-5">
                     <div className="card top-sell gift flex justify-center  space-y-6 p-4 w-72 h-80    items-center flex-col">
-                        <img src={img1} alt="" className='' />
+                        <img src={img1} alt="" className='overflow-hidden w-72 h-56' />
                         <div className=" flex justify-center items-center flex-col gap-3">
                             <p>Most Loved Designs</p>
                             <h3>This Week Top Sell</h3>
                         </div>
                     </div>
-                    <div className="card designoftheweek gift flex justify-ce space-y-6 p-4 w-72 h-80     item items-center flex-col lg:flex-col-reverse gap-5">
-                        <img src={img2} alt="" className='' />
-                        <div className=" flex justify-center items-center flex-col gap-3">
+                    <div className=" designoftheweek overflow-hidden  flex justify-center space-y-6 p-4 w-72 h-80  item items-center flex-col lg:flex-col-reverse gap-3 ">
+                        <img src={img2} alt="" className='w-72 h-56' />
+                        <div className=" flex justify-center items-center flex-col gap-1">
                             <p>Design of the Week</p>
                             <h2>Do Not Miss The Details</h2>
                         </div>
                     </div>
-                    <div className="card gift mt-16 md:mt-0 flex justify-center  space-y-6 p-4 w-72 h-80    items-center flex-col  ">
-                        <img src={img3} alt="" className='' />
-                        <div className=" flex justify-center items-center flex-col gap-3">
+                    <div className=" mt-16 md:mt-16 lg:mt-0 flex justify-center  space-y-6 p-4 w-72 h-80 overflow-hidden   items-center flex-col  ">
+                        <img src={img3} alt="" className='w-72 h-56' />
+                        <div className=" flex justify-center items-center flex-col gap-1">
                             <p>Looking For Gifts ?</p>
                             <h2>Not Expensive But Great Gift</h2>
                         </div>

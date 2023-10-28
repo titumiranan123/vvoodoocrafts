@@ -8,8 +8,8 @@ const Header = () => {
                 <div className="lg:w-1/2 w-full flex justify-center  flex-col gap-5 ">
                     <div className="w-40 bg-[#44484F] h-1"></div>
                     <h3 className="font-semibold text-2xl ">design & handcrafted by vvoodoo</h3>
-                    <h1 className="text-6xl">Handmade Leather <br /> Goods</h1>
-                    <p>Here at vvoodoo we have a daily goal of challenging our <br /> skills with new ideas , techniques &designs so we can <br /> provide the best 'Leather Accessory  experience for you </p>
+                    <h1 className="text-6xl text-[#4B4F58]">Handmade Leather <br /> Goods</h1>
+                    <p>Here at vvoodoo we have a daily goal of challenging our <br /> skills with new ideas , techniques &designs so we can <br /> provide the best Leather Accessory  experience for you </p>
                     <button className="flex gap-2 bg-[#44484F] text-white py-2 px-4 rounded-lg w-52 "> ALL PRODUCTS <FaLock className="text-white" /></button>
                 </div>
                 <div className="lg:w-1/2 w-full ">
