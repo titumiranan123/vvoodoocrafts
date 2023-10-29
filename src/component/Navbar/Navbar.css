@@ -7,7 +7,7 @@
 }
 
 .categories {
-    background-color: #fff;
+color: black;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -44,6 +44,8 @@
 
 .menu-item {
     margin: 0 10px;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .menu-item a {

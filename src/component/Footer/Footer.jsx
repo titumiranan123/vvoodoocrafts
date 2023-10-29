@@ -4,7 +4,7 @@ import { AiOutlineMail } from 'react-icons/ai';
 import logo from '../../assets/logo.png'
 const Footer = () => {
     return (
-        <footer className="mt-20 flex justify-center items-center flex-col">
+        <footer className="mt-10 flex justify-center items-center flex-col">
             <div className="footer flex flex-col justify-center items-center space-y-8">
                 <img src={logo} alt="" />
                 <div>

@@ -4,7 +4,7 @@ import couple from '../../assets/couple.jpg'
 
 const Unisexsecsion = () => {
     return (
-        <div>
+        <div className='-mt-10 md:mt-0'>
             <section className="third_section mt-20 mb-20">
                 <div className="flex justify-center flex-col items-center w-3/4 mx-auto ">
                     <h1 className='text-4xl text-center'>We Design &quot;Unisex&quot; !</h1>

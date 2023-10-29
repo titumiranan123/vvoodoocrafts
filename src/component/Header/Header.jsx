@@ -3,7 +3,7 @@ import header from '../../assets/HomeHeader-1024x854.png'
 
 const Header = () => {
     return (
-        <div className="mt-10 -z-20">
+        <div className="mt-5 -z-20">
             <div className="header flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-5">
                 <div className="lg:w-1/2 w-full flex justify-center  flex-col gap-5 ">
                     <div className="w-40 bg-[#44484F] h-1"></div>

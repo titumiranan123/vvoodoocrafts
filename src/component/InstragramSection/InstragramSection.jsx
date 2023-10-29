@@ -31,12 +31,12 @@ const InstragramSection = () => {
         });
     }, [])
     return (
-        <div>
+        <div className='mt-10'>
             <section className="fifth_section">
                 <div className="instagram_bar flex justify-between items-center mt-10 mb-10">
-                    <div className=" flex justify-center items-center gap-2">
-                        <FaInstagram className='text-xl' />
-                        <a className="instra_link text-xl font-semibold underline" href=""><span>@vvoodoocrafts</span></a>
+                    <div className=" flex justify-center items-center text-2xl gap-2">
+                        <FaInstagram className='text-2xl font-semibold' />
+                        <a className="instra_link text-2xl font-semibold underline" href=""><span>@vvoodoocrafts</span></a>
                     </div>
                     <div>
                         <div className="btn">Follow on Instagram</div>
@@ -45,8 +45,21 @@ const InstragramSection = () => {
                 <div className=" ">
                     <div id="" className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-1 gap-5">
                         <div className="showPageButton" style={{ position: 'relative' }}>
-                            <img className='md:h-60 md:w-60 w-full  h-80' src={insta_1} alt="" />
-                            <div className="overly bg-[#44484F] absolute top-0 left-0 w-full h-full flex justify-center items-center bg-opacity-50 opacity-0 hover:opacity-100 gap-4 ">
+                            <img className='md:h-80 md:w-60 w-full  h-80' src={insta_1} alt="" />
+                            <div className="overly bg-[#44484F] absolute top-0 left-0 md:h-80 md:w-60 w-full  h-80 flex justify-center items-center bg-opacity-50 opacity-0 hover:opacity-100 gap-4 ">
+                                <div className='text-white flex justify-center items-center gap-4 '>
+                                    <FaHeart className='text-red-500 icon ' />
+                                    <span className='text-white'>120</span>
+                                </div>
+                                <div className='flex justify-center items-center gap-4 text-white'>
+                                    <FaComment className='text-xl icon text-white' /> <span className='text-xl text-white'> 12</span>
+                                </div>
+                            </div>
+                        </div>
+                        {/*     ------------ */}
+                        <div className="showPageButton" style={{ position: 'relative' }}>
+                            <img className='md:h-80 md:w-60 w-full  h-80' src={insta_2} alt="" />
+                            <div className="overly bg-[#44484F] absolute top-0 left-0 md:h-80 md:w-60 w-full  h-80 flex justify-center items-center bg-opacity-50 opacity-0 hover:opacity-100 gap-4 ">
                                 <div className='text-white flex justify-center items-center gap-4 '>
                                     <FaHeart className='text-red-500 icon ' />
                                     <span className='text-white'>120</span>
@@ -58,8 +71,8 @@ const InstragramSection = () => {
                             </div>
                         </div>
                         <div className="showPageButton" style={{ position: 'relative' }}>
-                            <img className='md:h-60 md:w-60 w-full  h-80' src={insta_2} alt="" />
-                            <div className="overly bg-[#44484F] absolute top-0 left-0 w-full h-full flex justify-center items-center bg-opacity-50 opacity-0 hover:opacity-100 gap-4 ">
+                            <img className='md:h-80 md:w-60 w-full  h-80' src={insta_3} alt="" />
+                            <div className="overly bg-[#44484F] absolute top-0 left-0 md:h-80 md:w-60 w-full  h-80 flex justify-center items-center bg-opacity-50 opacity-0 hover:opacity-100 gap-4 ">
                                 <div className='text-white flex justify-center items-center gap-4 '>
                                     <FaHeart className='text-red-500 icon ' />
                                     <span className='text-white'>120</span>
@@ -71,8 +84,8 @@ const InstragramSection = () => {
                             </div>
                         </div>
                         <div className="showPageButton" style={{ position: 'relative' }}>
-                            <img className='md:h-60 md:w-60 w-full  h-80' src={insta_3} alt="" />
-                            <div className="overly bg-[#44484F] absolute top-0 left-0 w-full h-full flex justify-center items-center bg-opacity-50 opacity-0 hover:opacity-100 gap-4 ">
+                            <img className='md:h-80 md:w-60 w-full  h-80' src={insta_4} alt="" />
+                            <div className="overly bg-[#44484F] absolute top-0 left-0 md:h-80 md:w-60 w-full  h-80 flex justify-center items-center bg-opacity-50 opacity-0 hover:opacity-100 gap-4 ">
                                 <div className='text-white flex justify-center items-center gap-4 '>
                                     <FaHeart className='text-red-500 icon ' />
                                     <span className='text-white'>120</span>
@@ -84,8 +97,8 @@ const InstragramSection = () => {
                             </div>
                         </div>
                         <div className="showPageButton" style={{ position: 'relative' }}>
-                            <img className='md:h-60 md:w-60 w-full  h-80' src={insta_4} alt="" />
-                            <div className="overly bg-[#44484F] absolute top-0 left-0 w-full h-full flex justify-center items-center bg-opacity-50 opacity-0 hover:opacity-100 gap-4 ">
+                            <img className='md:h-80 md:w-60 w-full  h-80' src={insta_5} alt="" />
+                            <div className="overly bg-[#44484F] absolute top-0 left-0 md:h-80 md:w-60 w-full  h-80 flex justify-center items-center bg-opacity-50 opacity-0 hover:opacity-100 gap-4 ">
                                 <div className='text-white flex justify-center items-center gap-4 '>
                                     <FaHeart className='text-red-500 icon ' />
                                     <span className='text-white'>120</span>
@@ -97,8 +110,8 @@ const InstragramSection = () => {
                             </div>
                         </div>
                         <div className="showPageButton" style={{ position: 'relative' }}>
-                            <img className='md:h-60 md:w-60 w-full  h-80' src={insta_5} alt="" />
-                            <div className="overly bg-[#44484F] absolute top-0 left-0 w-full h-full flex justify-center items-center bg-opacity-50 opacity-0 hover:opacity-100 gap-4 ">
+                            <img className='md:h-80 md:w-60 w-full  h-80' src={insta_6} alt="" />
+                            <div className="overly bg-[#44484F] absolute top-0 left-0 md:h-80 md:w-60 w-full  h-80 flex justify-center items-center bg-opacity-50 opacity-0 hover:opacity-100 gap-4 ">
                                 <div className='text-white flex justify-center items-center gap-4 '>
                                     <FaHeart className='text-red-500 icon ' />
                                     <span className='text-white'>120</span>
@@ -110,8 +123,8 @@ const InstragramSection = () => {
                             </div>
                         </div>
                         <div className="showPageButton" style={{ position: 'relative' }}>
-                            <img className='md:h-60 md:w-60 w-full  h-80' src={insta_6} alt="" />
-                            <div className="overly bg-[#44484F] absolute top-0 left-0 w-full h-full flex justify-center items-center bg-opacity-50 opacity-0 hover:opacity-100 gap-4 ">
+                            <img className='md:h-80 md:w-60 w-full  h-80' src={insta_1} alt="" />
+                            <div className="overly bg-[#44484F] absolute top-0 left-0 md:h-80 md:w-60 w-full  h-80 flex justify-center items-center bg-opacity-50 opacity-0 hover:opacity-100 gap-4 ">
                                 <div className='text-white flex justify-center items-center gap-4 '>
                                     <FaHeart className='text-red-500 icon ' />
                                     <span className='text-white'>120</span>
@@ -123,8 +136,8 @@ const InstragramSection = () => {
                             </div>
                         </div>
                         <div className="showPageButton" style={{ position: 'relative' }}>
-                            <img className='md:h-60 md:w-60 w-full  h-80' src={insta_1} alt="" />
-                            <div className="overly bg-[#44484F] absolute top-0 left-0 w-full h-full flex justify-center items-center bg-opacity-50 opacity-0 hover:opacity-100 gap-4 ">
+                            <img className='md:h-80 md:w-60 w-full  h-80' src={insta_7} alt="" />
+                            <div className="overly bg-[#44484F] absolute top-0 left-0 md:h-80 md:w-60 w-full  h-80 flex justify-center items-center bg-opacity-50 opacity-0 hover:opacity-100 gap-4 ">
                                 <div className='text-white flex justify-center items-center gap-4 '>
                                     <FaHeart className='text-red-500 icon ' />
                                     <span className='text-white'>120</span>
@@ -136,8 +149,8 @@ const InstragramSection = () => {
                             </div>
                         </div>
                         <div className="showPageButton" style={{ position: 'relative' }}>
-                            <img className='md:h-60 md:w-60 w-full  h-80' src={insta_7} alt="" />
-                            <div className="overly bg-[#44484F] absolute top-0 left-0 w-full h-full flex justify-center items-center bg-opacity-50 opacity-0 hover:opacity-100 gap-4 ">
+                            <img className='md:h-80 md:w-60 w-full  h-80' src={insta_8} alt="" />
+                            <div className="overly bg-[#44484F] absolute top-0 left-0 md:h-80 md:w-60 w-full  h-80 flex justify-center items-center bg-opacity-50 opacity-0 hover:opacity-100 gap-4 ">
                                 <div className='text-white flex justify-center items-center gap-4 '>
                                     <FaHeart className='text-red-500 icon ' />
                                     <span className='text-white'>120</span>
@@ -149,21 +162,8 @@ const InstragramSection = () => {
                             </div>
                         </div>
                         <div className="showPageButton" style={{ position: 'relative' }}>
-                            <img className='md:h-60 md:w-60 w-full  h-80' src={insta_8} alt="" />
-                            <div className="overly bg-[#44484F] absolute top-0 left-0 w-full h-full flex justify-center items-center bg-opacity-50 opacity-0 hover:opacity-100 gap-4 ">
-                                <div className='text-white flex justify-center items-center gap-4 '>
-                                    <FaHeart className='text-red-500 icon ' />
-                                    <span className='text-white'>120</span>
-                                </div>
-                                <div className='flex justify-center items-center gap-4 text-white'>
-                                    <FaComment className='text-xl icon text-white' /> <span className='text-xl text-white'> 12</span>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div className="showPageButton" style={{ position: 'relative' }}>
-                            <img className='md:h-60 md:w-60 w-full  h-80' src={insta_9} alt="" />
-                            <div className="overly bg-[#44484F] absolute top-0 left-0 w-full h-full flex justify-center items-center bg-opacity-50 opacity-0 hover:opacity-100 gap-4 ">
+                            <img className='md:h-80 md:w-60 w-full  h-80' src={insta_9} alt="" />
+                            <div className="overly bg-[#44484F] absolute top-0 left-0 md:h-80 md:w-60 w-full  h-80 flex justify-center items-center bg-opacity-50 opacity-0 hover:opacity-100 gap-4 ">
                                 <div className='text-white flex justify-center items-center gap-4 '>
                                     <FaHeart className='text-red-500 icon ' />
                                     <span className='text-white'>120</span>

@@ -4,7 +4,7 @@ const ProductTag = () => {
     return (
         <div>
             <section className="products_tags mt-20">
-                <h2 className="text-lg font-serif ">Product tags :</h2>
+                <h2 className="text-2xl font-semibold font-serif ">Product tags :</h2>
                 <div className="product_tag_container">
                     <button className="py-2 px-4 border ms-2 mt-2 hover:bg-[#44484F] hover:text-white transition-all duration-300"> Accordion</button>
                     <button className="py-2 px-4 border ms-2 mt-2 hover:bg-[#44484F] hover:text-white transition-all duration-300"> Apple</button>

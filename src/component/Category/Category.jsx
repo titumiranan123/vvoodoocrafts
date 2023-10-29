@@ -35,12 +35,12 @@ const Category = () => {
     };
 
     return (
-        <div>
+        <div className='-mt-10 md:mt-0'>
             <div className='flex justify-center items-center  flex-col'>
                 <h2 className='text-4xl'>Shop By Category</h2>
                 <div className='bg-[#f8f8f8] w-20 h-[4px]'></div>
             </div>
-            <div className='mt-20'>
+            <div className='mt-10 md:mt-20'>
                 <Swiper
                     slidesPerView={5}
                     spaceBetween={30}
