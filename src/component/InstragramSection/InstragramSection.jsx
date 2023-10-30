@@ -33,7 +33,7 @@ const InstragramSection = () => {
     return (
         <div className='mt-10'>
             <section className="fifth_section">
-                <div className="instagram_bar flex justify-between items-center flex-col gap-5 md:flex-row mt-10 mb-10">
+                <div className="instagram_bar flex justify-between items-center flex-col gap-5 md:flex-row mt-10 mb-10  ">
                     <div className=" flex justify-center items-center text-2xl gap-2">
                         <FaInstagram className='text-2xl font-semibold mt-2' />
                         <a className="instra_link text-2xl font-semibold underline" href=""><span>@vvoodoocrafts</span></a>

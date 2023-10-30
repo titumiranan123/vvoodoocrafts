@@ -30,7 +30,7 @@ const Category = () => {
         },
         1200: {
             slidesPerView: 5,
-            spaceBetween: 50,
+            spaceBetween: 0,
         },
     };
 
@@ -42,7 +42,7 @@ const Category = () => {
             </div>
             <div className='mt-10 md:mt-20'>
                 <Swiper
-                    slidesPerView={5}
+                    slidesPerView={6}
                     spaceBetween={30}
                     autoplay={{
                         delay: 2500,

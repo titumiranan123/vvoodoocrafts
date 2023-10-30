@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="footer flex flex-col justify-center items-center space-y-8">
                 <img src={logo} alt="" />
                 <div>
-                    <h2 className='text-center'>Original vvoddoo Design</h2>
+                    <h2 className='text-lg hover:underline'>Quick Links</h2>
                 </div>
                 <div className="social_link flex justify-center items-center flex-wrap lg:flex-nowrap md:flex-nowrap gap-7">
                     <div className='flex justify-center items-center gap-4'><FaInstagram /> <span>Instagram</span></div>
@@ -18,24 +18,22 @@ const Footer = () => {
                     <div className='flex justify-center items-center gap-4 '><FaPinterest />  <span>Pinterest</span> </div>
                     <div className='flex justify-center items-center gap-4 '><FaTelegram />  <span>Telegram</span></div>
                 </div>
-                <div>
-                    <h2>Quick Links</h2>
-                </div>
+                
+                <div className='grid grid-cols-1 gap-10  md:grid-cols-2 md:gap-20' >
                 <div className='flex flex-col justify-center items-center gap-1'>
                     <p>FAQ</p>
                     <p>Refund & Contact Us</p>
                 </div>
-                <div>
-                    <h2>Important Links</h2>
-                </div>
+                
                 <div className='flex flex-col justify-center items-center gap-1'>
                     <p>Privacy Policy</p>
                     <p>Shipping & Payment</p>
                     <p>Terms & Condition</p>
                 </div>
+                </div>
 
             </div>
-            <div className="text-sm mt-20 flex flex-col justify-center items-center">
+            <div className="text-sm mt-10 flex flex-col justify-center items-center">
                 <p>Copyright 2023 <span className="vertical_line">
 
                 </span> vvoodoo Handmade Leather Goods</p>
