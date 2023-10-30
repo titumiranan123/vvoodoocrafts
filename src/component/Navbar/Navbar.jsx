@@ -81,7 +81,7 @@ const Navbar = () => {
                     <div className="relative">
                         <motion.div
                         whileHover={{scale:1.1}}>
-                        <FaShoppingCart className='text-4xl' />
+                        <FaShoppingCart className='text-2xl' />
                         </motion.div>
                             
 
@@ -130,7 +130,7 @@ const Navbar = () => {
                 animate={{ x: 0, opacity: 1 }}
 
             >
-                <div className='text-xl font-semibold'>
+                <div className='text-4xl '>
                     <ul className="menu flex flex-col gap-2 justify-center  p-10 ">
                         <li className="menu-item"><a href="#">Home</a></li>
                         <li className="menu-item"><a className='flex  items-center ' href="# " onClick={() => setProductOpen(!isProductopen)}>All Products <FaAngleDown /> </a></li>
