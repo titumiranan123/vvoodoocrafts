@@ -10,7 +10,7 @@ import Unisexsecsion from "../../component/Unisex/Unisex";
 
 const Home = () => {
     return (
-        <div className="lg:container mx-auto px-4">
+        <div className="lg:w-[1300px] mx-auto px-4">
             <Navbar />
             <Header />
             <FirstSection />

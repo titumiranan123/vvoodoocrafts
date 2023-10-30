@@ -58,37 +58,37 @@ const Category = () => {
 
                 >
                     <SwiperSlide>
-                        <div className='w-48 h-60 border bg-[#f8f8f8]'>
-                            <img className='w-48 h-48' src={card1} alt="" />
+                        <div className='w-[19rem] h-[22rem] border bg-[#f8f8f8]'>
+                            <img className='w-[18rem] h-[18rem]' src={card1} alt="" />
                             <div className=' flex justify-center items-center  p-5 '>
                                 <p>Hoster & Sheath</p>
                             </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className='w-48 h-60 border bg-[#f8f8f8]'>
-                            <img className='w-48 h-48' src={card2} alt="" />
+                        <div className='w-[19rem] h-[22rem] border bg-[#f8f8f8]'>
+                            <img className='w-[18rem] h-[18rem]' src={card2} alt="" />
                             <div className='flex justify-center items-center p-5'  >
                                 <p>Hoster & Sheath</p>
                             </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className='w-48 h-60 border bg-[#f8f8f8]'>
-                            <img className='w-48 h-48' src={card3} alt="" />
+                        <div className='w-[19rem] h-[22rem] border bg-[#f8f8f8]'>
+                            <img className='w-[18rem] h-[18rem]' src={card3} alt="" />
                             <div className='flex justify-center items-center p-5' >
                                 <p>Case</p>
                             </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className='w-48 h-60 border bg-[#f8f8f8]'>
-                            <img className='w-48 h-48' src={card4} alt="" />
+                        <div className='w-[19rem] h-[22rem] border bg-[#f8f8f8]'>
+                            <img className='w-[18rem] h-[18rem]' src={card4} alt="" />
                         </div >
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className='w-48 h-60 border bg-[#f8f8f8]'>
-                            <img className='w-48 h-48' src={card5} alt="" />
+                        <div className='w-[19rem] h-[22rem] border bg-[#f8f8f8]'>
+                            <img className='w-[18rem] h-[18rem]' src={card5} alt="" />
                             <div className='flex justify-center items-center p-5'  >
                                 <p>Belt </p>
                             </div>
@@ -103,16 +103,16 @@ const Category = () => {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className='w-48 h-60 border bg-[#f8f8f8]'>
-                            <img className='w-48 h-48' src={card1} alt="" />
+                        <div className='w-[19rem] h-[22rem] border bg-[#f8f8f8]'>
+                            <img className='w-[18rem] h-[18rem]' src={card1} alt="" />
                             <div className='flex justify-center items-center p-5' >
                                 <p>Bag</p>
                             </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className='w-48 h-60 border bg-[#f8f8f8]'>
-                            <img className='w-48 h-48' src={card2} alt="" />
+                        <div className='w-[19rem] h-[22rem] border bg-[#f8f8f8]'>
+                            <img className='w-[18rem] h-[18rem]' src={card2} alt="" />
                             <div className='flex justify-center items-center p-5'  >
                                 <p>Accessory</p>
                             </div>

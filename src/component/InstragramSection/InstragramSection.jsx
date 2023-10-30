@@ -31,7 +31,7 @@ const InstragramSection = () => {
         });
     }, [])
     return (
-        <div className='mt-10'>
+        <div className='mt-10  mx-auto'>
             <section className="fifth_section">
                 <div className="instagram_bar flex justify-between items-center flex-col gap-5 md:flex-row mt-10 mb-10  ">
                     <div className=" flex justify-center items-center text-2xl gap-2">
@@ -42,7 +42,7 @@ const InstragramSection = () => {
                         <div className="flex gap-2 justify-center items-center bg-[#44484F] text-white py-2 px-4 rounded-lg w-52 ">Follow on Instagram</div>
                     </div>
                 </div>
-                <div className=" ">
+                <div className="  ">
                     <div id="" className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-1 gap-5">
                         <div className="showPageButton" style={{ position: 'relative' }}>
                             <img className='md:h-80 md:w-60 w-full  h-80' src={insta_1} alt="" />
