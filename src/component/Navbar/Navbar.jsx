@@ -85,7 +85,7 @@ const Navbar = () => {
                         </motion.div>
                             
 
-                        <span className="absolute -top-2 -right-4 bg-red-500 text-white text-sm rounded-full px-2">
+                        <span className="absolute -top-2 -right-4 bg-red-500 text-white text-[12px] rounded-full px-2">
                             20
                         </span>
 

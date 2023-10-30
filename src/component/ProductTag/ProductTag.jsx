@@ -5,8 +5,8 @@ const ProductTag = () => {
         <div>
             <section className="products_tags mt-20">
                 <h2 className="text-2xl font-semibold font-serif ">Product tags :</h2>
-                <div className="product_tag_container text-sm">
-                    <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#44484F] hover:text-white transition-all duration-300"> Accordion</button>
+                <div className="product_tag_container text-sm lg:text-[12px]">
+                    <button className="py-2  px-2 border ms-2 mt-2 hover:bg-[#44484F] hover:text-white transition-all duration-300"> Accordion</button>
                     <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#44484F] hover:text-white transition-all duration-300"> Apple</button>
                     <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#44484F] hover:text-white transition-all duration-300"> Apple Watch</button>
                     <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#44484F] hover:text-white transition-all duration-300"> Belt Attach </button>
