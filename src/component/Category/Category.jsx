@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -52,7 +52,7 @@ const Category = () => {
                         clickable: true,
                     }}
                     navigation={true}
-                    modules={[Autoplay]}
+                    modules={[Autoplay, Pagination, Navigation]}
                     className="mySwiper"
                     breakpoints={swiperBreakpoints}
 

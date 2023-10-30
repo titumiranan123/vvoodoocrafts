@@ -27,7 +27,7 @@ const Unisexsecsion = () => {
                     <div className="category_card p-4 w-72 flex flex-col justify-center items-center border gap-4 ">
                         <img src={woman} alt="" />
                         <div className="flex justify-center items-center flex-col w-3/4">
-                            <h3 className='text-xl font-semibold '>For Men</h3>
+                            <h3>For Men</h3>
                             <span className="card_line mt-2 mb-2 bg-[#44484F] w-3/4 h-[1px]">
                             </span>
                             <p className='text-center'>Design and made specially
@@ -37,7 +37,7 @@ const Unisexsecsion = () => {
                     <div className="category_card p-4 w-72 flex flex-col justify-center items-center border gap-4  card">
                         <img src={couple} alt="" />
                         <div className="flex justify-center items-center flex-col w-3/4">
-                            <h3 className='text-xl font-semibold '>For Couples</h3>
+                            <h3>For Couples</h3>
                             <span className="card_line mt-2 mb-2 bg-[#44484F] w-3/4 h-[1px]">
                             </span>
                             <p className='text-center'>Celebrate love or

@@ -19,6 +19,11 @@ color: black;
 .categories li:hover {
     text-decoration: underline;
 }
+
+
+
+
+
 .menu {
     list-style: none;
     display: flex;
@@ -39,8 +44,8 @@ color: black;
 
 .menu-item {
     margin: 0 10px;
-    font-size: 20px;
-
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .menu-item a {
@@ -64,7 +69,6 @@ color: black;
 .categories {
     list-style: none;
     padding: 10px;
-   
 }
 
 .categories a {
@@ -72,7 +76,6 @@ color: black;
     color: #020202;
     display: block;
     margin: 5px 0;
-    font-size: 20px;
 }
 
 /* search icon  */

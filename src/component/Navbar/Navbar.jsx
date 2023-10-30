@@ -73,7 +73,7 @@ const Navbar = () => {
                 <div className=''>
                     <img src={log} className='w-40 h-20' alt="" />
                 </div>
-                <div className='flex text-3xl justify-center items-center gap-5 text-white '>
+                <div className='flex justify-center items-center gap-5 text-white '>
                     {navitem}
                 </div>
                 <div className='flex justify-center items-center gap-5'>
@@ -81,7 +81,7 @@ const Navbar = () => {
                     <div className="relative">
                         <motion.div
                         whileHover={{scale:1.1}}>
-                        <FaShoppingCart className='text-2xl' />
+                        <FaShoppingCart className='text-4xl' />
                         </motion.div>
                             
 
@@ -113,7 +113,7 @@ const Navbar = () => {
                         whileHover={{scale:1.2}}
                         whileTap={{scale:0.9}} className="relative">
                     
-                        <FaShoppingCart className='text-2xl' />
+                        <FaShoppingCart className='text-4xl' />
                         
 
                         <span className="absolute -top-4 -right-4 bg-red-500 text-white rounded-full px-2">
@@ -130,7 +130,7 @@ const Navbar = () => {
                 animate={{ x: 0, opacity: 1 }}
 
             >
-                <div className='text-3xl '>
+                <div className='text-xl font-semibold'>
                     <ul className="menu flex flex-col gap-2 justify-center  p-10 ">
                         <li className="menu-item"><a href="#">Home</a></li>
                         <li className="menu-item"><a className='flex  items-center ' href="# " onClick={() => setProductOpen(!isProductopen)}>All Products <FaAngleDown /> </a></li>
@@ -138,7 +138,7 @@ const Navbar = () => {
                             
                             <div className={`flex flex-col gap-1 ${!isProductopen ? 'hidden' : ''}`}>
                                 <ul className="categories ">
-                                    <li ><a href="#">WALLET AND CART HOLDER</a></li>
+                                    <li className='text-sm'><a href="#">WALLET AND CART HOLDER</a></li>
                                     <li><a href="#">BAG</a></li>
                                     <li><a href="#">BELT</a></li>
                                     <li><a href="#">ACCESSORY</a></li>
@@ -152,7 +152,7 @@ const Navbar = () => {
                         <li className="menu-item dropdown" id="account">
                             <a className='flex  items-center gap-2' href="#" onClick={() => setAccountOpen(!isAccountopen)} >Account <FaAngleDown /> </a>
                             <div className={`flex flex-col ${!isAccountopen ? "hidden" : ''}`}>
-                                <ul className="categories">
+                                <ul className="categories ">
                                     <li><a href="#">Login</a></li>
                                     <li><a href="#">Whitelist</a></li>
                                     
