@@ -113,10 +113,10 @@ const Navbar = () => {
                         whileHover={{scale:1.2}}
                         whileTap={{scale:0.9}} className="relative">
                     
-                        <FaShoppingCart className='text-4xl' />
+                        <FaShoppingCart className='text-2xl' />
                         
 
-                        <span className="absolute -top-4 -right-4 bg-red-500 text-white rounded-full px-2">
+                        <span className="absolute -top-4 -right-4 bg-red-500 text-white md:text-sm text-[12px]  rounded-full px-2">
                             20
                         </span>
 

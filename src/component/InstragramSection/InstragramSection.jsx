@@ -36,7 +36,7 @@ const InstragramSection = () => {
                 <div className="instagram_bar flex justify-between items-center flex-col gap-5 md:flex-row mt-10 mb-10  ">
                     <div className=" flex justify-center items-center text-2xl gap-2">
                         <FaInstagram className='text-2xl font-semibold mt-2' />
-                        <a className="instra_link text-2xl font-semibold underline" href=""><span>@vvoodoocrafts</span></a>
+                        <a className="instra_link text-2xl  underline" href=""><span>@vvoodoocrafts</span></a>
                     </div>
                     <div>
                         <div className="flex gap-2 justify-center items-center bg-[#44484F] text-white py-2 px-4 rounded-lg w-52 ">Follow on Instagram</div>
