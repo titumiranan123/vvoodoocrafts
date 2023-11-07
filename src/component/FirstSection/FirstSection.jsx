@@ -32,10 +32,8 @@ const FirstSection = () => {
             </section>
             <section className='flex justify-center flex-col-reverse  lg:flex-row items-center lg:gap-10 md:gap-20 gap-10 flex-wrap lg:flex-nowrap'>
                 <div className='lg:w-1/2  w-full'>
-                    <iframe className='lg:w-[576px] w-full h-[300px] lg:h-[350px]' src="https://www.youtube.com/watch?v=ZIXy5eC_1sw" title="YouTube video player"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
+                    <iframe className='lg:w-[576px] w-full h-[300px] lg:h-[350px]' src="https://www.youtube.com/embed/ZIXy5eC_1sw?si=AVnsLsvN_2R3bvCa" title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div className='lg:w-1/2 flex justify-center items-center flex-col gap-2   w-full'>
                     <h1 className='text-6xl text-center'>100% handcrafted</h1>
@@ -46,5 +44,6 @@ const FirstSection = () => {
         </div>
     );
 };
+
 
 export default FirstSection;
