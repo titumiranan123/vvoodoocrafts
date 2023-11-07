@@ -4,11 +4,11 @@ import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import card1 from '../../assets/card-1.jpg'
-import card2 from '../../assets/card-2.jpg'
-import card3 from '../../assets/card-3.jpg'
-import card4 from '../../assets/card-4.jpg'
-import card5 from '../../assets/card-5.jpg'
+import Accesories from '../../assets/Accesories .jpg'
+import bag from '../../assets/bag.png'
+import belt from '../../assets/belt.png'
+import wallet_and_card_holder from '../../assets/wallet and card holder.png'
+import lether from '../../assets/leather.jpg'
 import './style.css'
 const Category = () => {
     const swiperBreakpoints = {
@@ -59,36 +59,40 @@ const Category = () => {
                 >
                     <SwiperSlide>
                         <div className='w-[19rem] h-[22rem] border bg-[#f8f8f8]'>
-                            <img className='w-[18rem] h-[18rem]' src={card1} alt="" />
-                            <div className=' flex justify-center items-center  p-5 '>
-                                <p>Hoster & Sheath</p>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className='w-[19rem] h-[22rem] border bg-[#f8f8f8]'>
-                            <img className='w-[18rem] h-[18rem]' src={card2} alt="" />
-                            <div className='flex justify-center items-center p-5'  >
-                                <p>Hoster & Sheath</p>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className='w-[19rem] h-[22rem] border bg-[#f8f8f8]'>
-                            <img className='w-[18rem] h-[18rem]' src={card3} alt="" />
+                            <img className='w-[18rem] h-[18rem]' src={bag} alt="" />
                             <div className='flex justify-center items-center p-5' >
-                                <p>Case</p>
+                                <p>Bag</p>
                             </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className='w-[19rem] h-[22rem] border bg-[#f8f8f8]'>
-                            <img className='w-[18rem] h-[18rem]' src={card4} alt="" />
-                        </div >
+                            <img className='w-[18rem] h-[18rem]' src={Accesories} alt="" />
+                            <div className='flex justify-center items-center p-5'  >
+                                <p>Accessory</p>
+                            </div>
+                        </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className='w-[19rem] h-[22rem] border bg-[#f8f8f8]'>
-                            <img className='w-[18rem] h-[18rem]' src={card5} alt="" />
+                            <img className='w-[18rem] h-[18rem]' src={wallet_and_card_holder} alt="" />
+                            <div className=' flex justify-center items-center  p-5 '>
+                                <p>Wallet & Card Holder</p>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                        <div className='w-[19rem] h-[22rem] border bg-[#f8f8f8]'>
+                            <img className='w-[18rem] h-[18rem]' src={lether} alt="" />
+                            <div className='flex justify-center items-center p-5' >
+                                <p>Lether</p>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='w-[19rem] h-[22rem] border bg-[#f8f8f8]'>
+                            <img className='w-[18rem] h-[18rem]' src={belt} alt="" />
                             <div className='flex justify-center items-center p-5'  >
                                 <p>Belt </p>
                             </div>
@@ -104,7 +108,7 @@ const Category = () => {
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className='w-[19rem] h-[22rem] border bg-[#f8f8f8]'>
-                            <img className='w-[18rem] h-[18rem]' src={card1} alt="" />
+                            <img className='w-[18rem] h-[18rem]' src={bag} alt="" />
                             <div className='flex justify-center items-center p-5' >
                                 <p>Bag</p>
                             </div>
@@ -112,9 +116,26 @@ const Category = () => {
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className='w-[19rem] h-[22rem] border bg-[#f8f8f8]'>
-                            <img className='w-[18rem] h-[18rem]' src={card2} alt="" />
+                            <img className='w-[18rem] h-[18rem]' src={wallet_and_card_holder} alt="" />
+                            <div className=' flex justify-center items-center  p-5 '>
+                                <p>Wallet & Card Holder</p>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                        <div className='w-[19rem] h-[22rem] border bg-[#f8f8f8]'>
+                            <img className='w-[18rem] h-[18rem]' src={lether} alt="" />
+                            <div className='flex justify-center items-center p-5' >
+                                <p>Lether</p>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='w-[19rem] h-[22rem] border bg-[#f8f8f8]'>
+                            <img className='w-[18rem] h-[18rem]' src={belt} alt="" />
                             <div className='flex justify-center items-center p-5'  >
-                                <p>Accessory</p>
+                                <p>Belt </p>
                             </div>
                         </div>
                     </SwiperSlide>

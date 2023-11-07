@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import { FaAngleDown, FaBars, FaShoppingCart, FaTimes } from 'react-icons/fa';
-import log from '../../assets/logo.png'
+import log from '../../assets/Chamrabari_Logo.png'
 import './Navbar.css';
 import { motion } from "framer-motion";
 
@@ -68,10 +68,10 @@ const Navbar = () => {
         setIsNavOpen(!isNavOpen);
     };
     return (
-        <nav className="z-40  w-full  py-2  lg:px-4 px-2'">
-            <div className='lg:flex hidden justify-between lg:px-4 px-2'>
+        <nav className="z-40  w-full  py-6  lg:px-4 px-2'">
+            <div className='lg:flex hidden justify-between  px-2 items-center'>
                 <div className=''>
-                    <img src={log} className='w-40 h-20' alt="" />
+                    <img src={log} className='w-60 mt-2' alt="" />
                 </div>
                 <div className='flex justify-center items-center gap-5 text-white '>
                     {navitem}
@@ -80,10 +80,10 @@ const Navbar = () => {
 
                     <div className="relative">
                         <motion.div
-                        whileHover={{scale:1.1}}>
-                        <FaShoppingCart className='text-2xl' />
+                            whileHover={{ scale: 1.1 }}>
+                            <FaShoppingCart className='text-2xl' />
                         </motion.div>
-                            
+
 
                         <span className="absolute -top-2 -right-4 bg-red-500 text-white text-[12px] rounded-full px-2">
                             20
@@ -97,8 +97,8 @@ const Navbar = () => {
                     <img src={log} className='w-40 h-20' alt="" />
                 </div>
                 <motion.div
-                        whileHover={{scale:1.2}}
-                        whileTap={{scale:0.9}}  className="menu-icon h-10 flex justify-center items-center w-10" onClick={toggleNav}>
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.9 }} className="menu-icon h-10 flex justify-center items-center w-10" onClick={toggleNav}>
                     {isNavOpen ? <FaTimes className="spinning  text-xl " /> : <FaBars className="spinning  text-xl " />}
                 </motion.div>
                 <motion.div
@@ -110,17 +110,17 @@ const Navbar = () => {
                     style={{ originY: 0.55 }}
                 >
                     <motion.div
-                        whileHover={{scale:1.2}}
-                        whileTap={{scale:0.9}} className="relative">
-                    
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.9 }} className="relative">
+
                         <FaShoppingCart className='text-2xl' />
-                        
+
 
                         <span className="absolute -top-4 -right-4 bg-red-500 text-white md:text-sm text-[12px]  rounded-full px-2">
                             20
                         </span>
 
-                        </motion.div>
+                    </motion.div>
 
                 </motion.div>
             </div>
@@ -135,7 +135,7 @@ const Navbar = () => {
                         <li className="menu-item"><a href="#">Home</a></li>
                         <li className="menu-item"><a className='flex  items-center ' href="# " onClick={() => setProductOpen(!isProductopen)}>All Products <FaAngleDown /> </a></li>
                         <li className="menu-item dropdown" id="allProducts">
-                            
+
                             <div className={`flex flex-col gap-1 ${!isProductopen ? 'hidden' : ''}`}>
                                 <ul className="categories ">
                                     <li className='text-sm'><a href="#">WALLET AND CART HOLDER</a></li>
@@ -155,7 +155,7 @@ const Navbar = () => {
                                 <ul className="categories ">
                                     <li><a href="#">Login</a></li>
                                     <li><a href="#">Whitelist</a></li>
-                                    
+
 
                                 </ul>
                             </div>
