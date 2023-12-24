@@ -12,34 +12,32 @@ li {
     color: #4B4F58;
 }
 
-/* Reset some default styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
+
+.navfont {
+    font-family: 'Open Sans', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Saira:wght@400;500;600;700;800&display=swap');
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Saira', sans-serif;
 }
 
-body {
-
-    font-family: Roboto, Arial, Helvetica, sans-serif;
+.saria {
+    font-family: 'Saira';
 }
 
-@layer {
-    @import url("fonts/roboto/stylesheet.css");
-    @import url(https://db.onlinewebfonts.com/c/33024f503b98e8c48e99476ac919ddd3?family=Sophisto+OT+W01+DGauge);
+.img-fluid {
+    max-width: 100%;
+    height: auto;
 }
 
-a {
-    font-family: "Sophisto OT W01 DGauge";
-}
-
-li {
-    font-family: "Sophisto OT W01 DGauge";
-    font-size: 16px;
-}
-
-p {
-    font-family: Roboto;
-
+img,
+svg {
+    vertical-align: middle;
 }

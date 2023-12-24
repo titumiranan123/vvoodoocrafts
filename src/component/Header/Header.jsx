@@ -1,8 +1,8 @@
 import { FaLock } from "react-icons/fa";
-import header from '../../assets/HomeHeader-1024x854.png'
+import header from '../../assets/headerImage.jpg'
 const Header = () => {
     return (
-        <div className="mt-4 -z-20">
+        <div className=" md:px-6 -z-20 md:h-[940px] lg:h-[500px] md:mt-0 mt-10 flex justify-center items-center">
             <div className="header flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-5">
                 <div className="lg:w-1/2 w-full flex justify-center  flex-col gap-5 ">
                     <h3 className="font-semibold text-2xl ">design & handcrafted by vvoodoo</h3>
@@ -11,7 +11,7 @@ const Header = () => {
                     <button className="flex gap-2 bg-[#44484F] text-white py-2 px-4 rounded-lg w-52 "> ALL PRODUCTS <FaLock className="text-white" /></button>
                 </div>
                 <div className="lg:w-1/2 w-full ">
-                    <img src={header} alt="" />
+                    <img className="img-fluid" src={header} alt="" />
                 </div>
             </div>
         </div>

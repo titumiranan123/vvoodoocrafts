@@ -29,7 +29,7 @@ const Category = () => {
             spaceBetween: 40,
         },
         1200: {
-            slidesPerView: 5,
+            slidesPerView: 4,
             spaceBetween: 0,
         },
     };
@@ -42,10 +42,10 @@ const Category = () => {
             </div>
             <div className='mt-10 md:mt-20'>
                 <Swiper
-                    slidesPerView={6}
-                    spaceBetween={30}
+                    slidesPerView={4}
+                    spaceBetween={40}
                     autoplay={{
-                        delay: 2500,
+                        delay: 1500,
                         disableOnInteraction: false,
                     }}
                     pagination={{
@@ -98,14 +98,7 @@ const Category = () => {
                             </div>
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide>
-                        <div className='w-48 h-20 border bg-[#f8f8f8]'>
 
-                            <div className='flex justify-center h-20 items-center p-5'  >
-                                <p>Pattern </p>
-                            </div>
-                        </div>
-                    </SwiperSlide>
                     <SwiperSlide>
                         <div className='w-[19rem] h-[22rem] border bg-[#f8f8f8]'>
                             <img className='w-[18rem] h-[18rem]' src={bag} alt="" />
