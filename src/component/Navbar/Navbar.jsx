@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { FaAngleDown, FaBars, FaShoppingCart, FaTimes } from 'react-icons/fa';
 import log from '../../assets/Chamrabari_Logo.png';
 import { motion } from "framer-motion";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
@@ -50,9 +51,9 @@ const Navbar = () => {
                 </a>
                 <div className={`account-contents ${isAccountOpen ? '' : 'hidden'}`}>
                     <ul className="categories bg-white absolute top-14 p-4">
-                        <li><a href="#">Login</a></li>
+                        <li><Link to={'/login'}>Login</Link></li>
                         <li><a href="#">Whitelist</a></li>
-                        <li><a href="#">Cart</a></li>
+                        <li><Link to={'/cart'}>Cart</Link></li>
                     </ul>
                 </div>
             </li>
@@ -91,25 +92,27 @@ const Navbar = () => {
                 >
                     {isNavOpen ? <FaTimes className="spinning text-xl" /> : <FaBars className="spinning text-xl" />}
                 </motion.div>
-                <motion.div
-                    variants={{
-                        open: { rotate: 180 },
-                        closed: { rotate: 0 },
-                    }}
-                    transition={{ duration: 0.2 }}
-                    style={{ originY: 0.55 }}
-                >
+                <Link to={'/cart'}>
                     <motion.div
-                        whileHover={{ scale: 1.2 }}
-                        whileTap={{ scale: 0.9 }}
-                        className="relative"
+                        variants={{
+                            open: { rotate: 180 },
+                            closed: { rotate: 0 },
+                        }}
+                        transition={{ duration: 0.2 }}
+                        style={{ originY: 0.55 }}
                     >
-                        <FaShoppingCart className='text-2xl' />
-                        <span className="absolute -top-4 -right-4 bg-red-500 text-white md:text-sm text-[12px] rounded-full px-2">
-                            20
-                        </span>
+                        <motion.div
+                            whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 0.9 }}
+                            className="relative"
+                        >
+                            <FaShoppingCart className='text-2xl' />
+                            <motion.span className="absolute -top-4 -right-4 bg-red-500 text-white md:text-sm text-[12px] rounded-full px-2">
+                                20
+                            </motion.span>
+                        </motion.div>
                     </motion.div>
-                </motion.div>
+                </Link>
             </div>
             {isNavOpen && (
                 <motion.div
@@ -131,7 +134,7 @@ const Navbar = () => {
                             </li>
                             <li className="dropdown" id="allProducts">
                                 <div
-                                    className={`flex flex-col gap-1 border bg-white p-4 ${isProductOpen ? 'hidden' : ''}`}
+                                    className={`flex flex-col gap-1 border bg-white p-4 ${!isProductOpen ? 'hidden' : ''}`}
                                 >
                                     <ul className="categories ">
                                         <li className='text-sm'><a href="#">WALLET AND CART HOLDER</a></li>
@@ -153,9 +156,9 @@ const Navbar = () => {
                                 >
                                     Account <FaAngleDown />
                                 </a>
-                                <div className={`flex flex-col ${isAccountOpen ? 'hidden' : ''}`}>
+                                <div className={`flex flex-col ${!isAccountOpen ? 'hidden' : ''}`}>
                                     <ul className="categories border bg-white p-4">
-                                        <li><a href="#">Login</a></li>
+                                        <li><Link to={'/login'}>Login</Link></li>
                                         <li><a href="#">Whitelist</a></li>
                                     </ul>
                                 </div>
