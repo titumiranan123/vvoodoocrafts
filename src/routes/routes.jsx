@@ -4,6 +4,7 @@ import Home from "../page/Home/Index";
 import Loginpage from "../Loginpage/Loginpage";
 import Singup from "../Singuppage/Singuppage";
 import Mycart from "../page/Cart/Mycart";
+import Dashboard from "../dashbord/Dashboard";
 
 
 const routes = createBrowserRouter([
@@ -28,6 +29,10 @@ const routes = createBrowserRouter([
     {
         path: '/singup',
         element: <Singup />
+    },
+    {
+        path: '/admin-dashboard',
+        element: <Dashboard />
     },
 ])
 export default routes;

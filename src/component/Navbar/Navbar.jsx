@@ -61,7 +61,7 @@ const Navbar = () => {
     );
 
     return (
-        <nav className="z-40 w-full shadow-lg py-6 lg:px-6 px-6">
+        <nav className="z-40 w-full shadow-lg py-6 px-10">
             <div className='lg:flex hidden justify-between px-2 items-center'>
                 <div className='w-48 overflow-hidden '>
                     <img src={log} className='img-fluid ' alt="" />
@@ -70,14 +70,14 @@ const Navbar = () => {
                     {navItems}
                 </div>
                 <div className='flex justify-center items-center gap-5'>
-                    <div className="relative">
+                    <Link to={'/cart'} className="relative">
                         <motion.div whileHover={{ scale: 1.1 }}>
                             <FaShoppingCart className='text-2xl' />
                         </motion.div>
                         <span className="absolute -top-2 -right-4 bg-red-500 text-white text-[12px] rounded-full px-2">
                             20
                         </span>
-                    </div>
+                    </Link>
                 </div>
             </div>
             <div className='lg:hidden w-full flex justify-between items-center'>
