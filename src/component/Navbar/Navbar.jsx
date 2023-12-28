@@ -14,7 +14,7 @@ const Navbar = () => {
     };
 
     const navItems = (
-        <ul className="menu flex gap-2">
+        <ul className=" flex gap-5">
             <li className=""><a href="#">Home</a></li>
 
             <li className="group relative">
@@ -61,7 +61,7 @@ const Navbar = () => {
     );
 
     return (
-        <nav className="z-40 w-full shadow-lg py-6 px-10">
+        <nav className="z-40 w-full shadow-lg py-6 px-6">
             <div className='lg:flex hidden justify-between px-2 items-center'>
                 <div className='w-48 overflow-hidden '>
                     <img src={log} className='img-fluid ' alt="" />

@@ -1,11 +1,11 @@
 import img1 from '../../assets/sec-1.jpg'
 import img2 from '../../assets/sec-2.jpg'
 import img3 from '../../assets/sec-3.jpg'
-
+import Unisexsecsion from "../../component/Unisex/Unisex";
 const FirstSection = () => {
     return (
-        <div>
-            <section className="first_section md:mt-20 mt-14 lg:mt-20 md:mb-20 mb-10">
+        <div className=''>
+            <section className="first_section md:mt-20 mt-14 lg:mt-20 md:mb-28 mb-10">
                 <div className="section-1 flex justify-center items-center flex-wrap lg:flex-nowrap overflow-hidden gap-2  md:gap-5">
                     <div className="card top-sell gift flex justify-center  space-y-6 p-4 w-72 h-80    items-center flex-col">
                         <img src={img1} alt="" className='overflow-hidden w-72 h-56' />
@@ -30,15 +30,21 @@ const FirstSection = () => {
                     </div>
                 </div>
             </section>
-            <section className='flex justify-center flex-col-reverse  lg:flex-row items-center lg:gap-10 md:gap-20 gap-10 flex-wrap lg:flex-nowrap'>
-                <div className='lg:w-1/2  w-full'>
-                    <iframe className='lg:w-[576px] w-full h-[300px] lg:h-[350px]' src="https://www.youtube.com/embed/ZIXy5eC_1sw?si=AVnsLsvN_2R3bvCa" title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div>
+                <div className="flex justify-center flex-col items-center w-3/4  mx-auto ">
+                    <h1 className='text-4xl text-center'>We Design &quot;Unisex&quot; !</h1>
+                    <span className="hr_line bg-[#44484F] mx-auto h-[1px] w-2/3 mt-4 mb-5"></span>
+                    <button className="btn py-2 px-4 text-xl font-serif">SHOP UNISEX</button>
                 </div>
-                <div className='lg:w-1/2 flex justify-center items-center flex-col gap-2   w-full'>
+            </div>
+            <section className='flex justify-center flex-col-reverse  lg:flex-row items-center lg:gap-10 md:gap-20 gap-10 flex-wrap lg:flex-nowrap'>
+                <div className='lg:w-[80%]  w-full'>
+                    <Unisexsecsion />
+                </div>
+                <div className=' flex justify-center items-center flex-col gap-2   w-full'>
                     <h1 className='text-6xl text-center'>100% handcrafted</h1>
                     <div className='h-[3px] bg-[#44484F] mt-4 mb-4 w-3/4 mx-auto '></div>
-                    <p className='text-2xl text-center'>Watch the process in the youtube channel</p>
+                    {/* <p className='text-2xl text-center'>Watch the process in the youtube channel</p> */}
                 </div>
             </section>
         </div>

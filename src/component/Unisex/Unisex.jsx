@@ -6,11 +6,7 @@ const Unisexsecsion = () => {
     return (
         <div className='-mt-10 md:mt-0'>
             <section className="third_section mt-20 mb-20">
-                <div className="flex justify-center flex-col items-center w-3/4 mx-auto ">
-                    <h1 className='text-4xl text-center'>We Design &quot;Unisex&quot; !</h1>
-                    <span className="hr_line bg-[#44484F] mx-auto h-[1px] w-2/3 mt-4 mb-5"></span>
-                    <button className="btn py-2 px-4 text-xl font-serif">SHOP UNISEX</button>
-                </div>
+
                 <div className="card_section flex justify-center items-center gap-5 md:flex-wrap flex-wrap lg:flex-nowrap mt-10">
                     <div className="category_card p-4 w-72 flex flex-col justify-center items-center border gap-4 ">
                         <div>

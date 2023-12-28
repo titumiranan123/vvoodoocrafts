@@ -4,7 +4,7 @@ import FirstSection from "../../component/FirstSection/FirstSection";
 import Header from "../../component/Header/Header";
 
 import ProductTag from "../../component/ProductTag/ProductTag";
-import Unisexsecsion from "../../component/Unisex/Unisex";
+
 
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
 
             <Header />
             <FirstSection />
-            <Unisexsecsion />
+
             <Category />
             {/* <InstragramSection /> */}
             <ProductTag />
