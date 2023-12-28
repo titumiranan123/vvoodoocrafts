@@ -45,14 +45,14 @@ const ProductCart = () => {
                     key={product.id}
                     className="m-4 p-4 max-w-xs border rounded-lg shadow-md"
                     whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+
                 >
                     <img src={product.image_url} alt={product.product_name} className="mb-4 rounded-lg" />
                     <h3 className="text-lg font-semibold">{product.product_name}</h3>
                     <p className="text-gray-600">{product.price}</p>
-                    <button className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg focus:outline-none">
+                    <motion.button whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.05 }} className="mt-2 bg-[#C94428] text-white px-4 py-2 rounded-lg focus:outline-none">
                         Add to Cart
-                    </button>
+                    </motion.button>
                 </motion.div>
             ))}
         </div>

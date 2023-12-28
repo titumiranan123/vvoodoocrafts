@@ -4,6 +4,7 @@ import FirstSection from "../../component/FirstSection/FirstSection";
 import Header from "../../component/Header/Header";
 
 import ProductTag from "../../component/ProductTag/ProductTag";
+import Testimonial from "../../component/Testimonial.jsx/Testimonial";
 import Product from "../../component/product/Product";
 
 
@@ -15,6 +16,7 @@ const Home = () => {
             <FirstSection />
             <Product />
             <Category />
+            <Testimonial />
             <ProductTag />
         </div>
     );
