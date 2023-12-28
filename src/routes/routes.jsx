@@ -4,7 +4,10 @@ import Home from "../page/Home/Index";
 import Loginpage from "../Loginpage/Loginpage";
 import Singup from "../Singuppage/Singuppage";
 import Mycart from "../page/Cart/Mycart";
-import Dashboard from "../dashbord/Dashboard";
+// import Dashboard from "../dashbord/Dashboard";
+import Users from "../dashbord Coponent/Allusers/Users";
+import Dashboard from "../Layout/Dashboard/Dashboard";
+import Dashboardhome from "../dashbord/Dashboard";
 
 
 const routes = createBrowserRouter([
@@ -32,7 +35,7 @@ const routes = createBrowserRouter([
     },
     {
         path: '/admin-dashboard',
-        element: <Dashboard />
+        element: <Dashboard />,
     },
 ])
 export default routes;

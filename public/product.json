@@ -1,0 +1,34 @@
+[
+    {
+        "product_name": "Leather Belt",
+        "category": "Men",
+        "sub_category": "Belt",
+        "Product_details": "Genuine leather belt with a classic buckle",
+        "price": "$39.99",
+        "image_url": "https://example.com/leather_belt_image.jpg"
+    },
+    {
+        "product_name": "Women's Wallet",
+        "category": "Women",
+        "sub_category": "Wallet",
+        "Product_details": "Stylish and functional wallet for women",
+        "price": "$29.99",
+        "image_url": "https://example.com/womens_wallet_image.jpg"
+    },
+    {
+        "product_name": "Corporate Laptop Bag",
+        "category": "Corporate",
+        "sub_category": "Bag",
+        "Product_details": "Professional laptop bag with multiple compartments",
+        "price": "$59.99",
+        "image_url": "https://example.com/corporate_bag_image.jpg"
+    },
+    {
+        "product_name": "Unisex Gadget Cover",
+        "category": "Uni sex",
+        "sub_category": "gadget cover",
+        "Product_details": "Universal gadget cover for phones and small devices",
+        "price": "$19.99",
+        "image_url": "https://example.com/gadget_cover_image.jpg"
+    }
+]
