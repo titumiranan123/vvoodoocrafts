@@ -4,10 +4,10 @@ import Home from "../page/Home/Index";
 import Loginpage from "../Loginpage/Loginpage";
 import Singup from "../Singuppage/Singuppage";
 import Mycart from "../page/Cart/Mycart";
-
 import Dashboardlayout from "../Layout/Dashboardlayout";
 import Dashboardhome from "../dashbord/Dashboard";
 import Products from "../dashbord Coponent/Product_section/Products";
+import PaymentForm from "../page/Payment/PaymentForm";
 
 
 
@@ -23,6 +23,10 @@ const routes = createBrowserRouter([
             {
                 path: "/cart",
                 element: <Mycart />
+            },
+            {
+                path: "/payment",
+                element: <PaymentForm />
             },
         ]
     },
