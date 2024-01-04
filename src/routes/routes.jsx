@@ -8,6 +8,7 @@ import Dashboardlayout from "../Layout/Dashboardlayout";
 import Dashboardhome from "../dashbord/Dashboard";
 import Products from "../dashbord Coponent/Product_section/Products";
 import PaymentForm from "../page/Payment/PaymentForm";
+import Users from './../dashbord Coponent/Allusers/Users'
 
 
 
@@ -48,7 +49,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: 'users',
-                element: <p>users</p>,
+                element: <Users />,
             },
             {
                 path: 'products',
