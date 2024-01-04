@@ -1,11 +1,37 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
+
+
 const Products = () => {
     const { register, handleSubmit, errors } = useForm();
 
+
     const onSubmit = (data) => {
-        console.log(data); // You can perform actions with the form data here
+        console.log(data);
+
+        fetch('http://localhost:3001/user/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json(); // Parse the JSON response
+            })
+            .then(parsedResponse => {
+                // Handle the parsed response data
+                console.log(parsedResponse);
+                // Do something with the response data if needed
+            })
+            .catch(error => {
+                // Handle errors that occurred during the fetch request or parsing of response
+                console.error('There was a problem with the fetch request:', error);
+            });
     };
 
     return (
