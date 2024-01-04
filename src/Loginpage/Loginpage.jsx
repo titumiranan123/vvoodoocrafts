@@ -29,7 +29,7 @@ function Login() {
                 // Do something with the response data if needed
             })
             .catch(error => {
-                // Handle errors that occurred during the fetch request or parsing of response
+
                 console.error('There was a problem with the fetch request:', error);
             });
     };

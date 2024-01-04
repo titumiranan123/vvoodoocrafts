@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const CartCard = ({ item }) => {
     const [quantity, setQuantity] = useState(item.quantity);
@@ -43,7 +44,8 @@ const CartCard = ({ item }) => {
                     </div>
                 </div>
                 <div className='flex gap-5'>
-                    <button className="btn py-4 px-8 bg-slate-300 rounded-xl font-bold">Pay Now</button>
+                    <Link to={'/payment'}> <button className="btn py-4 px-8 bg-slate-300 rounded-xl font-bold">Pay Now</button></Link>
+
                     <button className="btn py-4 px-8 bg-red-400 hover:bg-red-500 rounded-xl font-bold">Remove</button>
                 </div>
             </div>
