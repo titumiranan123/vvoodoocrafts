@@ -1,8 +1,10 @@
 import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { Authcontext } from '../../provider/AuthProvider';
 
 const Login = () => {
+    const { singWithEmailpassword, loginwithGoogle } = useContext(Authcontext);
     const {
         register,
         handleSubmit,
@@ -36,21 +38,21 @@ const Login = () => {
                 console.error('There was a problem with the fetch request:', error);
             });
     };
-    // const { signwithGoogle } = useContext()
-    // const signWithGoogle = () => {
-    //     signwithGoogle()
-    //         .then(res => {
-    //             console.log(res.result)
-    //         })
-    //         .then(err => {
-    //             console.log(err)
-    //         })
-    // }
+    const loginWithgoogle = () => {
+        loginwithGoogle()
+            .then(res => {
+                toast('Success')
+                console.log(res.user)
+                navigate(location.state?.from?.pathname || '/')
+
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
     return (
         <div className="flex justify-center items-center h-screen bg-[#4B4F58] bg-opacity-60">
             <form className="bg-white border shadow-xl shadow-slate-400 rounded px-12 pt-12 w-1/3 mx-auto pb-8 mb-4 flex justify-center flex-col" onSubmit={handleSubmit(onSubmit)}>
-
-
                 <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
                         Email
@@ -101,7 +103,7 @@ const Login = () => {
                     </button>
                 </div>
             </form>
-            {/* <button onClick={signWithGoogle}>Login With Google </button> */}
+            <button onClick={loginWithgoogle}>Login With Google </button>
         </div>
     );
 }
