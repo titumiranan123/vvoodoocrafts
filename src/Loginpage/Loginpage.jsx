@@ -1,14 +1,16 @@
+import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
-function Login() {
+const Login = () => {
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
-
+    const navigate = useNavigate()
     const onSubmit = (data) => {
-        console.log(data);
+
 
         fetch('http://localhost:3001/user/login', {
             method: 'POST',
@@ -26,6 +28,7 @@ function Login() {
             .then(parsedResponse => {
                 // Handle the parsed response data
                 console.log(parsedResponse);
+                navigate('/')
                 // Do something with the response data if needed
             })
             .catch(error => {
@@ -33,7 +36,16 @@ function Login() {
                 console.error('There was a problem with the fetch request:', error);
             });
     };
-
+    // const { signwithGoogle } = useContext()
+    // const signWithGoogle = () => {
+    //     signwithGoogle()
+    //         .then(res => {
+    //             console.log(res.result)
+    //         })
+    //         .then(err => {
+    //             console.log(err)
+    //         })
+    // }
     return (
         <div className="flex justify-center items-center h-screen bg-[#4B4F58] bg-opacity-60">
             <form className="bg-white border shadow-xl shadow-slate-400 rounded px-12 pt-12 w-1/3 mx-auto pb-8 mb-4 flex justify-center flex-col" onSubmit={handleSubmit(onSubmit)}>
@@ -89,6 +101,7 @@ function Login() {
                     </button>
                 </div>
             </form>
+            {/* <button onClick={signWithGoogle}>Login With Google </button> */}
         </div>
     );
 }

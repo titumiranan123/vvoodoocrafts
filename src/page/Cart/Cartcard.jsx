@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const CartCard = ({ item }) => {
     const [quantity, setQuantity] = useState(item.quantity);
@@ -16,6 +17,8 @@ const CartCard = ({ item }) => {
             setPrice(() => price - item.price)
         }
     };
+
+
     return (
         <div>
             <div className='flex items-center  gap-10'>

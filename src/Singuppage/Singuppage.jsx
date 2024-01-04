@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
 function SignUp() {
     const {
@@ -8,7 +9,7 @@ function SignUp() {
         getValues,
     } = useForm();
 
-
+    const navigate = useNavigate();
     const onSubmit = (data) => {
         console.log(data);
 
@@ -27,6 +28,7 @@ function SignUp() {
             })
             .then(parsedResponse => {
                 // Handle the parsed response data
+                navigate('/login')
                 console.log(parsedResponse);
                 // Do something with the response data if needed
             })
