@@ -1,7 +1,8 @@
 import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Authcontext } from '../provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Login = () => {
     const { singWithEmailpassword, loginwithGoogle } = useContext(Authcontext);
@@ -12,9 +13,31 @@ const Login = () => {
         formState: { errors },
     } = useForm();
     const navigate = useNavigate()
+    const loginWithEmailPassword = (email, password) => {
+        singWithEmailpassword(email, password)
+            .then(res => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'sing in successful',
+
+                })
+                console.log(res)
+                navigate('/')
+            })
+            .catch(err => {
+                console.log(err)
+                if (err) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!',
+
+                    })
+                }
+            })
+    }
     const onSubmit = (data) => {
-
-
+        loginWithEmailPassword(data.email, data.password)
         fetch('http://localhost:3001/user/login', {
             method: 'POST',
             headers: {
@@ -29,25 +52,43 @@ const Login = () => {
                 return response.json(); // Parse the JSON response
             })
             .then(parsedResponse => {
-                // Handle the parsed response data
                 console.log(parsedResponse);
                 navigate('/')
                 // Do something with the response data if needed
             })
             .catch(error => {
+                if (error) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!',
 
+                    })
+                }
                 console.error('There was a problem with the fetch request:', error);
             });
     };
     const loginWithgoogle = () => {
         loginwithGoogle()
             .then(res => {
-                toast('Success')
-                console.log(res.user)
+                Swal.fire({
+                    icon: 'success',
+                    title: 'sing in successful',
+
+                })
+                console.log(res)
                 navigate('/')
             })
             .catch(err => {
                 console.log(err)
+                if (err) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!',
+
+                    })
+                }
             })
     }
     return (
@@ -106,6 +147,7 @@ const Login = () => {
                 </form>
                 <div className='flex justify-center items-center'>
                     <button onClick={loginWithgoogle} className='text-center btn ' >Login With Google </button>
+                    <Link to={'/singup'}><button className='text-center btn ' >Register </button></Link>
                 </div>
             </div>
 

@@ -1,5 +1,8 @@
+import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { Authcontext } from '../provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 function SignUp() {
     const {
@@ -8,9 +11,56 @@ function SignUp() {
         formState: { errors },
         getValues,
     } = useForm();
-
+    const { userCreateWithEmailpassword, loginwithGoogle } = useContext(Authcontext);
     const navigate = useNavigate();
+    const userCreate = (email, password) => {
+        userCreateWithEmailpassword(email, password)
+            .then(res => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'signup in successful',
+
+                })
+                console.log(res)
+                navigate('/login')
+            })
+            .catch(err => {
+                console.log(err)
+                if (err) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!',
+
+                    })
+                }
+            })
+    }
+    const loginWithgoogle = () => {
+        loginwithGoogle()
+            .then(res => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'sing in successful',
+
+                })
+                console.log(res)
+                navigate('/')
+            })
+            .catch(err => {
+                console.log(err)
+                if (err) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!',
+
+                    })
+                }
+            })
+    }
     const onSubmit = (data) => {
+        userCreate(data.email, data.password)
         fetch('http://localhost:3001/user/register', {
             method: 'POST',
             headers: {
@@ -25,13 +75,19 @@ function SignUp() {
                 return response.json(); // Parse the JSON response
             })
             .then(parsedResponse => {
-                // Handle the parsed response data
                 navigate('/login')
                 console.log(parsedResponse);
                 // Do something with the response data if needed
             })
             .catch(error => {
-                // Handle errors that occurred during the fetch request or parsing of response
+                if (error) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!',
+
+                    })
+                }
                 console.error('There was a problem with the fetch request:', error);
             });
     };
@@ -39,15 +95,15 @@ function SignUp() {
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
     return (
         <div className="flex justify-center items-center h-screen  bg-opacity-60">
-            <div className='bg-[#4B4F58] shadow-xl shadow-slate-400 p-10'>
-                <form className="   rounded px-12 pt-12  mx-auto pb-8 mb-4 flex justify-center flex-col" onSubmit={handleSubmit(onSubmit)}>
+            <div className='bg-[#4B4F58] shadow-xl shadow-slate-400 md:w-[500px]'>
+                <form className=" w-[100%]  rounded px-12 pt-12  mx-auto pb-8  flex justify-center flex-col" onSubmit={handleSubmit(onSubmit)}>
                     <div className="mb-4">
                         <label className="block text-white text-sm font-bold mb-2" htmlFor="name">
                             Name
                         </label>
                         <input
                             {...register('name', { required: 'Name is required' })}
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-slate-700 leading-tight focus:outline-none focus:shadow-outline"
                             id="name"
                             type="text"
                             placeholder="Enter your name"
@@ -67,7 +123,7 @@ function SignUp() {
                                     message: 'Invalid email address',
                                 },
                             })}
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-slate-700 leading-tight focus:outline-none focus:shadow-outline"
                             id="email"
                             type="email"
                             placeholder="Enter your email"
@@ -91,7 +147,7 @@ function SignUp() {
                                     message: 'Password must be at least 6 characters',
                                 },
                             })}
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-slate-700 leading-tight focus:outline-none focus:shadow-outline"
                             id="password"
                             type="password"
                             placeholder="Enter your password"
@@ -108,7 +164,7 @@ function SignUp() {
                                 validate: (value) =>
                                     value === getValues('password') || 'The passwords do not match',
                             })}
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-slate-700 leading-tight focus:outline-none focus:shadow-outline"
                             id="confirmPassword"
                             type="password"
                             placeholder="Confirm your password"
@@ -127,7 +183,7 @@ function SignUp() {
                     </div>
                 </form>
                 <div className='flex justify-center items-center'>
-                    <button className="btn">Login With Google</button>
+                    <button onClick={loginWithgoogle} className="btn">Login With Google</button>
                 </div>
             </div>
         </div>
