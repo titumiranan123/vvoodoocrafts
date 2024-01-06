@@ -7,9 +7,7 @@ import Swal from 'sweetalert2';
 
 const ProductCart = () => {
     const [products, setProduct] = useState([])
-
     useEffect(() => {
-
         fetch('http://localhost:3001/products')
             .then(res => res.json())
             .then(data => setProduct(data))
@@ -17,7 +15,16 @@ const ProductCart = () => {
 
     const handalClick = (product) => {
         const { _id } = product;
-        console.log(_id)
+
+        fetch('http://localhost:3001/cart', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ product_id: _id, user_email: user }),
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
         Swal.fire({
             position: "top-end",
             icon: "success",
@@ -26,8 +33,6 @@ const ProductCart = () => {
             timer: 1500
         });
     }
-
-
     return (
         <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2">
             {products.map((product) => (

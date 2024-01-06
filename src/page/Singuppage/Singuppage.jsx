@@ -7,8 +7,7 @@ function SignUp() {
     const {
         register,
         handleSubmit,
-        formState: { errors },
-        getValues,
+        formState: { errors }
     } = useForm();
 
     const navigate = useNavigate();
@@ -26,16 +25,16 @@ function SignUp() {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                return response.json(); // Parse the JSON response
+                return response.json();
             })
             .then(parsedResponse => {
-                // Handle the parsed response data
+
                 navigate('/login')
                 console.log(parsedResponse);
-                // Do something with the response data if needed
+
             })
             .catch(error => {
-                // Handle errors that occurred during the fetch request or parsing of response
+
                 console.error('There was a problem with the fetch request:', error);
             });
     };
@@ -116,7 +115,7 @@ function SignUp() {
 
                 </form>
                 <div className='flex justify-center items-center '>
-                    <button className="btn">loginWithgoogle</button>
+                    <button onClick={loginWithgoogle} className="btn">loginWithgoogle</button>
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@ import { FaAngleDown, FaBars, FaShoppingCart, FaTimes } from 'react-icons/fa';
 import log from '../../assets/Chamrabari_Logo.png';
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
-
+import './navbar.css'
 const Navbar = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [isProductOpen, setProductOpen] = useState(false);
@@ -14,50 +14,28 @@ const Navbar = () => {
     };
 
     const navItems = (
-        <ul className=" flex gap-5">
-            <li className=""><a href="#">Home</a></li>
-
-            <li className="group relative">
-                <a
-                    onMouseEnter={() => setProductOpen(!isProductOpen)}
-                    onMouseLeave={() => setProductOpen(!isProductOpen)}
-                    className='flex justify-center items-center gap-2'
-                    href="#"
-                >
-                    All Products <FaAngleDown />
-                </a>
-
-                <ul
-                    className={`account-contents bg-white  absolute top-8 border p-6 ${isProductOpen ? '' : 'hidden'}`}
-                >
-                    <li><a href="#">WALLET AND CART HOLDER</a></li>
-                    <li><a href="#">BAG</a></li>
-                    <li><a href="#">BELT</a></li>
-                    <li><a href="#">ACCESSORY</a></li>
-                    <li><a href="#">CASE</a></li>
-                    <li><a href="#">HOLSTER & SHEATH</a></li>
-                </ul>
-            </li>
-            <li className=""><a href="#">Blog</a></li>
-            <li className=""><a href="#">About</a></li>
-            <li className="dropdown" id="account">
-                <a
-                    onMouseEnter={() => setAccountOpen(!isAccountOpen)}
-                    onMouseLeave={() => setAccountOpen(!isAccountOpen)}
-                    className='flex justify-center items-center gap-2'
-                    href="#"
-                >
-                    Account <FaAngleDown />
-                </a>
-                <div className={`account-contents ${isAccountOpen ? '' : 'hidden'}`}>
-                    <ul className="categories bg-white absolute top-14 p-4">
-                        <li><Link to={'/login'}>Login</Link></li>
-                        <li><a href="#">Whitelist</a></li>
-                        <li><Link to={'/cart'}>Cart</Link></li>
+        <nav className='nav'>
+            <ul className="flex justify-center gap-4 items-center relative">
+                <li className=""><a href="/">Home</a></li>
+                <li className="group relative">
+                    <a className='flex justify-center items-center gap-2' href="allproducts"> All Products <FaAngleDown />
+                    </a>
+                    <ul
+                        className={`bg-white border p-6 submenu`}
+                    >
+                        <li><a href="#">WALLET AND CART HOLDER</a></li>
+                        <li><a href="#">BAG</a></li>
+                        <li><a href="#">BELT</a></li>
+                        <li><a href="#">ACCESSORY</a></li>
+                        <li><a href="#">CASE</a></li>
+                        <li><a href="#">HOLSTER & SHEATH</a></li>
                     </ul>
-                </div>
-            </li>
-        </ul>
+                </li>
+                <li className=""><a href="#">Blog</a></li>
+                <li className=""><a href="#">About</a></li>
+
+            </ul>
+        </nav>
     );
 
     return (
@@ -66,18 +44,17 @@ const Navbar = () => {
                 <div className='w-48 overflow-hidden '>
                     <img src={log} className='img-fluid ' alt="" />
                 </div>
-                <div className='gap-5 text-white '>
+                <div className=' '>
                     {navItems}
                 </div>
                 <div className='flex justify-center items-center gap-5'>
                     <Link to={'/cart'} className="relative">
-                        <motion.div whileHover={{ scale: 1.1 }}>
-                            <FaShoppingCart className='text-2xl' />
-                        </motion.div>
-                        <span className="absolute -top-2 -right-4 bg-red-500 text-white text-[12px] rounded-full px-2">
-                            20
-                        </span>
+                        <button className="btn">
+                            <span className='text-lg'> <FaShoppingCart className='text-2xl' /></span>
+                            <div className="badge badge-secondary">+99</div>
+                        </button>
                     </Link>
+                    <Link to={'/login'}>Login</Link>
                 </div>
             </div>
             <div className='lg:hidden w-full flex justify-between items-center'>
@@ -92,27 +69,19 @@ const Navbar = () => {
                 >
                     {isNavOpen ? <FaTimes className="spinning text-xl" /> : <FaBars className="spinning text-xl" />}
                 </motion.div>
-                <Link to={'/cart'}>
-                    <motion.div
-                        variants={{
-                            open: { rotate: 180 },
-                            closed: { rotate: 0 },
-                        }}
-                        transition={{ duration: 0.2 }}
-                        style={{ originY: 0.55 }}
-                    >
-                        <motion.div
-                            whileHover={{ scale: 1.2 }}
-                            whileTap={{ scale: 0.9 }}
-                            className="relative"
-                        >
-                            <FaShoppingCart className='text-2xl' />
-                            <motion.span className="absolute -top-4 -right-4 bg-red-500 text-white md:text-sm text-[12px] rounded-full px-2">
-                                20
-                            </motion.span>
-                        </motion.div>
-                    </motion.div>
-                </Link>
+                <motion.div
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="relative  hidden md:flex items-center justify-center"
+                >
+                    <Link to={'/cart'} className="relative">
+                        <button className="btn">
+                            <span className='text-lg'> <FaShoppingCart className='text-2xl' /></span>
+                            <div className="badge badge-secondary">+99</div>
+                        </button>
+                    </Link>
+                    <Link className='text-lg font-bold' to={'/login'}>Login</Link>
+                </motion.div>
             </div>
             {isNavOpen && (
                 <motion.div
@@ -122,7 +91,7 @@ const Navbar = () => {
                 >
                     <div className=' '>
                         <ul className="menu flex flex-col gap-2 justify-center p-10 ">
-                            <li className=""><a href="#">Home</a></li>
+                            <li className=""><a href="/">Home</a></li>
                             <li className="">
                                 <a
                                     className='flex items-center '
@@ -157,9 +126,15 @@ const Navbar = () => {
                                     Account <FaAngleDown />
                                 </a>
                                 <div className={`flex flex-col ${!isAccountOpen ? 'hidden' : ''}`}>
-                                    <ul className="categories border bg-white p-4">
-                                        <li><Link to={'/login'}>Login</Link></li>
-                                        <li><a href="#">Whitelist</a></li>
+                                    <ul className=" border  bg-white p-4">
+                                        <Link to={'/cart'} className="relative">
+                                            <button className="btn">
+                                                <span className='text-lg'> <FaShoppingCart className='text-2xl' /></span>
+                                                <div className="badge badge-secondary">+99</div>
+                                            </button>
+                                        </Link>
+                                        <Link to={'/login'}>Login</Link>
+
                                     </ul>
                                 </div>
                             </li>
