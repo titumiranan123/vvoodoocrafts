@@ -1,12 +1,12 @@
 // ProductCart.js
-import React, { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Swal from 'sweetalert2';
-
-
+import { Authcontext } from '../../provider/AuthProvider';
 
 const ProductCart = () => {
     const [products, setProduct] = useState([])
+    const { user } = useContext(Authcontext);
     useEffect(() => {
         fetch('http://localhost:3001/products')
             .then(res => res.json())
@@ -14,14 +14,22 @@ const ProductCart = () => {
     }, [])
 
     const handalClick = (product) => {
-        const { _id } = product;
 
+        const cart = {
+            product_name: product.product_name,
+            category: product.category,
+            sub_category: product.sub_category,
+            Product_details: product.Product_details,
+            image_url: product.image_url,
+            price: product.price,
+            user_email: user.email,
+        }
         fetch('http://localhost:3001/cart', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ product_id: _id, user_email: user }),
+            body: JSON.stringify(cart),
         })
             .then(res => res.json())
             .then(data => console.log(data))

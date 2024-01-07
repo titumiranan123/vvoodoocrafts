@@ -1,17 +1,45 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { FaAngleDown, FaBars, FaShoppingCart, FaTimes } from 'react-icons/fa';
 import log from '../../assets/Chamrabari_Logo.png';
 import { motion } from "framer-motion";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './navbar.css'
+import { Authcontext } from '../../provider/AuthProvider';
+import Swal from 'sweetalert2';
 const Navbar = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [isProductOpen, setProductOpen] = useState(false);
     const [isAccountOpen, setAccountOpen] = useState(false);
+    const { user, logOut } = useContext(Authcontext);
 
     const toggleNav = () => {
         setIsNavOpen(!isNavOpen);
     };
+    const navigate = useNavigate()
+    const singout = () => {
+        logOut()
+            .then(res => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Logout successful',
+
+                })
+                console.log(res)
+                navigate('/')
+            })
+            .catch(err => {
+                console.log(err)
+                if (err) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!',
+
+                    })
+                }
+            })
+
+    }
 
     const navItems = (
         <nav className='nav'>
@@ -21,7 +49,7 @@ const Navbar = () => {
                     <a className='flex justify-center items-center gap-2' href="allproducts"> All Products <FaAngleDown />
                     </a>
                     <ul
-                        className={`bg-white border p-6 submenu`}
+                        className={`bg-white border p-6 w-[200px] submenu`}
                     >
                         <li><a href="#">WALLET AND CART HOLDER</a></li>
                         <li><a href="#">BAG</a></li>
@@ -54,7 +82,17 @@ const Navbar = () => {
                             <div className="badge badge-secondary">+99</div>
                         </button>
                     </Link>
-                    <Link to={'/login'}>Login</Link>
+                    {
+                        !user ?
+                            <>
+                                <Link to='/login'>Login</Link>
+                                <span className='text-lg'>&#47;</span>
+                                <Link to='/singup'>Singup</Link>
+                            </>
+                            : <>
+                                <button onClick={singout}>Log out</button>
+                            </>
+                    }
                 </div>
             </div>
             <div className='lg:hidden w-full flex justify-between items-center'>
@@ -80,7 +118,17 @@ const Navbar = () => {
                             <div className="badge badge-secondary">+99</div>
                         </button>
                     </Link>
-                    <Link className='text-lg font-bold' to={'/login'}>Login</Link>
+                    {
+                        !user ?
+                            <>
+                                <Link to='/login'>Login</Link>
+                                <span className='text-lg'>&#47;</span>
+                                <Link to='/singup'>Singup</Link>
+                            </>
+                            : <>
+                                <button onClick={singout}>Log out</button>
+                            </>
+                    }
                 </motion.div>
             </div>
             {isNavOpen && (
@@ -133,7 +181,17 @@ const Navbar = () => {
                                                 <div className="badge badge-secondary">+99</div>
                                             </button>
                                         </Link>
-                                        <Link to={'/login'}>Login</Link>
+                                        {
+                                            !user ?
+                                                <>
+                                                    <Link to='/login'>Login</Link>
+                                                    <span className='text-lg'>&#47;</span>
+                                                    <Link to='/singup'>Singup</Link>
+                                                </>
+                                                : <>
+                                                    <button onClick={singout}>Log out</button>
+                                                </>
+                                        }
 
                                     </ul>
                                 </div>

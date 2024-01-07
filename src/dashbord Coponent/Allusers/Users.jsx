@@ -1,5 +1,5 @@
-import { RiAdminFill } from "react-icons/ri";
-import { FaUserTie } from "react-icons/fa";
+// import { RiAdminFill } from "react-icons/ri";
+// import { FaUserTie } from "react-icons/fa";
 import { useEffect, useState } from "react";
 
 const Users = () => {
@@ -45,14 +45,14 @@ const Users = () => {
                             </th>
                         </tr>
                     </thead>
-                    <tbody>
+                    {/* <tbody>
                         {
                             data?.map(user => <tr>
                                 <td className="px-6 py-4">{user.name}</td>
                                 <td className="px-6 py-4">{user.email}</td>
                             </tr>)
                         }
-                    </tbody>
+                    </tbody> */}
                 </table>
             </div>
         </div>

@@ -40,6 +40,18 @@ const routes = createBrowserRouter([
         element: <Singup />
     },
     {
+        path: '/payment/success/:trnId',
+        element: <div>success</div>
+    },
+    {
+        path: '/payment/failed',
+        element: <div>failed</div>
+    },
+    {
+        path: '/payment/cancel',
+        element: <div>cancel</div>
+    },
+    {
         path: '/dashboard',
         element: <Dashboardlayout />,
         children: [
