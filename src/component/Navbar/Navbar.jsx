@@ -51,10 +51,10 @@ const Navbar = () => {
                     <ul
                         className={`bg-white border p-6 w-[200px] submenu`}
                     >
-                        <li><a href="#">WALLET AND CART HOLDER</a></li>
-                        <li><a href="#">BAG</a></li>
-                        <li><a href="#">BELT</a></li>
-                        <li><a href="#">ACCESSORY</a></li>
+                        <li><a href="#">Men</a></li>
+                        <li><a href="#">Women</a></li>
+                        <li><a href="#">Children</a></li>
+                        <li><a href="#">Corporate </a></li>
                         <li><a href="#">CASE</a></li>
                         <li><a href="#">HOLSTER & SHEATH</a></li>
                     </ul>
