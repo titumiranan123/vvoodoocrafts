@@ -41,7 +41,7 @@ const FirstSection = () => {
                 <div className='lg:w-[80%]  w-full'>
                     <Unisexsecsion />
                 </div>
-                <div className=' flex justify-center items-center flex-col gap-2   w-full'>
+                <div className=' lg:flex hidden justify-center items-center flex-col gap-2   w-full'>
                     <h1 className='text-6xl text-center'>100% handcrafted</h1>
                     <div className='h-[3px] bg-[#44484F] mt-4 mb-4 w-3/4 mx-auto '></div>
                     {/* <p className='text-2xl text-center'>Watch the process in the youtube channel</p> */}

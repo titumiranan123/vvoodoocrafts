@@ -16,13 +16,15 @@ const Login = () => {
     const loginWithEmailPassword = (email, password) => {
         singWithEmailpassword(email, password)
             .then(res => {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'sing in successful',
+                if (res.user) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'sing in successful',
 
-                })
-                console.log(res)
-                navigate('/')
+                    })
+                    navigate('/')
+                }
+
             })
             .catch(err => {
                 console.log(err)
@@ -38,35 +40,36 @@ const Login = () => {
     }
     const onSubmit = (data) => {
         loginWithEmailPassword(data.email, data.password)
-        fetch('http://localhost:3001/user/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json(); // Parse the JSON response
-            })
-            .then(parsedResponse => {
-                console.log(parsedResponse);
-                navigate('/')
-                // Do something with the response data if needed
-            })
-            .catch(error => {
-                if (error) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Something went wrong!',
+        console.log(data)
+        // fetch('http://localhost:3001/user/login', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify(data),
+        // })
+        //     .then(response => {
+        //         if (!response.ok) {
+        //             throw new Error('Network response was not ok');
+        //         }
+        //         return response.json(); // Parse the JSON response
+        //     })
+        //     .then(parsedResponse => {
+        //         console.log(parsedResponse);
 
-                    })
-                }
-                console.error('There was a problem with the fetch request:', error);
-            });
+        //         // Do something with the response data if needed
+        //     })
+        //     .catch(error => {
+        //         if (error) {
+        //             Swal.fire({
+        //                 icon: 'error',
+        //                 title: 'Oops...',
+        //                 text: 'Something went wrong!',
+
+        //             })
+        //         }
+        //         console.error('There was a problem with the fetch request:', error);
+        //     });
     };
     const loginWithgoogle = () => {
         loginwithGoogle()
@@ -93,10 +96,10 @@ const Login = () => {
     }
     return (
         <div className="flex flex-col justify-center items-center h-screen  bg-opacity-60">
-            <div className='bg-[#4B4F58]  p-10'>
-                <form className=" border shadow-xl  rounded px-12 pt-12  mx-auto pb-8 mb-4 flex justify-center flex-col" onSubmit={handleSubmit(onSubmit)}>
+            <div className=' border bg-[#c94428] bg-opacity-20 border-[#c94428]  rounded-xl shadow-xl  p-10'>
+                <form className="  rounded  pt-12  mx-auto pb-8 mb-4 flex  flex-col" onSubmit={handleSubmit(onSubmit)}>
                     <div className="mb-4">
-                        <label className="block text-white text-sm font-bold mb-2" htmlFor="email">
+                        <label className="block  text-sm font-bold mb-2" htmlFor="email">
                             Email
                         </label>
                         <input
@@ -107,7 +110,7 @@ const Login = () => {
                                     message: 'Invalid email address',
                                 },
                             })}
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
                             id="email"
                             type="email"
                             placeholder="Enter your email"
@@ -116,7 +119,7 @@ const Login = () => {
                     </div>
 
                     <div className="mb-4">
-                        <label className="block text-white text-sm font-bold mb-2" htmlFor="password">
+                        <label className="block  text-sm font-bold mb-2" htmlFor="password">
                             Password
                         </label>
                         <input
@@ -127,7 +130,7 @@ const Login = () => {
                                     message: 'Password must be at least 6 characters',
                                 },
                             })}
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                            className="shadow appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
                             id="password"
                             type="password"
                             placeholder="Enter your password"
@@ -136,18 +139,19 @@ const Login = () => {
                     </div>
 
 
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-col gap-4 justify-start ">
                         <button
-                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            className="hover:bg-[#c94428] text-white  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline bg-[#c94428] bg-opacity-90  border border-[#c94428]"
                             type="submit"
                         >
                             Log in
                         </button>
+                        <Link to={'/login'} className=' '>Don&apos;t have an account ? <span className='cursor-pointer hover:underline hover:text-[#c94428]'>Sing up for Free  </span></Link>
                     </div>
                 </form>
-                <div className='flex justify-center items-center'>
-                    <button onClick={loginWithgoogle} className='text-center btn ' >Login With Google </button>
-                    <Link to={'/singup'}><button className='text-center btn ' >Register </button></Link>
+                <div className='flex justify-center gap-5 items-center'>
+                    <button onClick={loginWithgoogle} className='text-center btn  border border-[#c94428] hover:bg-[#c94428] hover:text-white' >Login With Google </button>
+                    <Link to={'/singup'}><button className='text-center btn  border border-[#c94428] hover:bg-[#c94428] hover:text-white' >Register </button></Link>
                 </div>
             </div>
 

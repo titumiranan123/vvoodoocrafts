@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../page/Home/Index";
 
-import Singup from "../Singuppage/Singuppage";
+import Singup from "../page/Singuppage/Singuppage";
 import Mycart from "../page/Cart/Mycart";
 import Dashboardlayout from "../Layout/Dashboardlayout";
 import Dashboardhome from "../dashbord/Dashboard";
