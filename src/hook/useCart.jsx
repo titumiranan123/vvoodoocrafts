@@ -8,7 +8,7 @@ const useCart = () => {
     const { user, loading } = useContext(Authcontext)
 
 
-    const { refetch, data, isLoading } = useQuery({
+    const { data, refetch, isLoading } = useQuery({
         queryKey: ['cart', user?.email],
         enabled: !loading,
         queryFn: async () => {
@@ -17,6 +17,6 @@ const useCart = () => {
             return data;
         }
     })
-    return [refetch, data, isLoading];
+    return [data, refetch, isLoading];
 }
 export default useCart;

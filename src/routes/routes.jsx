@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../page/Home/Index";
-import Loginpage from "../Loginpage/Loginpage";
+
 import Singup from "../Singuppage/Singuppage";
 import Mycart from "../page/Cart/Mycart";
 import Dashboardlayout from "../Layout/Dashboardlayout";
@@ -9,6 +9,7 @@ import Dashboardhome from "../dashbord/Dashboard";
 import Products from "../dashbord Coponent/Product_section/Products";
 import PaymentForm from "../page/Payment/PaymentForm";
 import Users from './../dashbord Coponent/Allusers/Users'
+import Login from "../page/Loginpage/Loginpage";
 
 
 
@@ -33,7 +34,7 @@ const routes = createBrowserRouter([
     },
     {
         path: '/login',
-        element: <Loginpage />
+        element: <Login />
     },
     {
         path: '/singup',

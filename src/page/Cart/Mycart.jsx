@@ -5,13 +5,15 @@ import useCart from "../../hook/useCart";
 import Loader from "../../component/Utilitis/Loader";
 
 
+
 const Mycart = () => {
 
-    const [, data,] = useCart();
-    console.log(data)
+    const [data] = useCart();
+
     if (!data) {
-        return (<Loader />)
+        return <Loader />
     }
+
     return (
         <div className="flex flex-col items-center">
             <h1 className="text-2xl font-bold mt-8 mb-4">Shopping Cart</h1>

@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Swal from 'sweetalert2';
 import { Authcontext } from '../../provider/AuthProvider';
+import { useNavigate } from 'react-router-dom';
 
 const ProductCart = () => {
     const [products, setProduct] = useState([])
@@ -12,34 +13,60 @@ const ProductCart = () => {
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
-
+    const navigate = useNavigate('/')
     const handalClick = (product) => {
-
-        const cart = {
-            product_name: product.product_name,
-            category: product.category,
-            sub_category: product.sub_category,
-            Product_details: product.Product_details,
-            image_url: product.image_url,
-            price: product.price,
-            user_email: user.email,
+        if (!user) {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "Please Login fast !!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Please Login"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate('/login')
+                    return;
+                }
+            });
         }
-        fetch('http://localhost:3001/cart', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(cart),
-        })
-            .then(res => res.json())
-            .then(data => console.log(data))
-        Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Product Added",
-            showConfirmButton: false,
-            timer: 1500
-        });
+        else {
+            const cart = {
+                product_name: product.product_name,
+                category: product.category,
+                sub_category: product.sub_category,
+                Product_details: product.Product_details,
+                image_url: product.image_url,
+                price: product.price,
+                user_email: user?.email,
+            }
+            fetch('http://localhost:3001/cart', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(cart),
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Product Added",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                })
+
+
+        }
+
+
+
+
+
     }
     return (
         <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2">

@@ -1,30 +1,55 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useCart from '../../hook/useCart';
+import Swal from 'sweetalert2';
 
 const CartCard = ({ item }) => {
     const [quantity, setQuantity] = useState(1);
-    const [price, setPrice] = useState(item.price);
-
+    const [price, setPrice] = useState(parseFloat(item.price));
     const increaseQuantity = () => {
         setQuantity(prevQuantity => prevQuantity + 1);
-        setPrice(prevPrice => prevPrice + item.price);
+        setPrice(prevPrice => parseFloat(prevPrice) + price);
     };
 
     const decreaseQuantity = () => {
         if (quantity > 1) {
             setQuantity(prevQuantity => prevQuantity - 1);
-            setPrice(prevPrice => prevPrice - item.price);
+            setPrice(prevPrice => parseFloat(prevPrice) - price);
         }
     };
-    const [refetch, ,] = useCart()
+
+    const [data, refetch] = useCart()
+    console.log(data, refetch)
     const removeFromCart = (id) => {
-        fetch(`http://localhost:3001/cart/${id}`, {
-            method: 'DELETE',
-        })
-            .then(res => res.json())
-            .then(data => refetch())
-            .catch(error => console.error('Error removing item:', error));
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:3001/cart/${id}`, {
+                    method: 'DELETE',
+                })
+                    .then(res => res.json())
+                    .then(data => {
+
+                        if (data.message === "deleted") {
+                            refetch();
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
+            }
+        });
+
     };
 
     return (
