@@ -10,7 +10,7 @@ const Products = () => {
     const onSubmit = (data) => {
         console.log(data);
 
-        fetch('http://localhost:3001/user/products', {
+        fetch('https://chamrabari-backend-3gcht6ow4-titumiranan123.vercel.app/user/products', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

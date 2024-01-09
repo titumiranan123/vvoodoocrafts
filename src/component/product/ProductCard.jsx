@@ -9,7 +9,7 @@ const ProductCart = () => {
     const [products, setProduct] = useState([])
     const { user } = useContext(Authcontext);
     useEffect(() => {
-        fetch('http://localhost:3001/products')
+        fetch('https://chamrabari-backend-3gcht6ow4-titumiranan123.vercel.app/products')
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
@@ -41,7 +41,7 @@ const ProductCart = () => {
                 price: product.price,
                 user_email: user?.email,
             }
-            fetch('http://localhost:3001/cart', {
+            fetch('https://chamrabari-backend-3gcht6ow4-titumiranan123.vercel.app/cart', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -61,7 +61,7 @@ function SignUp() {
     }
     const onSubmit = (data) => {
         userCreate(data.email, data.password)
-        fetch('http://localhost:3001/user/register', {
+        fetch('https://chamrabari-backend-3gcht6ow4-titumiranan123.vercel.app/user/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
