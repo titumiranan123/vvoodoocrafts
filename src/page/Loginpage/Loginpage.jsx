@@ -147,8 +147,10 @@ const Login = () => {
                             Log in
                         </button>
                         <Link to={'/login'} className=' '>Don&apos;t have an account ? <span className='cursor-pointer hover:underline hover:text-[#c94428]'>Sing up for Free  </span></Link>
+                        <Link to={'/forget_password'} className=' '><span className='cursor-pointer hover:underline hover:text-[#c94428]'>forget pasword</span></Link>
                     </div>
                 </form>
+
                 <div className='flex justify-center gap-5 items-center'>
                     <button onClick={loginWithgoogle} className='text-center btn  border border-[#c94428] hover:bg-[#c94428] hover:text-white' >Login With Google </button>
                     <Link to={'/singup'}><button className='text-center btn  border border-[#c94428] hover:bg-[#c94428] hover:text-white' >Register </button></Link>

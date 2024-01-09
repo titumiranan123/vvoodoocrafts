@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { FaAngleDown, FaBars, FaShoppingCart, FaTimes } from 'react-icons/fa';
 import log from '../../assets/Chamrabari_Logo.png';
 import { motion } from "framer-motion";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './navbar.css'
 import { Authcontext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
@@ -11,6 +11,7 @@ const Navbar = () => {
     const [isProductOpen, setProductOpen] = useState(false);
     const [isAccountOpen, setAccountOpen] = useState(false);
     const { user, logOut } = useContext(Authcontext);
+    const router = useLocation()
 
     const toggleNav = () => {
         setIsNavOpen(!isNavOpen);
@@ -40,11 +41,18 @@ const Navbar = () => {
             })
 
     }
+    const CustomLink = ({ href, className, title }) => {
+        const isActive = router.pathname === href
+        return (<Link className={` flex justify-center items-center ${className}${isActive && ' h-[30px] rounded-[30px] w-[89px] bg-white text-black px-5  py-2'}`} to={href}>
+            {title}
+        </Link>)
+    }
+
 
     const navItems = (
         <nav className='nav'>
             <ul className="flex justify-center gap-4 items-center relative w-full">
-                <li className=""><a href="/">Home</a></li>
+                <li className=""><CustomLink href={'/'} title={'Home'} /></li>
                 <li className=" relative">
                     <a className='flex justify-center items-center gap-2' href="allproducts"> All Products <FaAngleDown /> </a>
                     <ul
@@ -56,6 +64,9 @@ const Navbar = () => {
                                 className={`bg-white border p-6  submenus`}
                             >
                                 <li><a href="#">Belt</a></li>
+                                <li><a href="#">Wallet</a></li>
+                                <li><a href="#">Long Wallet</a></li>
+                                <li><a href="#">loffer</a></li>
                                 <li><a href="#">Card Holder </a></li>
                             </ul>
                         </li>
@@ -64,8 +75,9 @@ const Navbar = () => {
                             <ul
                                 className={`bg-white border p-6  submenus`}
                             >
-                                <li><a href="#">Bra</a></li>
-                                <li><a href="#">Women</a></li>
+                                <li><a href="#">Purse</a></li>
+                                <li><a href="#">Sandel</a></li>
+                                <li><a href="#">Bag</a></li>
                             </ul>
                         </li>
                         <li className='hover-me '>
@@ -73,7 +85,7 @@ const Navbar = () => {
                             <ul
                                 className={`bg-white border p-6  submenus`}
                             >
-                                <li><a href="#">children</a></li>
+                                <li><a href="#">Bag</a></li>
                                 <li><a href="#">Women</a></li>
                             </ul>
                         </li>
@@ -82,8 +94,8 @@ const Navbar = () => {
                             <ul
                                 className={`bg-white border p-6  submenus`}
                             >
-                                <li><a href="#">Corporate</a></li>
-                                <li><a href="#">Women</a></li>
+                                <li><a href="#">gadget cover</a></li>
+                                <li><a href="#">Half Shoe</a></li>
                             </ul>
                         </li>
 

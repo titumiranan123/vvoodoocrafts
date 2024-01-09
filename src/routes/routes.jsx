@@ -9,6 +9,11 @@ import Login from "../page/Loginpage/Loginpage";
 import Dashboardhome from "../page/dashbord/Dashboard";
 import Users from "../component/Allusers/Users";
 import Products from "../component/Product_section/Products";
+import Forgetpassword from "../page/UserAuthentication Page/Forgetpassword";
+import ErrorPage from "../page/Errorpage/Errorpage";
+import PaymentConfirmation from "../page/payment/PaymentSuceess";
+import PaymentCancelPage from "../page/payment/Paymentcancel";
+import PaymentFailedPage from "../page/payment/Paymentfailed";
 
 
 
@@ -16,6 +21,7 @@ const routes = createBrowserRouter([
     {
         path: '/',
         element: <Main />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: "/",
@@ -33,23 +39,28 @@ const routes = createBrowserRouter([
     },
     {
         path: '/login',
-        element: <Login />
+        element: <Login />,
+
     },
     {
         path: '/singup',
         element: <Singup />
     },
     {
+        path: 'forget_password',
+        element: <Forgetpassword />
+    },
+    {
         path: '/payment/success/:trnId',
-        element: <div>success</div>
+        element: <PaymentConfirmation />
     },
     {
         path: '/payment/failed',
-        element: <div>failed</div>
+        element: <PaymentFailedPage />
     },
     {
         path: '/payment/cancel',
-        element: <div>cancel</div>
+        element: <PaymentCancelPage />
     },
     {
         path: '/dashboard',
