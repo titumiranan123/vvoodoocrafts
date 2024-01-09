@@ -43,20 +43,50 @@ const Navbar = () => {
 
     const navItems = (
         <nav className='nav'>
-            <ul className="flex justify-center gap-4 items-center relative">
+            <ul className="flex justify-center gap-4 items-center relative w-full">
                 <li className=""><a href="/">Home</a></li>
-                <li className="group relative">
-                    <a className='flex justify-center items-center gap-2' href="allproducts"> All Products <FaAngleDown />
-                    </a>
+                <li className=" relative">
+                    <a className='flex justify-center items-center gap-2' href="allproducts"> All Products <FaAngleDown /> </a>
                     <ul
-                        className={`bg-white border p-6 w-[200px] submenu`}
+                        className={`bg-white border p-6  submenu_1`}
                     >
-                        <li><a href="#">Men</a></li>
-                        <li><a href="#">Women</a></li>
-                        <li><a href="#">Children</a></li>
-                        <li><a href="#">Corporate </a></li>
-                        <li><a href="#">CASE</a></li>
-                        <li><a href="#">HOLSTER & SHEATH</a></li>
+                        <li className='hover-me ' >
+                            <a href="#">Men</a>
+                            <ul
+                                className={`bg-white border p-6  submenus`}
+                            >
+                                <li><a href="#">Belt</a></li>
+                                <li><a href="#">Card Holder </a></li>
+                            </ul>
+                        </li>
+                        <li className='hover-me '>
+                            <a href="#">Women</a>
+                            <ul
+                                className={`bg-white border p-6  submenus`}
+                            >
+                                <li><a href="#">Bra</a></li>
+                                <li><a href="#">Women</a></li>
+                            </ul>
+                        </li>
+                        <li className='hover-me '>
+                            <a href="#">Children</a>
+                            <ul
+                                className={`bg-white border p-6  submenus`}
+                            >
+                                <li><a href="#">children</a></li>
+                                <li><a href="#">Women</a></li>
+                            </ul>
+                        </li>
+                        <li className='hover-me '>
+                            <a href="#">Corporate </a>
+                            <ul
+                                className={`bg-white border p-6  submenus`}
+                            >
+                                <li><a href="#">Corporate</a></li>
+                                <li><a href="#">Women</a></li>
+                            </ul>
+                        </li>
+
                     </ul>
                 </li>
                 <li className=""><a href="#">Blog</a></li>

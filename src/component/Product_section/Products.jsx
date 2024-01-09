@@ -1,16 +1,16 @@
-import React from 'react';
+
 import { useForm } from 'react-hook-form';
 
 
 
 const Products = () => {
-    const { register, handleSubmit, errors } = useForm();
+    const { handleSubmit } = useForm();
 
 
     const onSubmit = (data) => {
         console.log(data);
 
-        fetch('http://localhost:3001/user/register', {
+        fetch('http://localhost:3001/user/products', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

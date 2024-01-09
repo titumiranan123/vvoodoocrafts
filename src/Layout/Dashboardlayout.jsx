@@ -1,15 +1,14 @@
-import React from 'react';
+
 import { Outlet } from 'react-router-dom';
 import dashbord from '../../src/assets/icon/Dashbord.svg'
 import home from '../../src/assets/icon/home.svg'
-import inbox from '../../src/assets/icon/inbox.svg'
 import user from '../../src/assets/icon/user.svg'
 import product from '../../src/assets/icon/product.svg'
 import singup from '../../src/assets/icon/singup.svg'
 import singin from '../../src/assets/icon/singin.svg'
 import help from '../../src/assets/icon/help.svg'
-import SearchInput from '../dashbord Coponent/search/Search';
 import logo from '../../src/assets/Chamrabari_Logo.png'
+import SearchInput from '../component/search/Search';
 const navItem = <div className=' bg-opacity-60 h-screen'>
     <ul className="space-y-2 font-medium border-b-2 border-[#C94428] py-4">
         <li>

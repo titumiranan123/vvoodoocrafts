@@ -1,15 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../page/Home/Index";
-
 import Singup from "../page/Singuppage/Singuppage";
 import Mycart from "../page/Cart/Mycart";
 import Dashboardlayout from "../Layout/Dashboardlayout";
-import Dashboardhome from "../dashbord/Dashboard";
-import Products from "../dashbord Coponent/Product_section/Products";
 import PaymentForm from "../page/Payment/PaymentForm";
-import Users from './../dashbord Coponent/Allusers/Users'
 import Login from "../page/Loginpage/Loginpage";
+import Dashboardhome from "../page/dashbord/Dashboard";
+import Users from "../component/Allusers/Users";
+import Products from "../component/Product_section/Products";
 
 
 
