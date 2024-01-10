@@ -12,7 +12,6 @@ import Products from "../component/Product_section/Products";
 import Forgetpassword from "../page/UserAuthentication Page/Forgetpassword";
 import ErrorPage from "../page/Errorpage/Errorpage";
 import PaymentConfirmation from "../page/payment/PaymentSuceess";
-import PaymentCancelPage from "../page/payment/Paymentcancel";
 import PaymentFailedPage from "../page/payment/Paymentfailed";
 
 
@@ -57,10 +56,6 @@ const routes = createBrowserRouter([
     {
         path: '/payment/failed',
         element: <PaymentFailedPage />
-    },
-    {
-        path: '/payment/cancel',
-        element: <PaymentCancelPage />
     },
     {
         path: '/dashboard',

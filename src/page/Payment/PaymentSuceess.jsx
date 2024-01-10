@@ -1,5 +1,7 @@
+import { useNavigate } from "react-router-dom";
 
 const PaymentConfirmation = () => {
+    const navigate = useNavigate()
     return (
         <div className="bg-gray-100 min-h-screen flex items-center justify-center">
             <div className="bg-white p-8 rounded shadow-md max-w-md w-full">
@@ -9,7 +11,7 @@ const PaymentConfirmation = () => {
                 </p>
                 <button
                     className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                    onClick={() => window.location.replace('/')}
+                    onClick={() => navigate('/')}
                 >
                     Continue Shopping
                 </button>
