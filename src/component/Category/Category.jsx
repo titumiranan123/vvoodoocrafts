@@ -35,9 +35,9 @@ const Category = () => {
     };
 
     return (
-        <div className='-mt-10 md:mt-0'>
+        <div className=' mt-[100px]'>
             <div className='flex justify-center items-center  flex-col'>
-                <h2 className='text-4xl font-bold'>Shop By Category</h2>
+                <h2 className='text-3xl font-bold'>Shop By Category</h2>
                 <div className='bg-[#f8f8f8] w-20 h-[4px]'></div>
             </div>
             <div className='mt-10 md:mt-20'>
@@ -135,7 +135,9 @@ const Category = () => {
 
                 </Swiper>
             </div>
-
+            <div className='flex mt-10 justify-center items-center '>
+                <button className="mt-2 bg-[#C94428] bg-opacity-69 text-white font-semibold px-4 py-2 rounded-lg focus:outline-none">View More</button>
+            </div>
         </div>
     );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -29,7 +29,7 @@ const Testimonial = () => {
     return (
         <div className='mt-16'>
             <div className='flex justify-center items-center mb-5 flex-col'>
-                <h2 className='text-4xl font-bold'>Reviews</h2>
+                <h2 className='text-4xl font-bold'>Customer Blessings</h2>
                 <div className='bg-[#f8f8f8] w-20 h-[4px]'></div>
             </div>
             <div className='mt-10 md:mt-20'>
@@ -50,19 +50,19 @@ const Testimonial = () => {
 
                 >
                     <SwiperSlide>
-                        <div class="max-w-md mx-auto  bg-white rounded-xl shadow-lg border overflow-hidden md:max-w-2xl">
-                            <div class="md:flex">
-                                <div class="p-8">
+                        <div className="max-w-md mx-auto  bg-white rounded-xl shadow-lg border overflow-hidden md:max-w-2xl">
+                            <div className="md:flex">
+                                <div className="p-8">
 
-                                    <p class="mt-2 text-gray-500">"I'm very satisfied with the services provided. They exceeded my expectations and delivered exceptional results."</p>
-                                    <div class="mt-4">
-                                        <div class="flex items-center">
-                                            <div class="flex-shrink-0">
-                                                <img class="h-10 w-10 rounded-full" src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=826&t=st=1703731156~exp=1703731756~hmac=81961fa392f3f0ee96cc85e4aa806beee03db8d598da9ca1ad7ed35e20fac8ec" alt="User" />
+                                    <p className="mt-2 text-gray-500">&quot;I&apos;m very satisfied with the services provided. They exceeded my expectations and delivered exceptional results.&quot;</p>
+                                    <div className="mt-4">
+                                        <div className="flex items-center">
+                                            <div className="flex-shrink-0">
+                                                <img className="h-10 w-10 rounded-full" src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=826&t=st=1703731156~exp=1703731756~hmac=81961fa392f3f0ee96cc85e4aa806beee03db8d598da9ca1ad7ed35e20fac8ec" alt="User" />
                                             </div>
-                                            <div class="ml-3">
-                                                <div class="text-sm font-medium text-gray-900">John Doe</div>
-                                                <div class="text-sm text-gray-500">CEO, Company Name</div>
+                                            <div className="ml-3">
+                                                <div className="text-sm font-medium text-gray-900">John Doe</div>
+                                                <div className="text-sm text-gray-500">CEO, Company Name</div>
                                             </div>
                                         </div>
                                     </div>
@@ -71,19 +71,19 @@ const Testimonial = () => {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div class="max-w-md mx-auto bg-white rounded-xl shadow-lg border  overflow-hidden md:max-w-2xl">
-                            <div class="md:flex">
-                                <div class="p-8">
+                        <div className="max-w-md mx-auto bg-white rounded-xl shadow-lg border  overflow-hidden md:max-w-2xl">
+                            <div className="md:flex">
+                                <div className="p-8">
 
-                                    <p class="mt-2 text-gray-500">"I'm very satisfied with the services provided. They exceeded my expectations and delivered exceptional results."</p>
-                                    <div class="mt-4">
-                                        <div class="flex items-center">
-                                            <div class="flex-shrink-0">
-                                                <img class="h-10 w-10 rounded-full" src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=826&t=st=1703731156~exp=1703731756~hmac=81961fa392f3f0ee96cc85e4aa806beee03db8d598da9ca1ad7ed35e20fac8ec" alt="User" />
+                                    <p className="mt-2 text-gray-500">&quot;I&apos;m very satisfied with the services provided. They exceeded my expectations and delivered exceptional results.&quot;</p>
+                                    <div className="mt-4">
+                                        <div className="flex items-center">
+                                            <div className="flex-shrink-0">
+                                                <img className="h-10 w-10 rounded-full" src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=826&t=st=1703731156~exp=1703731756~hmac=81961fa392f3f0ee96cc85e4aa806beee03db8d598da9ca1ad7ed35e20fac8ec" alt="User" />
                                             </div>
-                                            <div class="ml-3">
-                                                <div class="text-sm font-medium text-gray-900">John Doe</div>
-                                                <div class="text-sm text-gray-500">CEO, Company Name</div>
+                                            <div className="ml-3">
+                                                <div className="text-sm font-medium text-gray-900">John Doe</div>
+                                                <div className="text-sm text-gray-500">CEO, Company Name</div>
                                             </div>
                                         </div>
                                     </div>
@@ -92,19 +92,19 @@ const Testimonial = () => {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div class="max-w-md mx-auto bg-white rounded-xl shadow-lg border  overflow-hidden md:max-w-2xl">
-                            <div class="md:flex">
-                                <div class="p-8">
+                        <div className="max-w-md mx-auto bg-white rounded-xl shadow-lg border  overflow-hidden md:max-w-2xl">
+                            <div className="md:flex">
+                                <div className="p-8">
 
-                                    <p class="mt-2 text-gray-500">"I'm very satisfied with the services provided. They exceeded my expectations and delivered exceptional results."</p>
-                                    <div class="mt-4">
-                                        <div class="flex items-center">
-                                            <div class="flex-shrink-0">
-                                                <img class="h-10 w-10 rounded-full" src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=826&t=st=1703731156~exp=1703731756~hmac=81961fa392f3f0ee96cc85e4aa806beee03db8d598da9ca1ad7ed35e20fac8ec" alt="User" />
+                                    <p className="mt-2 text-gray-500">&quot;I&apos;m very satisfied with the services provided. They exceeded my expectations and delivered exceptional results.&quot;</p>
+                                    <div className="mt-4">
+                                        <div className="flex items-center">
+                                            <div className="flex-shrink-0">
+                                                <img className="h-10 w-10 rounded-full" src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=826&t=st=1703731156~exp=1703731756~hmac=81961fa392f3f0ee96cc85e4aa806beee03db8d598da9ca1ad7ed35e20fac8ec" alt="User" />
                                             </div>
-                                            <div class="ml-3">
-                                                <div class="text-sm font-medium text-gray-900">John Doe</div>
-                                                <div class="text-sm text-gray-500">CEO, Company Name</div>
+                                            <div className="ml-3">
+                                                <div className="text-sm font-medium text-gray-900">John Doe</div>
+                                                <div className="text-sm text-gray-500">CEO, Company Name</div>
                                             </div>
                                         </div>
                                     </div>
@@ -113,19 +113,19 @@ const Testimonial = () => {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div class="max-w-md mx-auto bg-white rounded-xl shadow-lg border  overflow-hidden md:max-w-2xl">
-                            <div class="md:flex">
-                                <div class="p-8">
+                        <div className="max-w-md mx-auto bg-white rounded-xl shadow-lg border  overflow-hidden md:max-w-2xl">
+                            <div className="md:flex">
+                                <div className="p-8">
 
-                                    <p class="mt-2 text-gray-500">"I'm very satisfied with the services provided. They exceeded my expectations and delivered exceptional results."</p>
-                                    <div class="mt-4">
-                                        <div class="flex items-center">
-                                            <div class="flex-shrink-0">
-                                                <img class="h-10 w-10 rounded-full" src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=826&t=st=1703731156~exp=1703731756~hmac=81961fa392f3f0ee96cc85e4aa806beee03db8d598da9ca1ad7ed35e20fac8ec" alt="User" />
+                                    <p className="mt-2 text-gray-500">&quot;I&apos;m very satisfied with the services provided. They exceeded my expectations and delivered exceptional results.&quot;</p>
+                                    <div className="mt-4">
+                                        <div className="flex items-center">
+                                            <div className="flex-shrink-0">
+                                                <img className="h-10 w-10 rounded-full" src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=826&t=st=1703731156~exp=1703731756~hmac=81961fa392f3f0ee96cc85e4aa806beee03db8d598da9ca1ad7ed35e20fac8ec" alt="User" />
                                             </div>
-                                            <div class="ml-3">
-                                                <div class="text-sm font-medium text-gray-900">John Doe</div>
-                                                <div class="text-sm text-gray-500">CEO, Company Name</div>
+                                            <div className="ml-3">
+                                                <div className="text-sm font-medium text-gray-900">John Doe</div>
+                                                <div className="text-sm text-gray-500">CEO, Company Name</div>
                                             </div>
                                         </div>
                                     </div>
@@ -134,19 +134,19 @@ const Testimonial = () => {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div class="max-w-md mx-auto bg-white rounded-xl shadow-lg border  overflow-hidden md:max-w-2xl">
-                            <div class="md:flex">
-                                <div class="p-8">
+                        <div className="max-w-md mx-auto bg-white rounded-xl shadow-lg border  overflow-hidden md:max-w-2xl">
+                            <div className="md:flex">
+                                <div className="p-8">
 
-                                    <p class="mt-2 text-gray-500">"I'm very satisfied with the services provided. They exceeded my expectations and delivered exceptional results."</p>
-                                    <div class="mt-4">
-                                        <div class="flex items-center">
-                                            <div class="flex-shrink-0">
-                                                <img class="h-10 w-10 rounded-full" src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=826&t=st=1703731156~exp=1703731756~hmac=81961fa392f3f0ee96cc85e4aa806beee03db8d598da9ca1ad7ed35e20fac8ec" alt="User" />
+                                    <p className="mt-2 text-gray-500">&quot;I&apos;m very satisfied with the services provided. They exceeded my expectations and delivered exceptional results.&quot;</p>
+                                    <div className="mt-4">
+                                        <div className="flex items-center">
+                                            <div className="flex-shrink-0">
+                                                <img className="h-10 w-10 rounded-full" src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?w=826&t=st=1703731156~exp=1703731756~hmac=81961fa392f3f0ee96cc85e4aa806beee03db8d598da9ca1ad7ed35e20fac8ec" alt="User" />
                                             </div>
-                                            <div class="ml-3">
-                                                <div class="text-sm font-medium text-gray-900">John Doe</div>
-                                                <div class="text-sm text-gray-500">CEO, Company Name</div>
+                                            <div className="ml-3">
+                                                <div className="text-sm font-medium text-gray-900">John Doe</div>
+                                                <div className="text-sm text-gray-500">CEO, Company Name</div>
                                             </div>
                                         </div>
                                     </div>

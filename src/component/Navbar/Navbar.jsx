@@ -64,10 +64,10 @@ const Navbar = () => {
                                 className={`bg-white border p-6  submenus`}
                             >
                                 <li><a href="#">Belt</a></li>
-                                <li><a href="#">Wallet</a></li>
-                                <li><a href="#">Long Wallet</a></li>
-                                <li><a href="#">loffer</a></li>
-                                <li><a href="#">Card Holder </a></li>
+                                <li><a href="#">Sandal </a></li>
+                                <li><a href="#">Loafer</a></li>
+                                <li><a href="#">Half shoe</a></li>
+                                <li><a href="#">Shoe </a></li>
                             </ul>
                         </li>
                         <li className='hover-me '>
@@ -75,29 +75,39 @@ const Navbar = () => {
                             <ul
                                 className={`bg-white border p-6  submenus`}
                             >
+                                <li><a href="#">Belt </a></li>
                                 <li><a href="#">Purse</a></li>
-                                <li><a href="#">Sandel</a></li>
-                                <li><a href="#">Bag</a></li>
+                                <li><a href="#">Hand Bag </a></li>
+                                <li><a href="#">Sandal  </a></li>
+                                <li><a href="#">shoe </a></li>
                             </ul>
+
                         </li>
                         <li className='hover-me '>
                             <a href="#">Children</a>
                             <ul
                                 className={`bg-white border p-6  submenus`}
                             >
-                                <li><a href="#">Bag</a></li>
-                                <li><a href="#">Women</a></li>
+                                <li><a href="#">Belt</a></li>
+                                <li><a href="#">Sandal </a></li>
+                                <li><a href="#">Shoe </a></li>
                             </ul>
                         </li>
                         <li className='hover-me '>
-                            <a href="#">Corporate </a>
+                            <a href="#">Unisex </a>
                             <ul
                                 className={`bg-white border p-6  submenus`}
                             >
-                                <li><a href="#">gadget cover</a></li>
-                                <li><a href="#">Half Shoe</a></li>
+                                <li><a href="#">Wallet</a></li>
+                                <li><a href="#">Mobile wallet</a></li>
+                                <li><a href="#">Card Holder</a></li>
+                                <li><a href="#">Key Ring</a></li>
+                                <li><a href="#">Laptop Cover</a></li>
+                                <li><a href="#">Jacket</a></li>
+                                <li><a href="#">Side Bag</a></li>
                             </ul>
                         </li>
+                        <li><a href="#">Gift Box</a></li>
 
                     </ul>
                 </li>

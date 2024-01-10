@@ -9,10 +9,20 @@ const ProductCart = () => {
     const [products, setProduct] = useState([])
     const { user } = useContext(Authcontext);
     useEffect(() => {
-        fetch('https://chamrabari-backend-3gcht6ow4-titumiranan123.vercel.app/products')
-            .then(res => res.json())
+        fetch('https://chamrabari-backend.vercel.app/products')
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return res.json();
+            })
             .then(data => setProduct(data))
-    }, [])
+            .catch(error => {
+                // Handle the error here
+                console.error('Error fetching data:', error);
+            });
+    }, []);
+
     const navigate = useNavigate('/')
     const handalClick = (product) => {
         if (!user) {
@@ -41,7 +51,7 @@ const ProductCart = () => {
                 price: product.price,
                 user_email: user?.email,
             }
-            fetch('https://chamrabari-backend-3gcht6ow4-titumiranan123.vercel.app/cart', {
+            fetch('https://chamrabari-backend.vercel.app/cart', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -68,6 +78,7 @@ const ProductCart = () => {
 
 
     }
+    console.log(products)
     return (
         <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2">
             {products.map((product) => (

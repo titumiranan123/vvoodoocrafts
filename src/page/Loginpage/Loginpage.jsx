@@ -41,7 +41,7 @@ const Login = () => {
     const onSubmit = (data) => {
         loginWithEmailPassword(data.email, data.password)
         console.log(data)
-        // fetch('https://chamrabari-backend-3gcht6ow4-titumiranan123.vercel.app/user/login', {
+        // fetch('https://chamrabari-backend.vercel.app/user/login', {
         //     method: 'POST',
         //     headers: {
         //         'Content-Type': 'application/json',

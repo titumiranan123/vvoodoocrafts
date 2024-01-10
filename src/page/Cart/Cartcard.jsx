@@ -32,7 +32,7 @@ const CartCard = ({ item }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`https://chamrabari-backend-3gcht6ow4-titumiranan123.vercel.app/cart/${id}`, {
+                fetch(`https://chamrabari-backend.vercel.app/cart/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
