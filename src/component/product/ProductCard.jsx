@@ -4,10 +4,12 @@ import { motion } from 'framer-motion';
 import Swal from 'sweetalert2';
 import { Authcontext } from '../../provider/AuthProvider';
 import { useNavigate } from 'react-router-dom';
+import useCart from '../../hook/useCart';
 
 const ProductCart = () => {
     const [products, setProduct] = useState([])
     const { user } = useContext(Authcontext);
+    const [, refetch] = useCart()
     useEffect(() => {
         fetch('https://chamrabari-backend.vercel.app/products')
             .then(res => {
@@ -60,7 +62,9 @@ const ProductCart = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
+                    if (data) {
+                        refetch()
+                    }
                     Swal.fire({
                         position: "top-end",
                         icon: "success",

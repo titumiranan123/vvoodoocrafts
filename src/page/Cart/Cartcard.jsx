@@ -83,7 +83,7 @@ const CartCard = ({ item }) => {
                     <Link to={'/payment'}>
                         <button className="btn py-4 px-8 bg-slate-300 rounded-xl font-bold">Pay Now</button>
                     </Link>
-                    <button onClick={() => removeFromCart(item._id)} className="btn py-4 px-8 bg-red-400 hover:bg-red-500 rounded-xl font-bold">Remove</button>
+                    <button onClick={() => removeFromCart(item._id)} className="btn py-4 px-8 bg-[#C94428] hover:bg-red-500 rounded-xl font-bold">Remove</button>
                 </div>
             </div>
         </div>

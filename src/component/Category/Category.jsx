@@ -38,7 +38,8 @@ const Category = () => {
         <div className=' mt-[100px]'>
             <div className='flex justify-center items-center  flex-col'>
                 <h2 className='text-3xl font-bold'>Shop By Category</h2>
-                <div className='bg-[#f8f8f8] w-20 h-[4px]'></div>
+                <div className='bg-[#141414] w-1/3 mt-2 h-[2px]'></div>
+                <h3 className='text-xl font-bold mt-2'>All Products </h3>
             </div>
             <div className='mt-10 md:mt-20'>
                 <Swiper

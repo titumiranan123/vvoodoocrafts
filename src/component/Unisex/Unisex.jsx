@@ -8,7 +8,7 @@ const Unisexsecsion = () => {
             <section className="third_section mt-20 mb-20">
 
                 <div className="card_section flex justify-center items-center gap-5 md:flex-wrap flex-wrap lg:flex-nowrap mt-10">
-                    <div className="category_card card  border-red-400 p-4 h-[380px] w-72 flex flex-col justify-center items-center border gap-4 ">
+                    <div className="category_card card  border-[#C94428] p-4 h-[380px] w-72 flex flex-col justify-center items-center border gap-4 ">
                         <div>
                             <img src={man} alt="" />
                         </div>
@@ -20,7 +20,7 @@ const Unisexsecsion = () => {
                                 for WOMEN. products like tote bag , Bracelets, etc.</p>
                         </div>
                     </div>
-                    <div className="category_card card h-[380px] border-red-400 p-4 w-72 flex flex-col justify-center items-center border gap-4 ">
+                    <div className="category_card card h-[380px] border-[#C94428] p-4 w-72 flex flex-col justify-center items-center border gap-4 ">
                         <img src={woman} alt="" />
                         <div className="flex justify-center items-center flex-col w-3/4">
                             <h3 className='text-xl font-semibold '>For Women</h3>
@@ -30,7 +30,7 @@ const Unisexsecsion = () => {
                                 for MEN. products like Belt, Bifold Wallet, etc.</p>
                         </div>
                     </div>
-                    <div className="category_card h-[380px] border-red-400 p-4 w-72 flex flex-col justify-center items-center border gap-4  card">
+                    <div className="category_card h-[380px] border-[#C94428] p-4 w-72 flex flex-col justify-center items-center border gap-4  card">
                         <img src={couple} alt="" />
                         <div className="flex justify-center items-center flex-col w-3/4">
                             <h3 className='text-xl font-semibold '>Unisex </h3>

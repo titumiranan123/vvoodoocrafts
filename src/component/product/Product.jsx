@@ -5,7 +5,7 @@ const Product = () => {
     return (
         <div className='mt-20'>
             <div className='flex justify-center items-center mb-10 flex-col'>
-                <h2 className='text-3xl font-bold'>All Products </h2>
+                <h2 className='text-3xl font-bold'>Trending Products </h2>
                 <div className='bg-[#f8f8f8] w-20 h-[4px]'></div>
             </div>
             <ProductCart />

@@ -9,7 +9,7 @@ const Header = () => {
                     <h1 className="text-6xl text-[#4B4F58]">Handmade Leather <br /> Goods</h1>
                     <p>Chamrabari is a place where the timeless artistry of leather craftsmanship  meets your <br /> personal style. It&apos;s a place where leather becomes more than just a material; it  transforms <br /> into bonding of love with an expression of individuality and luxury.</p>
 
-                    <button className="flex gap-2 bg-[#44484F] text-white py-2 px-4 rounded-lg w-52 "> ALL PRODUCTS <FaLock className="text-white" /></button>
+                    <button className="flex gap-2 bg-[#C94428] text-white py-2 px-4 rounded-lg w-52 "> ALL PRODUCTS <FaLock className="text-white" /></button>
                 </div>
                 <div className="lg:w-1/2 w-full ">
                     <img className="img-fluid" src={header} alt="" />

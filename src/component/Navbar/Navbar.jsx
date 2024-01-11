@@ -6,6 +6,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './navbar.css'
 import { Authcontext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import useCart from '../../hook/useCart';
 const Navbar = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [isProductOpen, setProductOpen] = useState(false);
@@ -13,7 +14,7 @@ const Navbar = () => {
     const [isWomen, setWomen] = useState(false);
     const [isChildren, setChildren] = useState(false);
     const [isUnisex, setUnisex] = useState(false);
-
+    const [data] = useCart()
     const { user, logOut } = useContext(Authcontext);
     const router = useLocation()
 
@@ -57,7 +58,9 @@ const Navbar = () => {
         <nav className='nav'>
             <ul className="flex justify-center gap-4 items-center relative w-full">
                 <li className=""><CustomLink href={'/'} title={'Home'} /></li>
+                <li className=""><a href="#">About</a></li>
                 <li className=" relative">
+
                     <a className='flex justify-center items-center gap-2' href="allproducts"> All Products <FaAngleDown /> </a>
                     <ul
                         className={`bg-white border p-6  submenu_1`}
@@ -116,7 +119,7 @@ const Navbar = () => {
                     </ul>
                 </li>
                 <li className=""><a href="#">Blog</a></li>
-                <li className=""><a href="#">About</a></li>
+
 
             </ul>
         </nav>
@@ -135,7 +138,7 @@ const Navbar = () => {
                     <Link to={'/cart'} className="relative">
                         <button className="btn">
                             <span className='text-lg'> <FaShoppingCart className='text-2xl' /></span>
-                            <div className="badge badge-secondary">+99</div>
+                            <div className="badge text-white bg-[#C94428]">{data ? <>{data.length}</> : <>0</>}</div>
                         </button>
                     </Link>
                     {
@@ -171,7 +174,7 @@ const Navbar = () => {
                     <Link to={'/cart'} className="relative">
                         <button className="btn">
                             <span className='text-lg'> <FaShoppingCart className='text-2xl' /></span>
-                            <div className="badge badge-secondary">+99</div>
+                            <div className="badge bg-[#C94428]">{data ? <>{data.length}</> : <>0</>}</div>
                         </button>
                     </Link>
                     {
@@ -196,6 +199,7 @@ const Navbar = () => {
                     <div className=' '>
                         <ul className="menu flex flex-col gap-2  p-10 ">
                             <li className=""><a href="/">Home</a></li>
+                            <li className=""><a href="#">About</a></li>
                             <li className="">
                                 <a
                                     className='flex items-center '
@@ -275,7 +279,7 @@ const Navbar = () => {
                                 </div>
                             </li>
                             <li className=""><a href="#">Blog</a></li>
-                            <li className=""><a href="#">About</a></li>
+
 
                         </ul>
 
