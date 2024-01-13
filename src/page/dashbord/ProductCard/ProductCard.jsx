@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import Swal from 'sweetalert2';
 import useProduct from '../../../hook/useProduct';
+import { Link } from 'react-router-dom';
 
 const ProductCard = ({ item }) => {
+
     const [quantity, setQuantity] = useState(1);
     const [price, setPrice] = useState(parseFloat(item.price));
     const increaseQuantity = () => {
@@ -19,8 +20,8 @@ const ProductCard = ({ item }) => {
         }
     };
 
-    const [data, refetch] = useProduct()
-    console.log(data, refetch)
+    const [, refetch] = useProduct()
+
     const removeProduct = (id) => {
         Swal.fire({
             title: "Are you sure?",
@@ -33,7 +34,7 @@ const ProductCard = ({ item }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`https://chamrabari-backend.vercel.app/products/${id}`, {
+                fetch(`http://localhost:3001/products/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
@@ -52,6 +53,7 @@ const ProductCard = ({ item }) => {
         });
 
     };
+
 
     return (
         <div className=''>
@@ -81,9 +83,10 @@ const ProductCard = ({ item }) => {
                     </div>
                 </div>
                 <div className='flex gap-5'>
-                    <Link to={'/products'}>
-                        <button className="btn py-4 px-8 bg-slate-300 rounded-xl font-bold">Edit Products</button>
-                    </Link>
+                    {/* You can open the modal using document.getElementById('ID').showModal() method */}
+
+                    <Link to={`/dashboard/products/${item._id}`}><button className="btn border border-[#C94428]" >Edit Product</button></Link>
+
                     <button onClick={() => removeProduct(item._id)} className="btn py-4 px-8 bg-[#C94428] hover:bg-red-500 rounded-xl font-bold">Remove</button>
                 </div>
             </div>

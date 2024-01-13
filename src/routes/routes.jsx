@@ -13,6 +13,8 @@ import Forgetpassword from "../page/UserAuthentication Page/Forgetpassword";
 import ErrorPage from "../page/Errorpage/Errorpage";
 import PaymentConfirmation from "../page/payment/PaymentSuceess";
 import PaymentFailedPage from "../page/payment/Paymentfailed";
+import UpdateFrom from "../page/dashbord/updateProductform/UpdateProductform";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -28,7 +30,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: "/cart",
-                element: <Mycart />
+                element: <PrivateRoute><Mycart /></PrivateRoute>
             },
             {
                 path: "/payment",
@@ -72,6 +74,10 @@ const routes = createBrowserRouter([
             {
                 path: 'products',
                 element: <Products />,
+            },
+            {
+                path: 'products/:id',
+                element: <UpdateFrom />,
             }
         ]
     },
