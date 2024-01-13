@@ -69,8 +69,8 @@ const navItem = <div className=' bg-opacity-60 h-screen'>
 
 const Dashboardlayout = () => {
     return (
-        <div className='lg:max-w-[1440px]  px-4  mx-auto '>
-            <div className='flex justify-between pt-6 p-2 bg-white w-[90%] box-border fixed top-0  items-center'>
+        <div className='lg:max-w-[1540px]  px-4  mx-auto '>
+            <div className='flex justify-between pt-6 p-2 bg-white w-[1540px] box-border fixed top-0  items-center'>
                 <div>
                     <img src={logo} className='img-fluid w-48' alt="" />
                 </div>
