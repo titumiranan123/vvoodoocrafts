@@ -34,7 +34,7 @@ const ProductCard = ({ item }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:3001/products/${id}`, {
+                fetch(`https://chamrabari-backend-qz4xu1bgc-titumiranan123.vercel.app/products/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
