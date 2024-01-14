@@ -92,7 +92,7 @@ const ProductCart = () => {
                     whileHover={{ scale: 1.05 }}
 
                 >
-                    <img src={product.image_url} alt={product.product_name} className="mb-4 rounded-lg" />
+                    <img src={product.image_url} alt={product.product_name} className="mb-4 rounded-lg w-[300px] h-[280px]" />
                     <h3 className="text-lg font-semibold">{product.product_name}</h3>
                     <p className="text-gray-600">$ {product.price}</p>
                     <motion.button onClick={() => handalClick(product)} whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.05 }} className="mt-2 bg-[#C94428] text-white px-4 py-2 rounded-lg focus:outline-none">
