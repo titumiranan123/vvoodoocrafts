@@ -3,7 +3,7 @@ import ProductCard from "./ProductCard/ProductCard";
 
 const Dashboardhome = () => {
     const [data] = useProduct()
-    console.log(data)
+
     return (
         <div className="h-screen ">
             <div className="h-[400px]">

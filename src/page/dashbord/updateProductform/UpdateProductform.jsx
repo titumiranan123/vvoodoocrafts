@@ -36,7 +36,7 @@ const UpdateFrom = () => {
             image_url: based64,
             price: data.price,
         }
-        fetch(`https://chamrabari-backend-qz4xu1bgc-titumiranan123.vercel.app/products/${item._id}`, {
+        fetch(`https://chamrabari-backend.vercel.app/products/${item._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

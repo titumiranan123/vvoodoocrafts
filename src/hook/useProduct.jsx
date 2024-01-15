@@ -12,8 +12,8 @@ const useProduct = () => {
         queryKey: ['Product'],
         enabled: !loading,
         queryFn: async () => {
-            // const response = await fetch(`https://chamrabari-backend.vercel.app/products`)
-            const response = await fetch(`https://chamrabari-backend-qz4xu1bgc-titumiranan123.vercel.app/products`)
+            const response = await fetch(`https://chamrabari-backend.vercel.app/products`,)
+
             const data = response.json()
             return data;
         }

@@ -11,8 +11,7 @@ import Users from "../component/Allusers/Users";
 import Products from "../component/Product_section/Products";
 import Forgetpassword from "../page/UserAuthentication Page/Forgetpassword";
 import ErrorPage from "../page/Errorpage/Errorpage";
-import PaymentConfirmation from "../page/payment/PaymentSuceess";
-import PaymentFailedPage from "../page/payment/Paymentfailed";
+
 import UpdateFrom from "../page/dashbord/updateProductform/UpdateProductform";
 import PrivateRoute from "./PrivateRoute";
 
@@ -53,11 +52,11 @@ const routes = createBrowserRouter([
     },
     {
         path: '/payment/success/:trnId',
-        element: <PaymentConfirmation />
+        element: <div>success</div>
     },
     {
         path: '/payment/failed',
-        element: <PaymentFailedPage />
+        element: <div>failed</div>
     },
     {
         path: '/dashboard',
