@@ -119,6 +119,7 @@ const Navbar = () => {
                     </ul>
                 </li>
                 <li className=""><a href="#">Blog</a></li>
+                <li className=""><a href="/dashboard">Dashboard</a></li>
 
 
             </ul>
