@@ -71,7 +71,6 @@ const Login = () => {
                         icon: 'error',
                         title: 'Oops...',
                         text: 'Something went wrong!',
-
                     })
                 }
             })

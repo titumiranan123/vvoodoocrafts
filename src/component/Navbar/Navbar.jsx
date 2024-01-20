@@ -16,6 +16,7 @@ const Navbar = () => {
     const [isUnisex, setUnisex] = useState(false);
     const [data] = useCart()
     const { user, logOut } = useContext(Authcontext);
+    console.log(user)
     const router = useLocation()
 
     const toggleNav = () => {

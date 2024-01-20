@@ -4,30 +4,29 @@ import { AiOutlineMail } from 'react-icons/ai';
 import logo from '../../assets/Chamrabari_Logo.png'
 const Footer = () => {
     return (
-        <footer className="mt-10 flex justify-center items-center flex-col bg-slate-300 p-10">
+        <footer className="mt-10 flex justify-center items-center flex-col p-10">
             <div className="product_tag_container text-sm lg:text-[12px]">
-                <button className="py-2  px-2 border ms-2 mt-2 hover:bg-[#44484F] hover:text-white transition-all duration-300"> Accordion</button>
-                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#44484F] hover:text-white transition-all duration-300"> Apple</button>
-                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#44484F] hover:text-white transition-all duration-300"> Apple Watch</button>
-                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#44484F] hover:text-white transition-all duration-300"> Belt Attach </button>
-                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#44484F] hover:text-white transition-all duration-300"> Bifold Wallet</button>
-                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#44484F] hover:text-white transition-all duration-300">Camping</button>
-                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#44484F] hover:text-white transition-all duration-300">Card Wallet</button>
-                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#44484F] hover:text-white transition-all duration-300">Classic</button>
-                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#44484F] hover:text-white transition-all duration-300">Crossbody</button>
-                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#44484F] hover:text-white transition-all duration-300">digital</button>
+                <button className="py-2  px-2 border ms-2 mt-2 hover:bg-[#C94428] hover:text-white transition-all duration-300"> Accordion</button>
+                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#C94428] hover:text-white transition-all duration-300"> Apple</button>
+                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#C94428] hover:text-white transition-all duration-300"> Apple Watch</button>
+                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#C94428] hover:text-white transition-all duration-300"> Belt Attach </button>
+                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#C94428] hover:text-white transition-all duration-300"> Bifold Wallet</button>
+                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#C94428] hover:text-white transition-all duration-300">Camping</button>
+                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#C94428] hover:text-white transition-all duration-300">Card Wallet</button>
+                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#C94428] hover:text-white transition-all duration-300">Classic</button>
+                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#C94428] hover:text-white transition-all duration-300">Crossbody</button>
+                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#C94428] hover:text-white transition-all duration-300">digital</button>
 
-                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#44484F] hover:text-white transition-all duration-300">Economy</button>
-                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#44484F] hover:text-white transition-all duration-300">For Tools</button>
-                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#44484F] hover:text-white transition-all duration-300">Jewelry</button>
-                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#44484F] hover:text-white transition-all duration-300">Large Wallet</button>
-                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#44484F] hover:text-white transition-all duration-300">Lighter Case</button>
-                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#44484F] hover:text-white transition-all duration-300">Long Wallet</button>
+                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#C94428] hover:text-white transition-all duration-300">Economy</button>
+                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#C94428] hover:text-white transition-all duration-300">For Tools</button>
+                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#C94428] hover:text-white transition-all duration-300">Jewelry</button>
+                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#C94428] hover:text-white transition-all duration-300">Large Wallet</button>
+                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#C94428] hover:text-white transition-all duration-300">Lighter Case</button>
+                <button className="py-2 px-2 border ms-2 mt-2 hover:bg-[#C94428] hover:text-white transition-all duration-300">Long Wallet</button>
 
             </div>
             <div className="footer flex flex-col mt-10 justify-center items-center gap-5">
                 <img className='w-64 ' src={logo} alt="" />
-
                 <div className="social_link flex justify-center items-center flex-wrap lg:flex-nowrap md:flex-nowrap gap-5">
                     <div className='flex justify-center items-center gap-2 text-black'>FAQ</div>
                     <div className='flex justify-center items-center gap-2'><FaInstagram /> <span>Instagram</span></div>
@@ -40,7 +39,6 @@ const Footer = () => {
                     <p className='hover:underline'>Privacy Policy</p>
                     <p className='hover:underline'>Shipping & Payment </p>
                     <p className='hover:underline'>Terms & Conditions</p>
-
                 </div>
             </div>
             <div className="text-sm mt-4 flex flex-col justify-center items-center">

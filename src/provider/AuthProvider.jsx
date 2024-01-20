@@ -30,6 +30,17 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, gprovider)
     }
     useEffect(() => {
+        fetch(`https://chamrabari.vercel.app/api/v1/loggeduser`, {
+            method: 'GET',
+            headers: {
+                authorization: `bearer ${localStorage.getItem('access_token')}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                setUser(data.user)
+                setLoading(false);
+            })
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             if (currentUser) {
                 setUser(currentUser)
@@ -48,7 +59,8 @@ const AuthProvider = ({ children }) => {
         user,
         loading,
         setLoading,
-        forgotPassword
+        forgotPassword,
+        setUser
     }
     return (
         <Authcontext.Provider value={authinfo}>
