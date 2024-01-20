@@ -11,31 +11,9 @@ function SignUp() {
         formState: { errors },
         getValues,
     } = useForm();
-    const { userCreateWithEmailpassword, loginwithGoogle } = useContext(Authcontext);
+    const { loginwithGoogle } = useContext(Authcontext);
     const navigate = useNavigate();
-    const userCreate = (email, password) => {
-        userCreateWithEmailpassword(email, password)
-            .then(res => {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'signup in successful',
 
-                })
-                console.log(res)
-                navigate('/login')
-            })
-            .catch(err => {
-                console.log(err)
-                if (err) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Something went wrong!',
-
-                    })
-                }
-            })
-    }
     const loginWithgoogle = () => {
         loginwithGoogle()
             .then(res => {
@@ -60,8 +38,8 @@ function SignUp() {
             })
     }
     const onSubmit = (data) => {
-        userCreate(data.email, data.password)
-        fetch('https://chamrabari-backend.vercel.app/user/register', {
+        console.log(data)
+        fetch('https://chamrabari.vercel.app/api/v1/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -72,12 +50,17 @@ function SignUp() {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                return response.json(); // Parse the JSON response
+                return response.json();
             })
             .then(parsedResponse => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'signup in successful',
+
+                })
                 navigate('/login')
                 console.log(parsedResponse);
-                // Do something with the response data if needed
+
             })
             .catch(error => {
                 if (error) {

@@ -12,7 +12,14 @@ const useCart = () => {
         queryKey: ['cart', user?.email],
         enabled: !loading,
         queryFn: async () => {
-            const response = await fetch(`https://chamrabari-backend.vercel.app/cart?email=${user?.email}`)
+            const response = await fetch(`https://chamrabari-backend.vercel.app/cart?email=${user?.email}`,
+
+                {
+                    method: 'GET',
+                    headers: {
+                        authorization: `bearer ${localStorage.getItem('access_token')}`
+                    }
+                })
             const data = response.json()
             return data;
         }

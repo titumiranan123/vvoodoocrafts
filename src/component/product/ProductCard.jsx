@@ -76,18 +76,12 @@ const ProductCart = () => {
 
 
         }
-
-
-
-
-
     }
-    console.log(products)
     return (
         <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2">
             {products.map((product) => (
                 <motion.div
-                    key={product}
+                    key={product?._id}
                     className="m-4 p-4 max-w-xs border rounded-lg shadow-md"
                     whileHover={{ scale: 1.05 }}
 

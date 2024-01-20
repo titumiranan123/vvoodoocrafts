@@ -5,7 +5,7 @@ import { Authcontext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
 
 const Login = () => {
-    const { singWithEmailpassword, loginwithGoogle } = useContext(Authcontext);
+    const { loginwithGoogle } = useContext(Authcontext);
 
     const {
         register,
@@ -13,77 +13,59 @@ const Login = () => {
         formState: { errors },
     } = useForm();
     const navigate = useNavigate()
-    const loginWithEmailPassword = (email, password) => {
-        singWithEmailpassword(email, password)
-            .then(res => {
-                if (res.user) {
+
+    const onSubmit = (data) => {
+        fetch('https://chamrabari.vercel.app/api/v1/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(parsedResponse => {
+                console.log(parsedResponse)
+                localStorage.setItem('access_token', parsedResponse.token)
+                if (parsedResponse.message === "Login Successfull") {
+                    navigate('/')
                     Swal.fire({
                         icon: 'success',
-                        title: 'sing in successful',
-
-                    })
-                    navigate('/')
-                }
-
-            })
-            .catch(err => {
-                console.log(err)
-                if (err) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Something went wrong!',
+                        title: 'Login in Successfull',
 
                     })
                 }
+
             })
-    }
-    const onSubmit = (data) => {
-        loginWithEmailPassword(data.email, data.password)
-        console.log(data)
-        // fetch('https://chamrabari-backend.vercel.app/user/login', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify(data),
-        // })
-        //     .then(response => {
-        //         if (!response.ok) {
-        //             throw new Error('Network response was not ok');
-        //         }
-        //         return response.json(); // Parse the JSON response
-        //     })
-        //     .then(parsedResponse => {
-        //         console.log(parsedResponse);
+            .catch(error => {
+                console.error('There was a problem with the fetch request:', error);
+                // if (error) {
+                //     Swal.fire({
+                //         icon: 'error',
+                //         title: 'Oops...',
+                //         text: 'Something went wrong!',
 
-        //         // Do something with the response data if needed
-        //     })
-        //     .catch(error => {
-        //         if (error) {
-        //             Swal.fire({
-        //                 icon: 'error',
-        //                 title: 'Oops...',
-        //                 text: 'Something went wrong!',
+                //     })
+                // }
 
-        //             })
-        //         }
-        //         console.error('There was a problem with the fetch request:', error);
-        //     });
+            });
     };
     const loginWithgoogle = () => {
         loginwithGoogle()
             .then(res => {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'sing in successful',
-
-                })
-                console.log(res)
-                navigate('/')
+                if (res) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'sing in successful',
+                    })
+                    navigate('/')
+                }
             })
             .catch(err => {
-                console.log(err)
                 if (err) {
                     Swal.fire({
                         icon: 'error',
@@ -94,6 +76,7 @@ const Login = () => {
                 }
             })
     }
+
     return (
         <div className="flex flex-col justify-center items-center h-screen  bg-opacity-60">
             <div className=' border bg-[#c94428] bg-opacity-20 border-[#c94428]  rounded-xl shadow-xl  p-10'>

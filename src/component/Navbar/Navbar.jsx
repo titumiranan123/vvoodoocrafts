@@ -25,6 +25,8 @@ const Navbar = () => {
     const singout = () => {
         logOut()
             .then(res => {
+                localStorage.removeItem('access_token')
+                location.reload()
                 Swal.fire({
                     icon: 'success',
                     title: 'Logout successful',
