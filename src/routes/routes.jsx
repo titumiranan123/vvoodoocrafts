@@ -13,6 +13,8 @@ import Forgetpassword from "../page/UserAuthentication Page/Forgetpassword";
 import ErrorPage from "../page/Errorpage/Errorpage";
 import UpdateFrom from "../page/dashbord/updateProductform/UpdateProductform";
 import PrivateRoute from "./PrivateRoute";
+import AllProducts from "../page/Allproduct/AllProducts";
+import Productlayout from "../Layout/Productlayout";
 
 
 
@@ -29,6 +31,36 @@ const routes = createBrowserRouter([
             {
                 path: "/cart",
                 element: <PrivateRoute><Mycart /></PrivateRoute>
+            },
+            {
+                path: "/shop",
+                element: <Productlayout />,
+                children: [
+                    {
+                        path: 'allproduct',
+                        element: <AllProducts />
+                    },
+                    {
+                        path: 'category/men/belt',
+                        element: <div>men belt</div>
+                    },
+                    {
+                        path: 'category/men/sandal',
+                        element: <div>men sabdal</div>
+                    },
+                    {
+                        path: 'category/men/loafer',
+                        element: <div>men loafer</div>
+                    },
+                    {
+                        path: 'category/men/half_shoe',
+                        element: <div>men half_shoe</div>
+                    },
+                    {
+                        path: 'category/men/shoe',
+                        element: <div>men shoe</div>
+                    },
+                ]
             },
             {
                 path: "/payment",

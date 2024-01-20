@@ -54,8 +54,6 @@ const Navbar = () => {
             {title}
         </Link>)
     }
-
-
     const navItems = (
         <nav className='nav'>
             <ul className="flex justify-center gap-4 items-center relative w-full">
@@ -63,20 +61,20 @@ const Navbar = () => {
                 <li className=""><a href="#">About</a></li>
                 <li className=" relative">
 
-                    <a className='flex justify-center items-center gap-2' href="allproducts"> All Products <FaAngleDown /> </a>
+                    <a className='flex justify-center items-center gap-2' href="/shop/allproduct"> All Products <FaAngleDown /> </a>
                     <ul
                         className={`bg-white border p-6  submenu_1`}
                     >
                         <li className='hover-me ' >
-                            <a href="#">Men</a>
+                            <a href="">Men</a>
                             <ul
                                 className={`bg-white border p-6  submenus`}
                             >
-                                <li><a href="#">Belt</a></li>
-                                <li><a href="#">Sandal </a></li>
-                                <li><a href="#">Loafer</a></li>
-                                <li><a href="#">Half shoe</a></li>
-                                <li><a href="#">Shoe </a></li>
+                                <li><a href="/shop/category/men/belt">Belt</a></li>
+                                <li><a href="/shop/category/men/sandal">Sandal </a></li>
+                                <li><a href="/shop/category/men/loafer">Loafer</a></li>
+                                <li><a href="/shop/category/men/half_shoe">Half shoe</a></li>
+                                <li><a href="shoe">Shoe </a></li>
                             </ul>
                         </li>
                         <li className='hover-me '>
@@ -84,11 +82,11 @@ const Navbar = () => {
                             <ul
                                 className={`bg-white border p-6  submenus`}
                             >
-                                <li><a href="#">Belt </a></li>
-                                <li><a href="#">Purse</a></li>
-                                <li><a href="#">Hand Bag </a></li>
-                                <li><a href="#">Sandal  </a></li>
-                                <li><a href="#">shoe </a></li>
+                                <li><a href="/shop/category/men/belt">Belt </a></li>
+                                <li><a href="/shop/category/men/purse">Purse</a></li>
+                                <li><a href="/shop/category/men/hand_bag">Hand Bag </a></li>
+                                <li><a href="/shop/category/men/sandal">Sandal  </a></li>
+                                <li><a href="/shop/category/men/shoe">shoe </a></li>
                             </ul>
 
                         </li>
@@ -97,9 +95,9 @@ const Navbar = () => {
                             <ul
                                 className={`bg-white border p-6  submenus`}
                             >
-                                <li><a href="#">Belt</a></li>
-                                <li><a href="#">Sandal </a></li>
-                                <li><a href="#">Shoe </a></li>
+                                <li><a href="/shop/category/men/belt">Belt</a></li>
+                                <li><a href="/shop/category/men/belt">Sandal </a></li>
+                                <li><a href="/shop/category/men/belt">Shoe </a></li>
                             </ul>
                         </li>
                         <li className='hover-me '>
@@ -206,7 +204,7 @@ const Navbar = () => {
                             <li className="">
                                 <a
                                     className='flex items-center '
-                                    href="# "
+                                    href="/shop/allproduct"
                                     onClick={() => setProductOpen(!isProductOpen)}
                                 >
                                     All Products <FaAngleDown />
@@ -218,7 +216,7 @@ const Navbar = () => {
                                 >
                                     <ul className="categories ">
                                         <li className='text-sm'>
-                                            <a onClick={() => setMen(!isMen)} href="#">Men</a>
+                                            <a onClick={() => setMen(!isMen)} href="/category/men">Men</a>
                                             <div
                                                 className={`flex flex-col gap-1 border bg-white p-4 ${!isMen ? 'hidden' : ''}`}
                                             >

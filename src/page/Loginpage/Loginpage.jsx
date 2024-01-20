@@ -76,7 +76,6 @@ const Login = () => {
                 }
             })
     }
-
     return (
         <div className="flex flex-col justify-center items-center h-screen  bg-opacity-60">
             <div className=' border bg-[#c94428] bg-opacity-20 border-[#c94428]  rounded-xl shadow-xl  p-10'>

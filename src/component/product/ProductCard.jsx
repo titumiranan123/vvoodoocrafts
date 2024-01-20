@@ -79,7 +79,7 @@ const ProductCart = () => {
     }
     return (
         <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2">
-            {products.map((product) => (
+            {products.slice(0, 4).map((product) => (
                 <motion.div
                     key={product?._id}
                     className="m-4 p-4 max-w-xs border rounded-lg shadow-md"
