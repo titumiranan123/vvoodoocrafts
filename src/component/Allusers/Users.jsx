@@ -6,13 +6,18 @@ const Users = () => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        fetch('https://chamrabari-backend.vercel.app/user')
+        fetch('http://localhost:3001/api/v1/user', {
+            method: 'GET',
+            headers: {
+                authorization: `bearer ${localStorage.getItem('access_token')}`
+            }
+        })
             .then(res => res.json())
             .then(data => setUsers(data))
             .catch(error => console.error(error));
     }, []);
-    const { data } = users;
-    console.log(data)
+
+    console.log(users)
 
 
     return (
@@ -25,17 +30,13 @@ const Users = () => {
                     <thead className="text-xs text-secondary-700 uppercase bg-secondary-50 dark:bg-secondary-700 dark:text-secondary-400">
                         <tr>
                             <th scope="col" className="px-6 py-3">
-                                Name & Email
+                                Name
                             </th>
+
                             <th scope="col" className="px-6 py-3">
-                                ID
+                                Email
                             </th>
-                            <th scope="col" className="px-6 py-3">
-                                Phone
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                Gender
-                            </th>
+
                             <th scope="col" className="px-6 py-3">
                                 Role
                             </th>
@@ -45,14 +46,27 @@ const Users = () => {
                             </th>
                         </tr>
                     </thead>
-                    {/* <tbody>
+                    <tbody>
                         {
-                            data?.map(user => <tr>
-                                <td className="px-6 py-4">{user.name}</td>
-                                <td className="px-6 py-4">{user.email}</td>
+                            users?.map(user => <tr key={user._id}>
+                                <th scope="col" className="px-6 py-3">
+                                    {user.name}
+                                </th>
+
+                                <th scope="col" className="px-6 py-3">
+                                    {user.email}
+                                </th>
+
+                                <th scope="col" className="px-6 cursor-pointer py-3">
+                                    {user.role}
+                                </th>
+
+                                <th scope="col" className="px-6 bg-red-500 btn py-3">
+                                    Delete
+                                </th>
                             </tr>)
                         }
-                    </tbody> */}
+                    </tbody>
                 </table>
             </div>
         </div>
