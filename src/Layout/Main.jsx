@@ -5,7 +5,6 @@ import Navbar from '../component/Navbar/Navbar';
 
 
 const Main = () => {
-
     return (
         <div className='lg:max-w-[1440px] mx-auto px-4'>
             <Navbar />

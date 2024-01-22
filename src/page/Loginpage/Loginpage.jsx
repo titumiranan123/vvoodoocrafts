@@ -3,9 +3,11 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { Authcontext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { useDispatch } from 'react-redux';
 
 const Login = () => {
     const { loginwithGoogle } = useContext(Authcontext);
+    const dispatch = useDispatch();
 
     const {
         register,
@@ -29,15 +31,16 @@ const Login = () => {
                 return response.json();
             })
             .then(parsedResponse => {
-                console.log(parsedResponse)
+                // console.log(parsedResponse)
                 localStorage.setItem('access_token', parsedResponse.token)
                 if (parsedResponse.message === "Login Successfull") {
-                    navigate('/')
+
                     Swal.fire({
                         icon: 'success',
                         title: 'Login in Successfull',
-
                     })
+                    dispatch(Login({ token: parsedResponse.token, user: parsedResponse.user }))
+                    navigate('/')
                 }
 
             })

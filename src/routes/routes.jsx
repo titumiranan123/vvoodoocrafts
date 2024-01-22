@@ -15,6 +15,7 @@ import UpdateFrom from "../page/dashbord/updateProductform/UpdateProductform";
 import PrivateRoute from "./PrivateRoute";
 import AllProducts from "../page/Allproduct/AllProducts";
 import Productlayout from "../Layout/Productlayout";
+import CategoryProduct from "../page/CategoryProduct/CategoryProduct";
 
 
 
@@ -41,25 +42,11 @@ const routes = createBrowserRouter([
                         element: <AllProducts />
                     },
                     {
-                        path: 'category/men/belt',
-                        element: <div>men belt</div>
+                        path: 'category/:catId/:subcate',
+                        element: <CategoryProduct />,
+                        // loader: ({ params }) => [params.catId, params.subcate]
                     },
-                    {
-                        path: 'category/men/sandal',
-                        element: <div>men sabdal</div>
-                    },
-                    {
-                        path: 'category/men/loafer',
-                        element: <div>men loafer</div>
-                    },
-                    {
-                        path: 'category/men/half_shoe',
-                        element: <div>men half_shoe</div>
-                    },
-                    {
-                        path: 'category/men/shoe',
-                        element: <div>men shoe</div>
-                    },
+
                 ]
             },
             {

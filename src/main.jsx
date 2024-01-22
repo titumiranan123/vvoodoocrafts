@@ -11,6 +11,9 @@ import {
 } from '@tanstack/react-query'
 import { Suspense } from 'react';
 import Loader from './component/Utilitis/Loader.jsx';
+import { Provider } from 'react-redux';
+import store from './redux/store.js';
+
 
 
 // Create a client
@@ -26,7 +29,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
   <QueryClientProvider client={queryClient}>
     <Suspense fallback={<Loader />}>
-      <AuthProvider><RouterProvider router={routes} /></AuthProvider>
+      <Provider store={store}>
+        <AuthProvider><RouterProvider router={routes} /></AuthProvider>
+      </Provider>
     </Suspense>
 
   </QueryClientProvider>

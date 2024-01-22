@@ -73,9 +73,9 @@ const Navbar = () => {
                             >
                                 <li><a href="/shop/category/men/belt">Belt</a></li>
                                 <li><a href="/shop/category/men/sandal">Sandal </a></li>
-                                <li><a href="/shop/category/men/loafer">Loafer</a></li>
-                                <li><a href="/shop/category/men/half_shoe">Half shoe</a></li>
-                                <li><a href="shoe">Shoe </a></li>
+                                <li><a href="/shop/category/men/loffer">Loffer</a></li>
+                                <li><a href="/shop/category/men/half-shoe">Half shoe</a></li>
+                                <li><a href="/shop/category/men/shoe">Shoe </a></li>
                             </ul>
                         </li>
                         <li className='hover-me '>
