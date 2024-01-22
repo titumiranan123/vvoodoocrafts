@@ -83,11 +83,11 @@ const Navbar = () => {
                             <ul
                                 className={`bg-white border p-6  submenus`}
                             >
-                                <li><a href="/shop/category/men/belt">Belt </a></li>
-                                <li><a href="/shop/category/men/purse">Purse</a></li>
-                                <li><a href="/shop/category/men/hand_bag">Hand Bag </a></li>
-                                <li><a href="/shop/category/men/sandal">Sandal  </a></li>
-                                <li><a href="/shop/category/men/shoe">shoe </a></li>
+                                <li><a href="/shop/category/women/belt">Belt </a></li>
+                                <li><a href="/shop/category/women/purse">Purse</a></li>
+                                <li><a href="/shop/category/women/hand-bag">Hand Bag </a></li>
+                                <li><a href="/shop/category/women/sandal">Sandal  </a></li>
+                                <li><a href="/shop/category/women/shoe">shoe </a></li>
                             </ul>
 
                         </li>
@@ -96,9 +96,9 @@ const Navbar = () => {
                             <ul
                                 className={`bg-white border p-6  submenus`}
                             >
-                                <li><a href="/shop/category/men/belt">Belt</a></li>
-                                <li><a href="/shop/category/men/belt">Sandal </a></li>
-                                <li><a href="/shop/category/men/belt">Shoe </a></li>
+                                <li><a href="/shop/category/children/belt">Belt</a></li>
+                                <li><a href="/shop/category/children/sandal">Sandal </a></li>
+                                <li><a href="/shop/category/children/shoe">Shoe </a></li>
                             </ul>
                         </li>
                         <li className='hover-me '>
@@ -106,16 +106,16 @@ const Navbar = () => {
                             <ul
                                 className={`bg-white border p-6  submenus`}
                             >
-                                <li><a href="#">Wallet</a></li>
-                                <li><a href="#">Mobile wallet</a></li>
-                                <li><a href="#">Card Holder</a></li>
-                                <li><a href="#">Key Ring</a></li>
-                                <li><a href="#">Laptop Cover</a></li>
-                                <li><a href="#">Jacket</a></li>
-                                <li><a href="#">Side Bag</a></li>
+                                <li><a href="/shop/category/children/wallet">Wallet</a></li>
+                                <li><a href="/shop/category/children/mobile-wallet">Mobile wallet</a></li>
+                                <li><a href="/shop/category/children/card-holder">Card Holder</a></li>
+                                <li><a href="/shop/category/children/key-ring">Key Ring</a></li>
+                                <li><a href="/shop/category/children/laptop-cover">Laptop Cover</a></li>
+                                <li><a href="/shop/category/children/jacket">Jacket</a></li>
+                                <li><a href="/shop/category/children/side-bag">Side Bag</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Gift Box</a></li>
+                        <li><a href="/shop/category/children/gift">Gift Box</a></li>
 
                     </ul>
                 </li>

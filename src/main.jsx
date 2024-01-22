@@ -26,7 +26,6 @@ const queryClient = new QueryClient({
 })
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-
   <QueryClientProvider client={queryClient}>
     <Suspense fallback={<Loader />}>
       <Provider store={store}>
