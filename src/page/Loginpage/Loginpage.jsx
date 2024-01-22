@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Authcontext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { useDispatch } from 'react-redux';
+import { login } from '../../features/userSlice';
 
 const Login = () => {
     const { loginwithGoogle } = useContext(Authcontext);
@@ -31,29 +32,26 @@ const Login = () => {
                 return response.json();
             })
             .then(parsedResponse => {
-                // console.log(parsedResponse)
-                localStorage.setItem('access_token', parsedResponse.token)
                 if (parsedResponse.message === "Login Successfull") {
-
+                    dispatch(login({ token: parsedResponse.token, user: parsedResponse.user }))
                     Swal.fire({
                         icon: 'success',
                         title: 'Login in Successfull',
                     })
-                    dispatch(Login({ token: parsedResponse.token, user: parsedResponse.user }))
                     navigate('/')
                 }
 
             })
             .catch(error => {
                 console.error('There was a problem with the fetch request:', error);
-                // if (error) {
-                //     Swal.fire({
-                //         icon: 'error',
-                //         title: 'Oops...',
-                //         text: 'Something went wrong!',
+                if (error) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!',
 
-                //     })
-                // }
+                    })
+                }
 
             });
     };

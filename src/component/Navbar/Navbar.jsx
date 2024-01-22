@@ -7,6 +7,8 @@ import './navbar.css'
 import { Authcontext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import useCart from '../../hook/useCart';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../features/userSlice';
 const Navbar = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [isProductOpen, setProductOpen] = useState(false);
@@ -15,9 +17,10 @@ const Navbar = () => {
     const [isChildren, setChildren] = useState(false);
     const [isUnisex, setUnisex] = useState(false);
     const [data] = useCart()
-    const { user, logOut } = useContext(Authcontext);
-
+    const { logOut } = useContext(Authcontext);
+    const manuluser = useSelector(state => state.user.user)
     const router = useLocation()
+    const dispatch = useDispatch()
 
     const toggleNav = () => {
         setIsNavOpen(!isNavOpen);
@@ -26,8 +29,7 @@ const Navbar = () => {
     const singout = () => {
         logOut()
             .then(res => {
-                localStorage.removeItem('access_token')
-                location.reload()
+                dispatch(logout())
                 Swal.fire({
                     icon: 'success',
                     title: 'Logout successful',
@@ -55,6 +57,7 @@ const Navbar = () => {
             {title}
         </Link>)
     }
+
     const navItems = (
         <nav className='nav'>
             <ul className="flex justify-center gap-4 items-center relative w-full">
@@ -144,7 +147,7 @@ const Navbar = () => {
                         </button>
                     </Link>
                     {
-                        !user ?
+                        !manuluser ?
                             <>
                                 <Link to='/login'>Login</Link>
                                 <span className='text-lg'>&#47;</span>
@@ -180,7 +183,7 @@ const Navbar = () => {
                         </button>
                     </Link>
                     {
-                        !user ?
+                        !manuluser ?
                             <>
                                 <Link to='/login'>Login</Link>
                                 <span className='text-lg'>&#47;</span>
@@ -281,8 +284,6 @@ const Navbar = () => {
                                 </div>
                             </li>
                             <li className=""><a href="#">Blog</a></li>
-
-
                         </ul>
 
                     </div>
