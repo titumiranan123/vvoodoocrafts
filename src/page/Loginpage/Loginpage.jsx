@@ -4,12 +4,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Authcontext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { useDispatch } from 'react-redux';
-import { login } from '../../features/userSlice';
+import { login, logout } from '../../features/userSlice';
 
 const Login = () => {
     const { loginwithGoogle } = useContext(Authcontext);
     const dispatch = useDispatch();
-
     const {
         register,
         handleSubmit,
@@ -18,6 +17,9 @@ const Login = () => {
     const navigate = useNavigate()
 
     const onSubmit = (data) => {
+        setTimeout(() => {
+            dispatch(logout())
+        }, 20000);
         fetch('https://chamrabari.vercel.app/api/v1/login', {
             method: 'POST',
             headers: {

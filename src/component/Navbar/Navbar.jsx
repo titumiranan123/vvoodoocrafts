@@ -27,6 +27,7 @@ const Navbar = () => {
     };
     const navigate = useNavigate()
     const singout = () => {
+
         logOut()
             .then(res => {
                 dispatch(logout())
