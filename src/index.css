@@ -2,13 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 p,
 h1,
 h2,
-h3,
-li {
+h3 {
     color: #4B4F58;
 }
 

@@ -51,6 +51,5 @@ nav ul li:hover .submenu_1 li:last-child {
     margin-left: 140px;
     background-color: #fff;
     color: #ee6a50;
-
     transition: all ease o.3s;
 }

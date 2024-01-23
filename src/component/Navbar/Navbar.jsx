@@ -120,7 +120,6 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li><a href="/shop/category/children/gift">Gift Box</a></li>
-
                     </ul>
                 </li>
                 <li className=""><a href="#">Blog</a></li>
@@ -198,95 +197,117 @@ const Navbar = () => {
             </div>
             {isNavOpen && (
                 <motion.div
-                    className='z-50 w-full absolute right-0 bg-white overflow-y-scroll lg:hidden'
+                    className='z-50 w-full p-5 absolute right-0 bg-[#C94428] text-white md:text-[#4B4F58] md:bg-white overflow-y-scroll lg:hidden'
                     initial={{ x: 100, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                 >
                     <div className=' '>
-                        <ul className="menu flex flex-col gap-2  p-10 ">
-                            <li className=""><a href="/">Home</a></li>
-                            <li className=""><a href="#">About</a></li>
-                            <li className="">
-                                <a
-                                    className='flex items-center '
-                                    href="/shop/allproduct"
+                        <div className="menu flex flex-col gap-5  p-10 ">
+                            <div><Link to={'/'} className='text-[16px] font-[600]'>Home</Link></div>
+                            <div className='text-[16px] font-[600]'><Link to={'/about'}>
+                                About
+                            </Link></div>
+                            <div className="">
+                                <Link
+                                    className='flex items-center text-[16px] font-[600]'
                                     onClick={() => setProductOpen(!isProductOpen)}
                                 >
                                     All Products <FaAngleDown />
-                                </a>
-                            </li>
-                            <li id="allProducts">
+                                </Link>
+                            </div>
+                            <div id="allProducts" className='-mt-5'>
                                 <div
-                                    className={`flex flex-col gap-1 border bg-white p-4 ${!isProductOpen ? 'hidden' : ''}`}
+                                    className={`flex flex-col gap-1 border md:bg-white bg-[#C94428]  p-4 ${!isProductOpen ? 'hidden' : ''}`}
                                 >
-                                    <ul className="categories ">
-                                        <li className='text-sm'>
-                                            <a onClick={() => setMen(!isMen)} href="/category/men">Men</a>
+                                    <div className="categories flex flex-col gap-5 ">
+                                        <div >
+                                            <Link className='text-[16px] font-[500]' onClick={() => setMen(!isMen)} >Men</Link>
                                             <div
-                                                className={`flex flex-col gap-1 border bg-white p-4 ${!isMen ? 'hidden' : ''}`}
+                                                className={`flex flex-col gap-1 border md:bg-white bg-[#C94428]  p-4 ${!isMen ? 'hidden' : ''}`}
                                             >
                                                 <ul
-                                                    className={`bg-white border p-6  `}
+                                                    className={`md:bg-white bg-[#C94428] flex gap-3 flex-col border p-6 text-[16px]`}
                                                 >
-                                                    <li><a href="#">Belt</a></li>
-                                                    <li><a href="#">Sandal </a></li>
-                                                    <li><a href="#">Loafer</a></li>
-                                                    <li><a href="#">Half shoe</a></li>
-                                                    <li><a href="#">Shoe </a></li>
+                                                    <li><Link to="/shop/category/men/belt">Belt</Link></li>
+                                                    <li><Link to="/shop/category/men/sandal">Sandal </Link></li>
+                                                    <li><Link to="/shop/category/men/loffer">Loffer</Link></li>
+                                                    <li><Link to="/shop/category/men/half-shoe">Half shoe</Link></li>
+                                                    <li><Link to="/shop/category/men/shoe">Shoe </Link></li>
                                                 </ul>
                                             </div>
-                                        </li>
-                                        <li>
-                                            <a onClick={() => setWomen(!isWomen)} href="#">Women</a>
+                                        </div>
+                                        <div className='text-[16px] md:bg-white bg-[#C94428]  font-[500]'>
+                                            <Link onClick={() => setWomen(!isWomen)} >Women</Link>
                                             <div
-                                                className={`flex flex-col gap-1 border bg-white p-4 ${!isWomen ? 'hidden' : ''}`}
+                                                className={`flex flex-col gap-1 border md:bg-white bg-[#C94428]  p-4 ${!isWomen ? 'hidden' : ''}`}
                                             >
                                                 <ul
-                                                    className={`bg-white border p-6  `}
+                                                    className={`md:bg-white bg-[#C94428]  border p-6  `}
                                                 >
-                                                    <li><a href="#">Belt </a></li>
-                                                    <li><a href="#">Purse</a></li>
-                                                    <li><a href="#">Hand Bag </a></li>
-                                                    <li><a href="#">Sandal  </a></li>
-                                                    <li><a href="#">shoe </a></li>
+                                                    <li><Link to="/shop/category/women/belt">Belt </Link></li>
+                                                    <li><Link to="/shop/category/women/purse">Purse</Link></li>
+                                                    <li><Link to="/shop/category/women/hand-bag">Hand Bag </Link></li>
+                                                    <li><Link to="/shop/category/women/sandal">Sandal  </Link></li>
+                                                    <li><Link to="/shop/category/women/shoe">shoe </Link></li>
                                                 </ul>
                                             </div>
-                                        </li>
-                                        <li>
-                                            <a onClick={() => setChildren(!isChildren)} href="#">Children</a>
-                                            <div
-                                                className={`flex flex-col gap-1 border bg-white p-4 ${!isChildren ? 'hidden' : ''}`}
+                                        </div>
+                                        <div className='text-[16px] font-[500]'>
+                                            <Link onClick={() => setChildren(!isChildren)} >Children</Link>
+                                            <ul
+                                                className={`flex flex-col gap-1 border  md:bg-white bg-[#C94428] p-4 ${!isChildren ? 'hidden' : ''}`}
                                             >
-                                                <li><a href="#">Belt</a></li>
-                                                <li><a href="#">Sandal </a></li>
-                                                <li><a href="#">Shoe </a></li>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a onClick={() => setUnisex(!isUnisex)} href="#">Unisex</a>
+                                                <li><Link to="/shop/category/children/belt">Belt</Link></li>
+                                                <li><Link to="/shop/category/children/sandal">Sandal </Link></li>
+                                                <li><Link to="/shop/category/children/shoe">Shoe </Link></li>
+                                            </ul>
+                                        </div>
+                                        <div className='text-[16px] font-[500]'>
+                                            <Link onClick={() => setUnisex(!isUnisex)} >Unisex</Link>
                                             <div
-                                                className={`flex flex-col gap-1 border bg-white p-4 ${!isUnisex ? 'hidden' : ''}`}
+                                                className={`flex flex-col gap-1 border  md:bg-white bg-[#C94428] p-4 ${!isUnisex ? 'hidden' : ''}`}
                                             >
                                                 <ul
-                                                    className={`bg-white border p-6  `}
+                                                    className={` md:bg-white bg-[#C94428] border p-6  `}
                                                 >
-                                                    <li><a href="#">Wallet</a></li>
-                                                    <li><a href="#">Mobile wallet</a></li>
-                                                    <li><a href="#">Card Holder</a></li>
-                                                    <li><a href="#">Key Ring</a></li>
-                                                    <li><a href="#">Laptop Cover</a></li>
-                                                    <li><a href="#">Jacket</a></li>
-                                                    <li><a href="#">Side Bag</a></li>
+                                                    <li><Link to="/shop/category/children/wallet">Wallet</Link></li>
+                                                    <li><Link to="/shop/category/children/mobile-wallet">Mobile wallet</Link></li>
+                                                    <li><Link to="/shop/category/children/card-holder">Card Holder</Link></li>
+                                                    <li><Link to="/shop/category/children/key-ring">Key Ring</Link></li>
+                                                    <li><Link to="/shop/category/children/laptop-cover">Laptop Cover</Link></li>
+                                                    <li><Link to="/shop/category/children/jacket">Jacket</Link></li>
+                                                    <li><Link to="/shop/category/children/side-bag">Side Bag</Link></li>
                                                 </ul>
                                             </div>
-                                        </li>
-                                        <li><a href="#">Gift Box</a></li>
-                                    </ul>
+                                        </div>
+                                        <div className='text-[16px] font-[500]'><Link to="#">Gift Box</Link></div>
+                                    </div>
                                 </div>
-                            </li>
-                            <li className=""><a href="#">Blog</a></li>
-                        </ul>
+                            </div>
+                            <div className="text-[16px] font-[600]"><Link to="#">Blog</Link></div>
+                        </div>
+                        <motion.div
+                            className="relative flex gap-5  md:hidden items-center ms-9"
+                        >
 
+                            {
+                                !manuluser ?
+                                    <>
+                                        <Link className='btn' to='/login'>Login</Link>
+                                        <span className='text-lg'> &#47;</span>
+                                        <Link className='btn' to='/singup'>Singup</Link>
+                                    </>
+                                    : <div className='flex items-center gap-5'>
+                                        <Link to={'/cart'} className="relative">
+                                            <button className="btn">
+                                                <span className='text-lg'> <FaShoppingCart className='text-2xl' /></span>
+                                                <div className="badge bg-[#C94428]">{data ? <>{data.length}</> : <>0</>}</div>
+                                            </button>
+                                        </Link>
+                                        <button onClick={singout} className='btn'>Log out</button>
+                                    </div>
+                            }
+                        </motion.div>
                     </div>
                 </motion.div>
             )}
