@@ -20,6 +20,7 @@ const Products = () => {
             Product_details: data.Product_details,
             image_url: based64,
             price: data.price,
+            discount: data?.discout_price
         }
 
         fetch('http://localhost:3001/products', {
@@ -36,7 +37,7 @@ const Products = () => {
                 return response.json(); // Parse the JSON response
             })
             .then(parsedResponse => {
-                // Handle the parsed response data
+
                 console.log(parsedResponse);
                 if (parsedResponse.message === 'success') {
                     Swal.fire(
@@ -150,6 +151,19 @@ const Products = () => {
                         name="price"
                         className="border border-[#C94428] rounded-md px-3 py-2 mt-1 focus:outline-none focus:ring focus:border-blue-300 w-full"
                         {...register("price")}
+                    />
+
+                </div>
+                <div className="mb-4">
+                    <label htmlFor="price" className="block text-gray-700">
+                        Discount  Price:
+                    </label>
+                    <input
+                        type="text"
+                        id="discount_price"
+                        name="discount_price"
+                        className="border border-[#C94428] rounded-md px-3 py-2 mt-1 focus:outline-none focus:ring focus:border-blue-300 w-full"
+                        {...register("discount_price")}
                     />
 
                 </div>

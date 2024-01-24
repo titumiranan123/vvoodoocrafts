@@ -16,6 +16,8 @@ import PrivateRoute from "./PrivateRoute";
 import AllProducts from "../page/Allproduct/AllProducts";
 import Productlayout from "../Layout/Productlayout";
 import CategoryProduct from "../page/CategoryProduct/CategoryProduct";
+import About from "../component/about/About";
+import Blogpage from "../page/Blog/Blogpage";
 
 
 
@@ -28,6 +30,14 @@ const routes = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />
+            },
+            {
+                path: "/about",
+                element: <About />
+            },
+            {
+                path: "/blog",
+                element: <Blogpage />
             },
             {
                 path: "/cart",

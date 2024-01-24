@@ -1,27 +1,10 @@
-import { useState } from 'react';
 
 import Swal from 'sweetalert2';
 import useProduct from '../../../hook/useProduct';
 import { Link } from 'react-router-dom';
 
 const ProductCard = ({ item }) => {
-
-    const [quantity, setQuantity] = useState(1);
-    const [price, setPrice] = useState(parseFloat(item.price));
-    const increaseQuantity = () => {
-        setQuantity(prevQuantity => prevQuantity + 1);
-        setPrice(prevPrice => parseFloat(prevPrice) + price);
-    };
-
-    const decreaseQuantity = () => {
-        if (quantity > 1) {
-            setQuantity(prevQuantity => prevQuantity - 1);
-            setPrice(prevPrice => parseFloat(prevPrice) - price);
-        }
-    };
-
     const [, refetch] = useProduct()
-
     const removeProduct = (id) => {
         Swal.fire({
             title: "Are you sure?",
@@ -65,22 +48,7 @@ const ProductCard = ({ item }) => {
                     <p className='text-xl font-bold'>{item.product_name}</p>
                 </div>
                 <div>
-                    <p> Price: {price}Tk.</p>
-                    <div className="flex items-center">
-                        <button
-                            className="text-xs bg-gray-300 rounded-full w-6 h-6 flex items-center justify-center"
-                            onClick={decreaseQuantity}
-                        >
-                            -
-                        </button>
-                        <span className="text-gray-700 mx-2">{quantity}</span>
-                        <button
-                            className="text-xs bg-gray-300 rounded-full w-6 h-6 flex items-center justify-center"
-                            onClick={increaseQuantity}
-                        >
-                            +
-                        </button>
-                    </div>
+                    <p> Price: {item.price}Tk.</p>
                 </div>
                 <div className='flex gap-5'>
                     {/* You can open the modal using document.getElementById('ID').showModal() method */}

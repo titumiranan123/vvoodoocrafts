@@ -7,21 +7,22 @@ const CategoryProduct = () => {
     const [data, setDate] = useState([]);
 
     useEffect(() => {
-        const filteredData = product.filter(product => {
+        const filteredData = products.filter(product => {
+            console.log(product)
             // Correct the condition: add parentheses after toLowerCase
             return product.category.toLowerCase() === catId && product.sub_category.toLowerCase() === subcate;
         });
 
         setDate(filteredData);
     }, [catId, subcate]);
-    console.log(catId, subcate, data)
+
     return (
-        <div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {
                 data.length === 0 && <div className="flex justify-center items-center h-screen text-lg ">No Product Found</div>
             }
             {
-                data?.map((pt, indx) => <ProductCard key={indx} img={pt.image_url} name={pt.product_name} price={pt.price} previous_price={pt.previous_price} />)
+                data?.map((pt, indx) => <ProductCard key={indx} product={pt} />)
             }
         </div>
     );
@@ -29,7 +30,7 @@ const CategoryProduct = () => {
 
 export default CategoryProduct;
 
-const product = [
+const products = [
     {
         "product_name": "Classic Leather Belt",
         "category": "Men",

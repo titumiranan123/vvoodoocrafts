@@ -7,10 +7,13 @@ const useCart = () => {
 
     const user = useSelector(state => state.user.user)
 
-
     const { data, refetch, isLoading } = useQuery({
-        queryKey: ['cart', user?.email],
+        queryKey: user?.email && ['cart', user?.email],
         queryFn: async () => {
+            if (!user?.email) {
+                return null;
+
+            }
             const response = await fetch(`http://localhost:3001/api/v1/cart?email=${user?.email}`,
                 {
                     method: 'GET',

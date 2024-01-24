@@ -63,7 +63,7 @@ const Navbar = () => {
         <nav className='nav'>
             <ul className="flex justify-center gap-4 items-center relative w-full">
                 <li className=""><CustomLink href={'/'} title={'Home'} /></li>
-                <li className=""><a href="#">About</a></li>
+                <li className=""><a href="about">About</a></li>
                 <li className=" relative">
 
                     <a className='flex justify-center items-center gap-2' href="/shop/allproduct"> All Products <FaAngleDown /> </a>
@@ -122,7 +122,7 @@ const Navbar = () => {
                         <li><a href="/shop/category/children/gift">Gift Box</a></li>
                     </ul>
                 </li>
-                <li className=""><a href="#">Blog</a></li>
+                <li className=""><a href="/blog">Blog</a></li>
                 <li className=""><a href="/dashboard">Dashboard</a></li>
 
 

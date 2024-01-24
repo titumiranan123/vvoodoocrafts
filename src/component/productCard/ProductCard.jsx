@@ -7,7 +7,7 @@ const ProductCard = ({ product }) => {
 
     const loggedUser = useSelector(state => state.user.user)
     const [, refetch] = useCart()
-    const { name, price, previous_price, image_url } = product;
+    const { price, previous_price, image_url } = product;
     const navigate = useNavigate('/')
     const handalClick = (product) => {
         if (!loggedUser) {
@@ -60,6 +60,7 @@ const ProductCard = ({ product }) => {
 
         }
     }
+    const discoutPrice = (price * (39 / 100)) || previous_price
     return (
         <div>
             <div className="relative m-10  flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-[#C94428] bg-white shadow-md">
@@ -74,7 +75,7 @@ const ProductCard = ({ product }) => {
                     <div className="mt-2 mb-5 flex items-center justify-between">
                         <p>
                             <span className="text-3xl font-bold text-slate-900">${price}</span>
-                            <span className="text-sm text-slate-900 line-through">${previous_price}</span>
+                            <span className="text-sm text-slate-900 line-through">${discoutPrice}</span>
                         </p>
                         <div className="flex items-center">
                             <svg aria-hidden="true" className="h-5 w-5 text-[#C94428]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">

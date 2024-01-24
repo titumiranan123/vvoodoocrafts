@@ -2,7 +2,7 @@ import useProduct from "../../hook/useProduct";
 import ProductCard from "./ProductCard/ProductCard";
 
 const Dashboardhome = () => {
-    const [data] = useProduct()
+    const data = useProduct()
 
     return (
         <div className="h-screen ">
