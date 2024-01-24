@@ -39,7 +39,7 @@ function SignUp() {
     }
     const onSubmit = (data) => {
         console.log(data)
-        fetch('https://chamrabari.vercel.app/api/v1/register', {
+        fetch('http://localhost:3001/api/v1/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -1,23 +1,21 @@
 
 import { useQuery } from "@tanstack/react-query"
-import { useContext } from "react";
-import { Authcontext } from "../provider/AuthProvider";
+import { useSelector } from "react-redux"
+
 
 const useCart = () => {
 
-    const { user, loading } = useContext(Authcontext)
+    const user = useSelector(state => state.user.user)
 
 
     const { data, refetch, isLoading } = useQuery({
         queryKey: ['cart', user?.email],
-        enabled: !loading,
         queryFn: async () => {
-            const response = await fetch(`https://chamrabari-backend.vercel.app/cart?email=${user?.email}`,
-
+            const response = await fetch(`http://localhost:3001/api/v1/cart?email=${user?.email}`,
                 {
                     method: 'GET',
                     headers: {
-                        authorization: `bearer ${localStorage.getItem('access_token')}`
+                        authorization: `bearer ${localStorage.getItem('token')}`
                     }
                 })
             const data = response.json()

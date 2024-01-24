@@ -18,8 +18,8 @@ const CartCard = ({ item }) => {
         }
     };
 
-    const [data, refetch] = useCart()
-    console.log(data, refetch)
+    const [, refetch] = useCart()
+
     const removeFromCart = (id) => {
         Swal.fire({
             title: "Are you sure?",
@@ -31,13 +31,11 @@ const CartCard = ({ item }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-
-                fetch(`https://chamrabari-backend.vercel.app/cart/${id}`, {
+                fetch(`http://localhost:3001/api/v1/cart/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
                     .then(data => {
-
                         if (data.message === "deleted") {
                             refetch();
                             Swal.fire(

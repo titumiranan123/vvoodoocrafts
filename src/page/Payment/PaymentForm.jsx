@@ -20,7 +20,7 @@ const PaymentForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault(); // Uncommented this line
 
-        fetch('https://chamrabari-backend.vercel.app/payment', {
+        fetch('http://localhost:3001/payment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

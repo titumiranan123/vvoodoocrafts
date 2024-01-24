@@ -179,7 +179,7 @@ const Navbar = () => {
                     <Link to={'/cart'} className="relative">
                         <button className="btn">
                             <span className='text-lg'> <FaShoppingCart className='text-2xl' /></span>
-                            <div className="badge bg-[#C94428]">{data ? <>{data.length}</> : <>0</>}</div>
+                            <div className="badge text-white bg-[#C94428]">{data ? <>{data.length}</> : <>0</>}</div>
                         </button>
                     </Link>
                     {
@@ -301,7 +301,7 @@ const Navbar = () => {
                                         <Link to={'/cart'} className="relative">
                                             <button className="btn">
                                                 <span className='text-lg'> <FaShoppingCart className='text-2xl' /></span>
-                                                <div className="badge bg-[#C94428]">{data ? <>{data.length}</> : <>0</>}</div>
+                                                <div className="badge text-white bg-[#C94428]">{data ? <>{data.length}</> : <>0</>}</div>
                                             </button>
                                         </Link>
                                         <button onClick={singout} className='btn'>Log out</button>

@@ -2,18 +2,18 @@
 import CartCard from "./Cartcard";
 
 import useCart from "../../hook/useCart";
-import Loader from "../../component/Utilitis/Loader";
-
 
 
 const Mycart = () => {
 
     const [data] = useCart();
+    console.log(data)
 
     if (!data) {
-        return <Loader />
+        return (<div>
+            Product Not Found
+        </div>)
     }
-
     return (
         <div className="flex flex-col items-center">
             <h1 className="text-2xl font-bold mt-8 mb-4">Shopping Cart</h1>

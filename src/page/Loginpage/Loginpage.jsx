@@ -19,8 +19,8 @@ const Login = () => {
     const onSubmit = (data) => {
         setTimeout(() => {
             dispatch(logout())
-        }, 20000);
-        fetch('https://chamrabari.vercel.app/api/v1/login', {
+        }, 2000000);
+        fetch('http://localhost:3001/api/v1/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

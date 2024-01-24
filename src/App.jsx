@@ -19,7 +19,7 @@ const App = ({ children }) => {
             return
         }
         if (token) {
-            fetch(`https://chamrabari.vercel.app/api/v1/loggeduser`, {
+            fetch(`http://localhost:3001/api/v1/loggeduser`, {
                 method: 'GET',
                 headers: {
                     authorization: `bearer ${localStorage.getItem('access_token')}`

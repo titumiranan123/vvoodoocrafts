@@ -22,7 +22,7 @@ const Products = () => {
             price: data.price,
         }
 
-        fetch('https://chamrabari-backend.vercel.app/products', {
+        fetch('http://localhost:3001/products', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

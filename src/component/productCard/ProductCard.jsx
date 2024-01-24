@@ -1,11 +1,70 @@
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import useCart from "../../hook/useCart";
+import { useSelector } from "react-redux";
+
+const ProductCard = ({ product }) => {
+
+    const loggedUser = useSelector(state => state.user.user)
+    const [, refetch] = useCart()
+    const { name, price, previous_price, image_url } = product;
+    const navigate = useNavigate('/')
+    const handalClick = (product) => {
+        if (!loggedUser) {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "Please Login fast !!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Please Login"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate('/login')
+                    return;
+                }
+            });
+        }
+        else {
+            const cart = {
+                product_name: product.product_name,
+                category: product.category,
+                sub_category: product.sub_category,
+                Product_details: product.Product_details,
+                image_url: product.image_url,
+                price: product.price,
+                user_email: loggedUser?.email,
+            }
+            fetch('http://localhost:3001/api/v1/cart', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(cart),
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data) {
+                        refetch()
+                    }
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Product Added",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                })
 
 
-const ProductCard = ({ name, price, previous_price, img }) => {
+        }
+    }
     return (
         <div>
             <div className="relative m-10  flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-[#C94428] bg-white shadow-md">
                 <a className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="#">
-                    <img className="object-cover" src={img} alt="product image" />
+                    <img className="object-cover" src={image_url} alt="product image" />
                     <span className="absolute top-0 left-0 m-2 rounded-full bg-[#C94428] px-2 text-center text-sm font-medium text-white">39% OFF</span>
                 </a>
                 <div className="mt-4 px-5 pb-5">
@@ -36,12 +95,12 @@ const ProductCard = ({ name, price, previous_price, img }) => {
                             <span className="mr-2 ml-3 rounded bg-[#C94428] px-2.5 py-0.5 text-xs font-semibold">5.0</span>
                         </div>
                     </div>
-                    <a href="#" className="flex items-center justify-center rounded-md bg-[#C94428] px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-[#C94428] hover:bg-opacity-90 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                    <button onClick={() => handalClick(product)} className="flex items-center justify-center rounded-md bg-[#C94428] px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-[#C94428] hover:bg-opacity-90 focus:outline-none focus:ring-4 focus:ring-blue-300">
                         <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
-                        Add to cart</a
-                    >
+                        Add to cart</button>
+
                 </div>
             </div>
         </div>
