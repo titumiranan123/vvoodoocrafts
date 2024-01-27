@@ -8,7 +8,6 @@ const CategoryProduct = () => {
 
     useEffect(() => {
         const filteredData = products.filter(product => {
-            console.log(product)
             // Correct the condition: add parentheses after toLowerCase
             return product.category.toLowerCase() === catId && product.sub_category.toLowerCase() === subcate;
         });

@@ -1,9 +1,8 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-
-
-
+import useProduct from "../../hook/useProduct";
+import ProductCard from "../productCard/ProductCard";
 
 
 const Products = () => {
@@ -11,18 +10,19 @@ const Products = () => {
     const navigate = useNavigate()
     // console.log(register)
     const onSubmit = async (data) => {
+
         const file = data.image[0]
         const based64 = await covertToBased24(file)
         const productData = {
             product_name: data.product_name,
-            category: data.category,
-            sub_category: data.sub_category,
+            category: data.category.toLowerCase(),
+            sub_category: data.sub_category.toLowerCase(),
             Product_details: data.Product_details,
             image_url: based64,
             price: data.price,
-            discount: data?.discout_price
+            discount: data.discount
         }
-
+        console.log(data)
         fetch('http://localhost:3001/products', {
             method: 'POST',
             headers: {
@@ -60,7 +60,8 @@ const Products = () => {
                 console.error('There was a problem with the fetch request:', error);
             });
     };
-
+    const data = useProduct()
+    console.log(data)
     return (
         <div>
             <div>
@@ -99,10 +100,10 @@ const Products = () => {
                         {...register("category")}
                     >
                         <option value="">Select Category</option>
-                        <option value="Men">Men</option>
-                        <option value="Women">Women</option>
-                        <option value="Children">Children</option>
-                        <option value="Corporate">Corporate</option>
+                        <option value="men">Men</option>
+                        <option value="women">Women</option>
+                        <option value="children">Children</option>
+                        <option value="corporate">Corporate</option>
                     </select>
 
                 </div>
@@ -119,9 +120,14 @@ const Products = () => {
                         {...register("sub_category")}
                     >
                         <option value="">Select Sub Category</option>
-                        <option value="Belt">Belt</option>
-                        <option value="Wallet">Wallet</option>
-                        {/* Add other sub categories based on your schema */}
+                        <option value="belt">Belt</option>
+                        <option value="wallet">Wallet</option>
+                        <option value="long-wallet">Long-Wallet</option>
+                        <option value="purse">purse</option>
+                        <option value="loffer">Loffer</option>
+                        <option value="shoe">Shoe</option>
+                        <option value="sandel">Sandel</option>
+                        <option value="half-shoe">Half Shoe</option>
                     </select>
 
                 </div>
@@ -160,10 +166,10 @@ const Products = () => {
                     </label>
                     <input
                         type="text"
-                        id="discount_price"
-                        name="discount_price"
+                        id="discount"
+                        name="discount"
                         className="border border-[#C94428] rounded-md px-3 py-2 mt-1 focus:outline-none focus:ring focus:border-blue-300 w-full"
-                        {...register("discount_price")}
+                        {...register("discount")}
                     />
 
                 </div>
@@ -176,6 +182,16 @@ const Products = () => {
                     Submit
                 </button>
             </form>
+            <div>
+                <div className="flex flex-col items-center">
+                    <h1 className="text-2xl font-bold mb-8 mt-8 ">New Order </h1>
+                    <div className="flex flex-col gap-10">
+                        {data?.map((item, index) => (
+                            <ProductCard key={index} item={item} />
+                        ))}
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
