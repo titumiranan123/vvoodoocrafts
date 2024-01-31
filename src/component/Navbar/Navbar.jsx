@@ -27,20 +27,17 @@ const Navbar = () => {
     };
     const navigate = useNavigate()
     const singout = () => {
-
         logOut()
             .then(res => {
                 dispatch(logout())
                 Swal.fire({
                     icon: 'success',
                     title: 'Logout successful',
-
                 })
                 console.log(res)
                 navigate('/')
             })
             .catch(err => {
-                console.log(err)
                 if (err) {
                     Swal.fire({
                         icon: 'error',
@@ -65,7 +62,6 @@ const Navbar = () => {
                 <li className=""><CustomLink href={'/'} title={'Home'} /></li>
                 <li className=""><a href="about">About</a></li>
                 <li className=" relative">
-
                     <a className='flex justify-center items-center gap-2' href="/shop/allproduct"> All Products <FaAngleDown /> </a>
                     <ul
                         className={`bg-white border p-6  submenu_1`}

@@ -12,7 +12,6 @@ const useCart = () => {
         queryFn: async () => {
             if (!user?.email) {
                 return null;
-
             }
             const response = await fetch(`http://localhost:3001/api/v1/cart?email=${user?.email}`,
                 {

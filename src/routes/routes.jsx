@@ -18,6 +18,7 @@ import Productlayout from "../Layout/Productlayout";
 import CategoryProduct from "../page/CategoryProduct/CategoryProduct";
 import About from "../component/about/About";
 import Blogpage from "../page/Blog/Blogpage";
+import PaymentSuccess from "../page/payment/PaymentSuccess";
 
 
 
@@ -60,8 +61,8 @@ const routes = createBrowserRouter([
                 ]
             },
             {
-                path: "/payment",
-                element: <PaymentForm />
+                path: "/payment/:productId",
+                element: <PrivateRoute><PaymentForm /></PrivateRoute>
             },
         ]
     },
@@ -80,7 +81,7 @@ const routes = createBrowserRouter([
     },
     {
         path: '/payment/success/:trnId',
-        element: <div>success</div>
+        element: <PaymentSuccess />
     },
     {
         path: '/payment/failed',

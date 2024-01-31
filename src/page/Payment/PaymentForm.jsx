@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 const PaymentForm = () => {
+    const { productId } = useParams()
+    console.log(productId)
     const [paymentData, setPaymentData] = useState({
         name: '',
         phone: '',
@@ -10,19 +13,21 @@ const PaymentForm = () => {
         address: '',
         area: '',
         district: '',
+        productId: productId
     });
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setPaymentData({ ...paymentData, [name]: value });
     };
 
+    console.log(paymentData)
     const handleSubmit = (e) => {
-        e.preventDefault(); // Uncommented this line
+        e.preventDefault();
 
         fetch('http://localhost:3001/payment', {
             method: 'POST',
             headers: {
+                // authorization: `bearer ${localStorage.getItem('token')}`,
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(paymentData),
@@ -44,15 +49,15 @@ const PaymentForm = () => {
     };
     return (
         <div className="container mx-auto mt-8">
-            <form onSubmit={handleSubmit} className="max-w-md mx-auto bg-white p-8 shadow-md">
-                <label className="block mb-4">
+            <form onSubmit={handleSubmit} className="max-w-[1000px] mx-auto bg-white p-8   border-[#c94428] border rounded-lg shadow-2xl">
+                <label className="block mb-4 ">
                     Name:
                     <input
                         type="text"
                         name="name"
                         value={paymentData.name}
                         onChange={handleChange}
-                        className="form-input mt-1 block w-full"
+                        className="form-input mt-1 py-2 px-2 block w-full border-[#c94428] border rounded-md"
                     />
                 </label>
 
@@ -63,7 +68,7 @@ const PaymentForm = () => {
                         name="phone"
                         value={paymentData.phone}
                         onChange={handleChange}
-                        className="form-input mt-1 block w-full"
+                        className="form-input mt-1 py-2 px-2 block w-full border-[#c94428] border rounded-md"
                     />
                 </label>
 
@@ -74,7 +79,7 @@ const PaymentForm = () => {
                         name="quantity"
                         value={paymentData.quantity}
                         onChange={handleChange}
-                        className="form-input mt-1 block w-full"
+                        className="form-input mt-1 py-2 px-2 block w-full border-[#c94428] border rounded-md"
                     />
                 </label>
 
@@ -85,7 +90,7 @@ const PaymentForm = () => {
                         name="deliveryCharge"
                         value={paymentData.deliveryCharge}
                         onChange={handleChange}
-                        className="form-input mt-1 block w-full"
+                        className="form-input mt-1 py-2 px-2 block w-full border-[#c94428] border rounded-md"
                     />
                 </label>
 
@@ -96,7 +101,7 @@ const PaymentForm = () => {
                         name="total_price"
                         value={paymentData.total_price}
                         onChange={handleChange}
-                        className="form-input mt-1 block w-full"
+                        className="form-input mt-1 py-2 px-2 block w-full border-[#c94428] border rounded-md"
                     />
                 </label>
 
@@ -106,7 +111,7 @@ const PaymentForm = () => {
                         name="address"
                         value={paymentData.address}
                         onChange={handleChange}
-                        className="form-input mt-1 block w-full"
+                        className="form-input mt-1 py-2 px-2 block w-full border-[#c94428] border rounded-md"
                     />
                 </label>
 
@@ -117,7 +122,7 @@ const PaymentForm = () => {
                         name="area"
                         value={paymentData.area}
                         onChange={handleChange}
-                        className="form-input mt-1 block w-full"
+                        className="form-input mt-1 py-2 px-2 block w-full border-[#c94428] border rounded-md"
                     />
                 </label>
 
@@ -128,7 +133,7 @@ const PaymentForm = () => {
                         name="district"
                         value={paymentData.district}
                         onChange={handleChange}
-                        className="form-input mt-1 block w-full"
+                        className="form-input mt-1 py-2 px-2 block w-full border-[#c94428] border rounded-md"
                     />
                 </label>
 

@@ -7,8 +7,8 @@ const Dashboardhome = () => {
 
     const info = [
         {
-            name: 'Date',
-            weekly: 4000,
+            name: '3 Jan',
+            weekly: 16000,
             monthly: 2400,
             amt: 2400,
         },
@@ -61,7 +61,7 @@ const Dashboardhome = () => {
                     <h1>Confirm Order</h1>
                     <p className="text-xl font-bold">5 </p>
                 </div>
-                <div className="flex justify-center items-center flex-col w-[275px] bg-green-600 p-10 ">
+                <div className="flex border p-10 bg-green-500 border-green-500 justify-center items-center flex-col w-[275px]">
                     <h1 className="text-white">Total Transaction</h1>
                     <p className="text-xl font-bold text-white">5 </p>
                 </div>

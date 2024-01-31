@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Authcontext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { useDispatch } from 'react-redux';
-import { login, logout } from '../../features/userSlice';
+import { login } from '../../features/userSlice';
 
 const Login = () => {
     const { loginwithGoogle } = useContext(Authcontext);
@@ -17,9 +17,6 @@ const Login = () => {
     const navigate = useNavigate()
 
     const onSubmit = (data) => {
-        setTimeout(() => {
-            dispatch(logout())
-        }, 2000000);
         fetch('http://localhost:3001/api/v1/login', {
             method: 'POST',
             headers: {

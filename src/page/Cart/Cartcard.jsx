@@ -4,6 +4,7 @@ import useCart from '../../hook/useCart';
 import Swal from 'sweetalert2';
 
 const CartCard = ({ item }) => {
+
     const [quantity, setQuantity] = useState(1);
     const [price, setPrice] = useState(parseFloat(item.price));
     const increaseQuantity = () => {
@@ -78,7 +79,7 @@ const CartCard = ({ item }) => {
                     </div>
                 </div>
                 <div className='flex gap-5'>
-                    <Link to={'/payment'}>
+                    <Link to={`/payment/${item.productId}`}>
                         <button className="btn py-4 px-8 bg-slate-300 rounded-xl font-bold">Pay Now</button>
                     </Link>
                     <button onClick={() => removeFromCart(item._id)} className="btn py-4 px-8 bg-[#C94428] hover:bg-red-500 rounded-xl font-bold">Remove</button>

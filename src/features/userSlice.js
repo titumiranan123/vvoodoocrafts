@@ -30,9 +30,10 @@ export const userSlice = createSlice({
         },
         setUser: (state, action) => {
             state.user = action.payload.user;
-            if (!localStorage.getItem('user')) {
-                localStorage.setItem("user", JSON.stringify(action.payload.user))
-            }
+            // console.log(`${action.payload.user},user`)
+            // if (!localStorage.getItem('user')) {
+            //     localStorage.setItem("user", JSON.stringify(action.payload.user))
+            // }
             if (localStorage.getItem("token")) {
                 state.token = localStorage.getItem("token")
                 state.isAuthenticated = true;
