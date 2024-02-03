@@ -47,19 +47,25 @@ function SignUp() {
             body: JSON.stringify(data),
         })
             .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
                 return response.json();
             })
             .then(parsedResponse => {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'signup in successful',
-
-                })
-                navigate('/login')
-                console.log(parsedResponse);
+                if(parsedResponse.message !== "Email Already Used "){
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'signup in successful',
+                    })
+                    navigate('/login')
+                    return;
+                }
+                else{
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Email Already Used',
+                    })
+                    navigate('/singup')
+                }
+              
 
             })
             .catch(error => {
