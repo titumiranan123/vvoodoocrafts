@@ -1,9 +1,9 @@
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
-import useProduct from "../../hook/useProduct";
 import ProductCard from "./ProductCard/ProductCard";
+import useProducts from "../../hook/useProducts";
 
 const Dashboardhome = () => {
-    const data = useProduct();
+
 
     const info = [
         {
@@ -49,7 +49,7 @@ const Dashboardhome = () => {
             amt: 2100,
         },
     ];
-
+    const [data] = useProducts()
     return (
         <div className="space-y-10 ">
             <div className="flex justify-between mt-10 items-center ">
@@ -95,8 +95,6 @@ const Dashboardhome = () => {
                             <Tooltip />
                             <Legend />
                             <Line type="monotone" dataKey="weekly" stroke="#EF4444" strokeDasharray="5" />
-                            {/* Replace 'uv' with 'monthly' or 'amt' depending on what you intend */}
-
                         </LineChart>
                     </ResponsiveContainer>
                 </div>

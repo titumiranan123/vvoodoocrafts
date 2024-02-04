@@ -2,7 +2,8 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useProduct from "../../hook/useProduct";
-import ProductCard from "../productCard/ProductCard";
+import ProductCard from "../../page/dashbord/ProductCard/ProductCard";
+
 
 
 const Products = () => {
@@ -186,7 +187,7 @@ const Products = () => {
                 <div className="flex flex-col items-center">
                     <h1 className="text-2xl font-bold mb-8 mt-8 ">New Order </h1>
                     <div className="flex flex-col gap-10">
-                        {data?.map((item, index) => (
+                    {data?.map((item, index) => (
                             <ProductCard key={index} item={item} />
                         ))}
                     </div>

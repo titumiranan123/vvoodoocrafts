@@ -1,10 +1,10 @@
 
 import Swal from 'sweetalert2';
-import useProduct from '../../../hook/useProduct';
 import { Link } from 'react-router-dom';
+import useProducts from '../../../hook/useProducts';
 
 const ProductCard = ({ item }) => {
-    const [, refetch] = useProduct()
+const [,refetch]=useProducts()
     const removeProduct = (id) => {
         Swal.fire({
             title: "Are you sure?",
@@ -34,10 +34,7 @@ const ProductCard = ({ item }) => {
                     })
             }
         });
-
     };
-
-
     return (
         <div className=''>
             <div className='grid grid-cols-4 gap-10'>
