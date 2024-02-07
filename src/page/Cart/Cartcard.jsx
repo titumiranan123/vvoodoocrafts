@@ -4,16 +4,17 @@ import useCart from "../../hook/useCart";
 import Swal from "sweetalert2";
 
 const CartCard = ({ item }) => {
+  console.log(item);
   const [quantity, setQuantity] = useState(1);
-  const [price, setPrice] = useState(parseFloat(item.price));
+  const [price, setPrice] = useState(parseFloat(item.price * item.quntity));
   const increaseQuantity = () => {
     setQuantity((prevQuantity) => prevQuantity + 1);
-    setPrice((prevPrice) => parseFloat(prevPrice) + price);
+    setPrice((prevPrice) => parseFloat(prevPrice) + parseFloat(item.price));
   };
   const decreaseQuantity = () => {
     if (quantity > 1) {
       setQuantity((prevQuantity) => prevQuantity - 1);
-      setPrice((prevPrice) => parseFloat(prevPrice) - price);
+      setPrice((prevPrice) => parseFloat(prevPrice) - parseFloat(item.price));
     }
   };
   const [, refetch] = useCart();
@@ -42,8 +43,8 @@ const CartCard = ({ item }) => {
     });
   };
   return (
-    <div>
-      <div className="flex items-center gap-10">
+    <div className="flex justify-center items-center flex-col">
+      <div className="grid md:grid-cols-4 grid-cols-3 gap-10">
         <div>
           <img className="w-20 h-20" src={item.image_url} alt="" />
         </div>
@@ -51,7 +52,7 @@ const CartCard = ({ item }) => {
           <p className="text-xl font-bold">{item.product_name}</p>
         </div>
         <div>
-          <p> Price: {price}Tk.</p>
+          <p> Price: {price.toFixed(3)} $</p>
           <div className="flex items-center">
             <button
               className="text-xs bg-gray-300 rounded-full w-6 h-6 flex items-center justify-center"
@@ -59,7 +60,7 @@ const CartCard = ({ item }) => {
             >
               -
             </button>
-            <span className="text-gray-700 mx-2">{quantity}</span>
+            <span className="text-gray-700 mx-2">{item.quntity}</span>
             <button
               className="text-xs bg-gray-300 rounded-full w-6 h-6 flex items-center justify-center"
               onClick={increaseQuantity}
@@ -68,7 +69,7 @@ const CartCard = ({ item }) => {
             </button>
           </div>
         </div>
-        <div className="flex gap-5">
+        <div className="flex gap-5 md:col-span-1 col-span-3">
           <Link to={`/payment/${item.productId}`}>
             <button className="btn py-4 px-8 bg-slate-300 rounded-xl font-bold">
               Pay Now
