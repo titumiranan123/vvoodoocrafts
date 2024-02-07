@@ -1,9 +1,11 @@
 import CartCard from "./Cartcard";
 import useCart from "../../hook/useCart";
 import { Link } from "react-router-dom";
+import setTitle from "../../hook/setTitle";
 
 const Mycart = () => {
   const [data] = useCart();
+  setTitle("Chamrabari || Cart");
   if (data == 0) {
     return (
       <div className="flex gap-10 justify-center flex-col items-center h-screen text-2xl">

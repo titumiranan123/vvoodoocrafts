@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import setTitle from "../../hook/setTitle";
 
 const PaymentForm = () => {
+  setTitle("Chamrabari || Payment");
   const { productId } = useParams();
   console.log(productId);
   const [paymentData, setPaymentData] = useState({

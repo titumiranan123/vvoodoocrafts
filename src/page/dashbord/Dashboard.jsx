@@ -13,6 +13,7 @@ import useOrder from "../../hook/useOrder";
 import { useEffect, useState } from "react";
 import useProduct from "../../hook/useProduct";
 import OrderCard from "../../component/orderCard/Ordercard";
+import setTitle from "../../hook/setTitle";
 
 const Dashboardhome = () => {
   const [count, setCount] = useState(0);
@@ -20,7 +21,7 @@ const Dashboardhome = () => {
   const [Pendding, setPendding] = useState(0);
   const [orders] = useOrder();
   const products = useProduct();
-
+  setTitle("Chamrabari || Dashborad");
   useEffect(() => {
     if (orders) {
       let ct = 0;
