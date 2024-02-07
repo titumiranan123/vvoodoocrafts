@@ -26,11 +26,8 @@ const Dashboardhome = () => {
       let ct = 0;
       let total = 0;
       let pendding = 0;
-      orders.map((pr) => {
-        console.log(pr.updatedAt);
-      });
       orders.forEach((order) => {
-        if (order?.confirmStatus === false) {
+        if (order?.confirmStatus === true) {
           // console.log(order.order.productId);
           products?.forEach((pd) => {
             if (order.order.productId === pd._id) {

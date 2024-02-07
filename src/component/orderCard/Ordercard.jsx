@@ -1,17 +1,35 @@
 import { useEffect, useState } from "react";
 import useProducts from "../../hook/useProducts";
+import useOrder from "../../hook/useOrder";
 
 const OrderCard = ({ order }) => {
   const [product] = useProducts();
   const [data, setData] = useState([]);
+  const [, refeatch] = useOrder();
   useEffect(() => {
     product?.forEach((pt) => {
       if (pt._id === order.order.productId) {
         setData(pt);
-        console.log(pt);
       }
     });
   }, [product, order]);
+  const confirmOrder = (id) => {
+    fetch(`http://localhost:3001/payment/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        refeatch(); // Assuming this is a typo and should be 'refetch()'
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error("Error confirming order:", error);
+      });
+  };
+
   return (
     <div className="bg-white flex justify-center items-center shadow-lg rounded-lg overflow-hidden">
       <div>
@@ -27,7 +45,16 @@ const OrderCard = ({ order }) => {
         </span>
       </div>
       <div>
-        <button className="btn bg-orange-400">Confirmed</button>
+        <button
+          onClick={() => confirmOrder(order._id)}
+          className={`${
+            order.confirmStatus
+              ? "disabled btn  hover:bg-slate-300 bg-slate-300"
+              : "btn bg-orange-500 hover:bg-orange-300"
+          }`}
+        >
+          Confirmed
+        </button>
       </div>
     </div>
   );
