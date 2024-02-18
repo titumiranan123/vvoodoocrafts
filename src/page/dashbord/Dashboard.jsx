@@ -62,13 +62,11 @@ const Dashboardhome = () => {
         </div>
         <div className="flex border p-10 bg-green-500 border-green-500 justify-center items-center flex-col w-[275px]">
           <h1 className="text-white">Pendding Transaction</h1>
-          <p className="text-xl font-bold text-white">
-            {Pendding.toFixed(2)} $
-          </p>
+          <p className="text-xl font-bold text-white">{Pendding} $ </p>
         </div>
         <div className="flex border p-10 bg-green-500 border-green-500 justify-center items-center flex-col w-[275px]">
           <h1 className="text-white">Total Transaction</h1>
-          <p className="text-xl font-bold text-white">{total.toFixed(2)} $</p>
+          <p className="text-xl font-bold text-white">{total?.toFixed(3)} $</p>
         </div>
       </div>
       <div>
